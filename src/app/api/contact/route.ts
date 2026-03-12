@@ -19,9 +19,12 @@ export async function POST(req: NextRequest) {
     const chatId = process.env.TELEGRAM_CHAT_ID;
 
     if (!token || !chatId) {
-      console.error("TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID is not set");
       return NextResponse.json(
-        { success: false, error: "Telegram is not configured" },
+        {
+          success: false,
+          error:
+            "Telegram не настроен. Проверьте TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID в настройках Vercel и сделайте повторный деплой.",
+        },
         { status: 500 },
       );
     }
