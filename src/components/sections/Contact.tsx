@@ -7,10 +7,50 @@ import { Button } from "@/components/ui/Button";
 
 export function Contact() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
+    setError(null);
+    setLoading(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      name: String(formData.get("name") || ""),
+      email: String(formData.get("email") || ""),
+      message: String(formData.get("message") || ""),
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const data = (await res.json().catch(() => null)) as
+          | { error?: string }
+          | null;
+        throw new Error(data?.error || "Не удалось отправить заявку. Попробуйте ещё раз.");
+      }
+
+      form.reset();
+      setSent(true);
+    } catch (err) {
+      const message =
+        err instanceof Error
+          ? err.message
+          : "Не удалось отправить заявку. Попробуйте ещё раз.";
+      setError(message);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -30,6 +70,11 @@ export function Contact() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="mt-10 space-y-6">
+              {error && (
+                <div className="rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-500/40 dark:bg-red-500/10 dark:text-red-100">
+                  {error}
+                </div>
+              )}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-slate-600 dark:text-slate-300">
                   Имя / Компания
@@ -69,8 +114,13 @@ export function Contact() {
                   placeholder="Опишите проект или задачу..."
                 />
               </div>
-              <Button type="submit" variant="primary" size="lg" className="w-full sm:w-auto">
-                Отправить заявку
+              <Button
+                type="submit"
+                variant="primary"
+                size="lg"
+                className="w-full sm:w-auto"
+              >
+                {loading ? "Отправка..." : "Отправить заявку"}
               </Button>
             </form>
           )}
