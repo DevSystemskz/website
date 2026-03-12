@@ -14,9 +14,15 @@ const DeviceIcon = () => (
   </svg>
 );
 
-const CloudIcon = () => (
+const BlockchainIcon = () => (
   <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+  </svg>
+);
+
+const SparklesIcon = () => (
+  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
   </svg>
 );
 
@@ -40,10 +46,16 @@ const services = [
     features: ["React Native, Flutter", "Нативный iOS/Android", "MVP и полный цикл"],
   },
   {
-    icon: <CloudIcon />,
-    title: "Облачные решения",
-    description: "Архитектура, миграция и поддержка в AWS, GCP, Azure.",
-    features: ["Миграция в облако", "DevOps и CI/CD", "Масштабирование"],
+    icon: <BlockchainIcon />,
+    title: "Блокчейн",
+    description: "Смарт-контракты, DApp, токенизация и интеграция с крипто-инфраструктурой.",
+    features: ["Smart contracts", "Web3, DeFi", "Аудит и консалтинг"],
+  },
+  {
+    icon: <SparklesIcon />,
+    title: "Интеграция с AI",
+    description: "Внедрение ИИ в продукты: чат-боты, автоматизация, анализ данных и генеративный контент.",
+    features: ["LLM, RAG, агенты", "Обработка данных", "Кастомные модели"],
   },
   {
     icon: <PuzzleIcon />,
@@ -62,7 +74,7 @@ export function Services() {
           title="Что мы делаем"
           description="Полный цикл разработки: от аналитики и дизайна до запуска и поддержки."
         />
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {services.map((s) => (
             <ServiceCard key={s.title} {...s} />
           ))}
