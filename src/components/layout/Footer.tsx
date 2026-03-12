@@ -13,8 +13,8 @@ const footerLinks = {
     { href: "#services", label: "Интеграции" },
   ],
   legal: [
-    { href: "#", label: "Политика конфиденциальности" },
-    { href: "#", label: "Условия использования" },
+    { href: "/privacy", label: "Политика конфиденциальности" },
+    { href: "/terms", label: "Условия использования" },
   ],
 };
 
