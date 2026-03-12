@@ -18,8 +18,8 @@ export function CTABanner() {
               <Button href="#contact" variant="primary" size="lg">
                 Оставить заявку
               </Button>
-              <Button href="mailto:hello@devsystems.ru" variant="outline" size="lg">
-                hello@devsystems.ru
+              <Button href="mailto:devsystemg@gmail.com" variant="outline" size="lg">
+                devsystemg@gmail.com
               </Button>
             </div>
           </div>
