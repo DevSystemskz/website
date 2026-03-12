@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
 
     const token = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID;
-
+    // rebuild
     if (!token || !chatId) {
       return NextResponse.json(
         {
