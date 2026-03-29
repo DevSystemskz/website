@@ -3,15 +3,15 @@ import { Container } from "@/components/ui/Container";
 
 const footerLinks = {
   company: [
-    { href: "#portfolio", label: "Портфолио" },
-    { href: "#about", label: "О компании" },
-    { href: "#team", label: "Команда" },
-    { href: "#contact", label: "Контакты" },
+    { href: "/#portfolio", label: "Портфолио" },
+    { href: "/#about", label: "О компании" },
+    { href: "/#team", label: "Команда" },
+    { href: "/#contact", label: "Контакты" },
   ],
   services: [
-    { href: "#services", label: "Веб-разработка" },
-    { href: "#services", label: "Мобильные приложения" },
-    { href: "#services", label: "Интеграции" },
+    { href: "/#services", label: "Веб-разработка" },
+    { href: "/#services", label: "Мобильные приложения" },
+    { href: "/#services", label: "Интеграции" },
   ],
   legal: [
     { href: "/privacy", label: "Политика конфиденциальности" },

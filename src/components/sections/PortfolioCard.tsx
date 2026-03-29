@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 
 interface PortfolioCardProps {
   title: string;
@@ -15,15 +18,21 @@ export function PortfolioCard({
   imageSrc,
   imageAlt,
 }: PortfolioCardProps) {
+  const reduce = useReducedMotion();
+
   return (
-    <article className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:border-indigo-400/50 hover:shadow-lg hover:shadow-indigo-500/5 dark:border-slate-800 dark:bg-slate-800/30 dark:hover:border-indigo-500/40">
+    <motion.article
+      className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:border-indigo-400/50 hover:shadow-lg hover:shadow-indigo-500/5 dark:border-slate-800 dark:bg-slate-800/30 dark:hover:border-indigo-500/40"
+      whileHover={reduce ? undefined : { y: -8 }}
+      transition={{ type: "spring", stiffness: 380, damping: 26 }}
+    >
       <div className="relative h-44 w-full overflow-hidden bg-slate-200 dark:bg-slate-800">
         <Image
           src={imageSrc}
           alt={imageAlt}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover transition duration-300 group-hover:scale-105"
+          className="object-cover transition duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
       </div>
@@ -45,6 +54,6 @@ export function PortfolioCard({
           ))}
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }

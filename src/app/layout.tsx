@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import { ScrollToHash } from "@/components/layout/ScrollToHash";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -42,7 +43,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <ScrollToHash />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

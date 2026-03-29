@@ -1,6 +1,10 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { TeamCard } from "./TeamCard";
+import { useStaggerVariants, viewportOnce } from "@/components/motion/useStaggerVariants";
 
 const team = [
   {
@@ -30,20 +34,36 @@ const team = [
 ];
 
 export function Team() {
+  const { section, item, grid } = useStaggerVariants();
+
   return (
-    <section id="team" className="border-t border-slate-200 bg-white py-20 lg:py-28 dark:border-slate-800 dark:bg-slate-900">
+    <motion.section
+      id="team"
+      className="border-t border-slate-200 bg-white py-20 lg:py-28 dark:border-slate-800 dark:bg-slate-900"
+      variants={section}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+    >
       <Container>
-        <SectionTitle
-          tag="Команда"
-          title="Люди, которые делают проекты"
-          description="Опытные разработчики, менеджеры и дизайнеры. Выделенная команда под ваш проект."
-        />
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <motion.div variants={item}>
+          <SectionTitle
+            tag="Команда"
+            title="Люди, которые делают проекты"
+            description="Опытные разработчики, менеджеры и дизайнеры. Выделенная команда под ваш проект."
+          />
+        </motion.div>
+        <motion.div
+          className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          variants={grid}
+        >
           {team.map((member) => (
-            <TeamCard key={member.name} {...member} />
+            <motion.div key={member.name} variants={item}>
+              <TeamCard {...member} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </Container>
-    </section>
+    </motion.section>
   );
 }

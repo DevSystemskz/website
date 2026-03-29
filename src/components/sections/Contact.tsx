@@ -1,11 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Button } from "@/components/ui/Button";
+import { useStaggerVariants, viewportOnce } from "@/components/motion/useStaggerVariants";
 
 export function Contact() {
+  const { section, item } = useStaggerVariants();
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -54,22 +57,40 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="border-t border-slate-200 bg-slate-50 py-20 lg:py-28 dark:border-slate-800 dark:bg-slate-900/50">
+    <motion.section
+      id="contact"
+      className="border-t border-slate-200 bg-slate-50 py-20 lg:py-28 dark:border-slate-800 dark:bg-slate-900/50"
+      variants={section}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+    >
       <Container>
         <div className="mx-auto max-w-2xl">
-          <SectionTitle
-            tag="Контакты"
-            title="Напишите нам"
-            description="Расскажите о проекте — мы свяжемся с вами и предложим варианты сотрудничества."
-          />
+          <motion.div variants={item}>
+            <SectionTitle
+              tag="Контакты"
+              title="Напишите нам"
+              description="Расскажите о проекте — мы свяжемся с вами и предложим варианты сотрудничества."
+            />
+          </motion.div>
           {sent ? (
-            <div className="mt-10 rounded-2xl border border-indigo-300 bg-indigo-50 p-8 text-center dark:border-indigo-500/30 dark:bg-indigo-500/10">
+            <motion.div
+              className="mt-10 rounded-2xl border border-indigo-300 bg-indigo-50 p-8 text-center dark:border-indigo-500/30 dark:bg-indigo-500/10"
+              initial={{ opacity: 0, scale: 0.96, y: 12 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 380, damping: 28 }}
+            >
               <p className="text-lg font-medium text-slate-900 dark:text-white">
                 Заявка отправлена. Мы свяжемся с вами в ближайшее время.
               </p>
-            </div>
+            </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="mt-10 space-y-6">
+            <motion.form
+              onSubmit={handleSubmit}
+              className="mt-10 space-y-6"
+              variants={item}
+            >
               {error && (
                 <div className="rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-500/40 dark:bg-red-500/10 dark:text-red-100">
                   {error}
@@ -122,10 +143,10 @@ export function Contact() {
               >
                 {loading ? "Отправка..." : "Отправить заявку"}
               </Button>
-            </form>
+            </motion.form>
           )}
         </div>
       </Container>
-    </section>
+    </motion.section>
   );
 }

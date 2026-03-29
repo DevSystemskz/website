@@ -1,3 +1,6 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
 import { type ReactNode } from "react";
 
 interface ServiceCardProps {
@@ -13,8 +16,15 @@ export function ServiceCard({
   description,
   features = [],
 }: ServiceCardProps) {
+  const reduce = useReducedMotion();
+
   return (
-    <article className="group relative rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:border-indigo-400 hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-800/30 dark:hover:border-indigo-500/50 dark:hover:bg-slate-800/50 lg:p-8">
+    <motion.article
+      className="group relative rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:border-indigo-400 hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-800/30 dark:hover:border-indigo-500/50 dark:hover:bg-slate-800/50 lg:p-8"
+      whileHover={reduce ? undefined : { y: -6 }}
+      whileTap={reduce ? undefined : { scale: 0.99 }}
+      transition={{ type: "spring", stiffness: 400, damping: 28 }}
+    >
       <div className="mb-4 inline-flex rounded-xl bg-indigo-100 p-3 text-indigo-600 transition group-hover:bg-indigo-200 dark:bg-indigo-500/10 dark:text-indigo-400 dark:group-hover:bg-indigo-500/20">
         {icon}
       </div>
@@ -30,6 +40,6 @@ export function ServiceCard({
           ))}
         </ul>
       )}
-    </article>
+    </motion.article>
   );
 }

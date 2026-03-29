@@ -7,12 +7,12 @@ import { Button } from "@/components/ui/Button";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 const navLinks = [
-  { href: "#services", label: "Услуги" },
-  { href: "#portfolio", label: "Портфолио" },
-  { href: "#about", label: "О нас" },
-  { href: "#process", label: "Процесс" },
-  { href: "#team", label: "Команда" },
-  { href: "#contact", label: "Контакты" },
+  { href: "/#services", label: "Услуги" },
+  { href: "/#portfolio", label: "Портфолио" },
+  { href: "/#about", label: "О нас" },
+  { href: "/#process", label: "Процесс" },
+  { href: "/#team", label: "Команда" },
+  { href: "/#contact", label: "Контакты" },
 ];
 
 export function Header() {
@@ -44,10 +44,10 @@ export function Header() {
 
           <div className="hidden items-center gap-2 md:flex">
             <ThemeToggle />
-            <Button href="#contact" variant="outline" size="sm">
+            <Button href="/#contact" variant="outline" size="sm">
               Связаться
             </Button>
-            <Button href="#contact" variant="primary" size="sm">
+            <Button href="/#contact" variant="primary" size="sm">
               Обсудить проект
             </Button>
           </div>
@@ -88,10 +88,10 @@ export function Header() {
                 </li>
               ))}
               <li className="flex gap-2 pt-2">
-                <Button href="#contact" variant="outline" size="sm">
+                <Button href="/#contact" variant="outline" size="sm">
                   Связаться
                 </Button>
-                <Button href="#contact" variant="primary" size="sm">
+                <Button href="/#contact" variant="primary" size="sm">
                   Обсудить проект
                 </Button>
               </li>

@@ -1,6 +1,10 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { TestimonialCard } from "./TestimonialCard";
+import { useStaggerVariants, viewportOnce } from "@/components/motion/useStaggerVariants";
 
 const testimonials = [
   {
@@ -27,20 +31,35 @@ const testimonials = [
 ];
 
 export function Testimonials() {
+  const { section, item, grid } = useStaggerVariants();
+
   return (
-    <section className="border-t border-slate-200 bg-slate-50 py-20 lg:py-28 dark:border-slate-800 dark:bg-slate-900/50">
+    <motion.section
+      className="border-t border-slate-200 bg-slate-50 py-20 lg:py-28 dark:border-slate-800 dark:bg-slate-900/50"
+      variants={section}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+    >
       <Container>
-        <SectionTitle
-          tag="Отзывы"
-          title="Что говорят клиенты"
-          description="Реальные проекты и долгосрочное сотрудничество."
-        />
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <motion.div variants={item}>
+          <SectionTitle
+            tag="Отзывы"
+            title="Что говорят клиенты"
+            description="Реальные проекты и долгосрочное сотрудничество."
+          />
+        </motion.div>
+        <motion.div
+          className="mt-14 grid gap-6 md:grid-cols-3"
+          variants={grid}
+        >
           {testimonials.map((t) => (
-            <TestimonialCard key={t.author} {...t} />
+            <motion.div key={t.author} variants={item}>
+              <TestimonialCard {...t} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </Container>
-    </section>
+    </motion.section>
   );
 }

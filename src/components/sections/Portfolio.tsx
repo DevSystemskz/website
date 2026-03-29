@@ -1,6 +1,10 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { PortfolioCard } from "./PortfolioCard";
+import { useStaggerVariants, viewportOnce } from "@/components/motion/useStaggerVariants";
 
 const projects = [
   {
@@ -60,23 +64,36 @@ const projects = [
 ];
 
 export function Portfolio() {
+  const { section, item, grid } = useStaggerVariants();
+
   return (
-    <section
+    <motion.section
       id="portfolio"
       className="border-t border-slate-200 bg-slate-50 py-20 lg:py-28 dark:border-slate-800 dark:bg-slate-900/50"
+      variants={section}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
     >
       <Container>
-        <SectionTitle
-          tag="Портфолио"
-          title="Избранные проекты"
-          description="Реальные задачи: от MVP до масштабируемых продуктов. Названия и детали могут быть изменены под ваш кейс."
-        />
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <motion.div variants={item}>
+          <SectionTitle
+            tag="Портфолио"
+            title="Избранные проекты"
+            description="Реальные задачи: от MVP до масштабируемых продуктов. Названия и детали могут быть изменены под ваш кейс."
+          />
+        </motion.div>
+        <motion.div
+          className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          variants={grid}
+        >
           {projects.map((p) => (
-            <PortfolioCard key={p.title} {...p} />
+            <motion.div key={p.title} variants={item}>
+              <PortfolioCard {...p} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </Container>
-    </section>
+    </motion.section>
   );
 }

@@ -1,6 +1,10 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { ServiceCard } from "./ServiceCard";
+import { useStaggerVariants, viewportOnce } from "@/components/motion/useStaggerVariants";
 
 const CodeIcon = () => (
   <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,20 +70,36 @@ const services = [
 ];
 
 export function Services() {
+  const { section, item, grid } = useStaggerVariants();
+
   return (
-    <section id="services" className="bg-white py-20 lg:py-28 dark:bg-slate-900">
+    <motion.section
+      id="services"
+      className="bg-white py-20 lg:py-28 dark:bg-slate-900"
+      variants={section}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+    >
       <Container>
-        <SectionTitle
-          tag="Услуги"
-          title="Что мы делаем"
-          description="Полный цикл разработки: от аналитики и дизайна до запуска и поддержки."
-        />
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <motion.div variants={item}>
+          <SectionTitle
+            tag="Услуги"
+            title="Что мы делаем"
+            description="Полный цикл разработки: от аналитики и дизайна до запуска и поддержки."
+          />
+        </motion.div>
+        <motion.div
+          className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5"
+          variants={grid}
+        >
           {services.map((s) => (
-            <ServiceCard key={s.title} {...s} />
+            <motion.div key={s.title} variants={item}>
+              <ServiceCard {...s} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </Container>
-    </section>
+    </motion.section>
   );
 }
