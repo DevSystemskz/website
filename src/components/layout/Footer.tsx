@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 
 const footerLinks = {
   company: [
+    { href: "#portfolio", label: "Портфолио" },
     { href: "#about", label: "О компании" },
     { href: "#team", label: "Команда" },
     { href: "#contact", label: "Контакты" },

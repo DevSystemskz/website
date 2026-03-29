@@ -11,10 +11,7 @@ export function Hero() {
       <Container className="relative">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between md:gap-12">
           <div className="min-w-0 flex-1 max-w-3xl">
-          <span className="inline-block rounded-full border border-indigo-400/40 bg-indigo-50 px-4 py-1.5 text-sm font-medium text-indigo-700 dark:border-indigo-500/30 dark:bg-indigo-500/10 dark:text-indigo-300">
-            Разработка ПО под ключ
-          </span>
-          <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-6xl dark:text-white">
+          <h1 className="mt-10 text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:mt-12 sm:text-5xl lg:mt-14 lg:text-6xl dark:text-white">
             Создаём цифровые продукты, которые{" "}
             <span className="text-indigo-600 dark:text-indigo-400">работают на бизнес</span>
           </h1>
