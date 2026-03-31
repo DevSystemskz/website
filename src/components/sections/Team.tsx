@@ -37,6 +37,34 @@ function getTeam(locale: Locale) {
       },
     ];
   }
+  if (locale === "kk") {
+    return [
+      {
+        name: "Дмитрий Волков",
+        role: "Tech Lead",
+        bio: "Архитектура және негізгі техникалық шешімдер. Веб пен бұлтта 10+ жыл тәжірибе.",
+        initials: "ДВ",
+      },
+      {
+        name: "Мария Соколова",
+        role: "Project Manager",
+        bio: "Командаларды үйлестіру және тапсырыс берушімен коммуникация. Agile, Scrum.",
+        initials: "МС",
+      },
+      {
+        name: "Андрей Петров",
+        role: "Senior Developer",
+        bio: "Fullstack және мобильді әзірлеу. Код сапасына ерекше назар.",
+        initials: "АП",
+      },
+      {
+        name: "Елена Козлова",
+        role: "UX/UI Designer",
+        bio: "Интерфейстер мен UX: прототиптен бастап дизайн-жүйеге дейін.",
+        initials: "ЕК",
+      },
+    ];
+  }
 
   return [
     {

@@ -34,6 +34,31 @@ function getTestimonials(locale: Locale) {
       },
     ];
   }
+  if (locale === "kk") {
+    return [
+      {
+        quote:
+          "Мерзімдер сақталды, код сапасы жоғары. Күрделі веб-жобаларға сенімді түрде ұсынамын.",
+        author: "Игорь М.",
+        role: "Негізін қалаушы",
+        company: "MarketPlace Pro",
+      },
+      {
+        quote:
+          "Процесс түсінікті, демолар тұрақты. Мобильді қосымша сторларға уақытында шықты.",
+        author: "Ольга Т.",
+        role: "Product Owner",
+        company: "HealthApp",
+      },
+      {
+        quote:
+          "Инфрақұрылымды бұлтқа көшіруге көмектесті. Барлығы құжатталған, тапсыру кезеңі өте ыңғайлы өтті.",
+        author: "Никита В.",
+        role: "CTO",
+        company: "DataFlow",
+      },
+    ];
+  }
 
   return [
     {

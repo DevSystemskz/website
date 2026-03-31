@@ -6,7 +6,12 @@ import { type Locale } from "@/i18n/messages";
 export function LanguageToggle() {
   const { locale, setLocale } = useI18n();
 
-  const options: Locale[] = ["ru", "en"];
+  const options: Locale[] = ["ru", "kk", "en"];
+  const labels: Record<Locale, string> = {
+    ru: "RU",
+    kk: "KZ",
+    en: "EN",
+  };
 
   return (
     <div className="inline-flex rounded-lg border border-slate-300 bg-white p-1 dark:border-slate-700 dark:bg-slate-800">
@@ -24,7 +29,7 @@ export function LanguageToggle() {
             }`}
             aria-pressed={active}
           >
-            {opt}
+            {labels[opt]}
           </button>
         );
       })}

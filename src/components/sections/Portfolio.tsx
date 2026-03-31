@@ -67,6 +67,64 @@ function getProjects(locale: Locale) {
       },
     ];
   }
+  if (locale === "kk") {
+    return [
+      {
+        title: "FinTech порталы",
+        description:
+          "Қаржылық сервиске арналған клиенттік кабинет пен админ-панель: төлемдер, есептер, рөлдер.",
+        tags: ["Next.js", "TypeScript", "PostgreSQL"],
+        imageSrc:
+          "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80&auto=format&fit=crop",
+        imageAlt: "Қаржылық аналитика интерфейсі",
+      },
+      {
+        title: "Жеткізуге арналған мобильді қосымша",
+        description:
+          "Курьерлер мен клиенттерге арналған кросс-платформалы қосымша: трекинг, push-хабарламалар, офлайн режим.",
+        tags: ["React Native", "Node.js"],
+        imageSrc:
+          "https://images.unsplash.com/photo-1526367790999-0150786686a2?w=800&q=80&auto=format&fit=crop",
+        imageAlt: "Жеткізу қызметі",
+      },
+      {
+        title: "DeFi дашборды",
+        description:
+          "Әмияндар мен ликвидтілік пулдарына арналған веб-интерфейс, блокчейнмен интеграция.",
+        tags: ["Web3", "React", "Solidity"],
+        imageSrc:
+          "https://images.unsplash.com/photo-1639762681057-408e52192e55?w=800&q=80&auto=format&fit=crop",
+        imageAlt: "Блокчейн және цифрлық активтер",
+      },
+      {
+        title: "Қолдауға арналған AI-ассистент",
+        description:
+          "Компания білім базасы бойынша RAG бар LLM-чатбот, операторға эскалация.",
+        tags: ["AI", "RAG", "Python"],
+        imageSrc:
+          "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80&auto=format&fit=crop",
+        imageAlt: "Жасанды интеллект",
+      },
+      {
+        title: "B2B маркетплейс",
+        description:
+          "Каталог, себет, ERP интеграциясы және көтерме сауда үшін төлем провайдерлері.",
+        tags: ["Vue", "Microservices"],
+        imageSrc:
+          "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80&auto=format&fit=crop",
+        imageAlt: "E-commerce",
+      },
+      {
+        title: "Аналитикалық панель",
+        description:
+          "Басшылыққа арналған нақты уақыттағы дашбордтар: KPI визуализациясы және дерек экспорт.",
+        tags: ["Next.js", "D3.js", "ClickHouse"],
+        imageSrc:
+          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format&fit=crop",
+        imageAlt: "Метрикалар мен графиктер дашборды",
+      },
+    ];
+  }
 
   return [
     {

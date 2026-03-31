@@ -18,6 +18,7 @@ function detectLocale(): Locale {
   const stored = localStorage.getItem(KEY) as Locale | null;
   if (stored && locales.includes(stored)) return stored;
   const lang = navigator.language.toLowerCase();
+  if (lang.startsWith("kk")) return "kk";
   return lang.startsWith("ru") ? "ru" : "en";
 }
 

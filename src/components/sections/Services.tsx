@@ -78,6 +78,40 @@ function getServices(locale: Locale) {
       },
     ];
   }
+  if (locale === "kk") {
+    return [
+      {
+        icon: <CodeIcon />,
+        title: "Веб-әзірлеу",
+        description: "Сайттар, порталдар, SPA және заманауи стектердегі серверлік қосымшалар.",
+        features: ["React, Next.js, Vue", "Node.js, Python", "API және интеграциялар"],
+      },
+      {
+        icon: <DeviceIcon />,
+        title: "Мобильді қосымшалар",
+        description: "iOS және Android үшін нативті және кросс-платформалы қосымшалар.",
+        features: ["React Native, Flutter", "Нативті iOS/Android", "MVP-ден толық өнімге дейін"],
+      },
+      {
+        icon: <BlockchainIcon />,
+        title: "Блокчейн",
+        description: "Смарт-келісімшарттар, dApp, токенизация және крипто-инфрақұрылыммен интеграция.",
+        features: ["Smart contracts", "Web3, DeFi", "Аудит және консалтинг"],
+      },
+      {
+        icon: <SparklesIcon />,
+        title: "AI интеграциясы",
+        description: "Өнімдерге ИИ енгізу: чат-боттар, автоматтандыру, аналитика және генеративті контент.",
+        features: ["LLM, RAG, агенттер", "Деректерді өңдеу", "Кастом модельдер"],
+      },
+      {
+        icon: <PuzzleIcon />,
+        title: "Интеграциялар және қолдау",
+        description: "Жүйелерді біріктіру, өнімді жетілдіру және ұзақ мерзімді техникалық қолдау.",
+        features: ["API және микросервистер", "24/7 қолдау", "Аудит және оңтайландыру"],
+      },
+    ];
+  }
 
   return [
     {
