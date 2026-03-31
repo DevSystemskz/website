@@ -4,9 +4,11 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { smoothEase } from "@/lib/motion";
+import { useI18n } from "@/components/i18n/I18nProvider";
 
 export function Hero() {
   const reduce = useReducedMotion();
+  const { m } = useI18n();
 
   const item = (i: number) => ({
     initial: reduce ? false : { opacity: 0, y: 28 },
@@ -55,21 +57,21 @@ export function Hero() {
               className="mt-10 text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:mt-12 sm:text-5xl lg:mt-14 lg:text-6xl dark:text-white"
               {...item(0)}
             >
-              Создаём цифровые продукты, которые{" "}
-              <span className="text-indigo-600 dark:text-indigo-400">работают на бизнес</span>
+              {m.hero.titleA}{" "}
+              <span className="text-indigo-600 dark:text-indigo-400">{m.hero.titleB}</span>
             </motion.h1>
             <motion.p
               className="mt-6 text-lg text-slate-600 sm:text-xl dark:text-slate-400"
               {...item(1)}
             >
-              Веб-приложения, мобильные приложения, облачные решения и техническая поддержка. От идеи до запуска и масштабирования.
+              {m.hero.description}
             </motion.p>
             <motion.div className="mt-10 flex flex-wrap gap-4" {...item(2)}>
               <Button href="#contact" variant="primary" size="lg">
-                Обсудить проект
+                {m.hero.discussBtn}
               </Button>
               <Button href="#services" variant="outline" size="lg">
-                Наши услуги
+                {m.hero.servicesBtn}
               </Button>
             </motion.div>
 
@@ -83,11 +85,7 @@ export function Hero() {
                 ease: smoothEase,
               }}
             >
-              {[
-                { n: "50+", t: "реализованных проектов" },
-                { n: "8+", t: "лет на рынке" },
-                { n: "100%", t: "фокус на качестве" },
-              ].map((stat, i) => (
+              {m.hero.stats.map((stat, i) => (
                 <motion.div
                   key={stat.t}
                   className="flex items-center gap-2"

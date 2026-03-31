@@ -5,6 +5,8 @@ import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { ServiceCard } from "./ServiceCard";
 import { useStaggerVariants, viewportOnce } from "@/components/motion/useStaggerVariants";
+import { useI18n } from "@/components/i18n/I18nProvider";
+import { type Locale } from "@/i18n/messages";
 
 const CodeIcon = () => (
   <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -36,57 +38,101 @@ const PuzzleIcon = () => (
   </svg>
 );
 
-const services = [
-  {
-    icon: <CodeIcon />,
-    title: "Веб-разработка",
-    description: "Сайты, порталы, SPA и серверные приложения на современных стеках.",
-    features: ["React, Next.js, Vue", "Node.js, Python", "API и интеграции"],
-  },
-  {
-    icon: <DeviceIcon />,
-    title: "Мобильные приложения",
-    description: "Нативные и кроссплатформенные приложения для iOS и Android.",
-    features: ["React Native, Flutter", "Нативный iOS/Android", "MVP и полный цикл"],
-  },
-  {
-    icon: <BlockchainIcon />,
-    title: "Блокчейн",
-    description: "Смарт-контракты, DApp, токенизация и интеграция с крипто-инфраструктурой.",
-    features: ["Smart contracts", "Web3, DeFi", "Аудит и консалтинг"],
-  },
-  {
-    icon: <SparklesIcon />,
-    title: "Интеграция с AI",
-    description: "Внедрение ИИ в продукты: чат-боты, автоматизация, анализ данных и генеративный контент.",
-    features: ["LLM, RAG, агенты", "Обработка данных", "Кастомные модели"],
-  },
-  {
-    icon: <PuzzleIcon />,
-    title: "Интеграции и поддержка",
-    description: "Связка систем, доработки и долгосрочная техническая поддержка.",
-    features: ["API и микросервисы", "Поддержка 24/7", "Аудит и оптимизация"],
-  },
-];
+function getServices(locale: Locale) {
+  if (locale === "en") {
+    return [
+      {
+        icon: <CodeIcon />,
+        title: "Web Development",
+        description:
+          "Marketing websites, portals, SPAs, and server-side applications with modern stacks.",
+        features: ["React, Next.js, Vue", "Node.js, Python", "APIs and integrations"],
+      },
+      {
+        icon: <DeviceIcon />,
+        title: "Mobile Apps",
+        description:
+          "Native and cross-platform applications for iOS and Android.",
+        features: ["React Native, Flutter", "Native iOS/Android", "MVP to full product"],
+      },
+      {
+        icon: <BlockchainIcon />,
+        title: "Blockchain",
+        description:
+          "Smart contracts, dApps, tokenization, and integration with crypto infrastructure.",
+        features: ["Smart contracts", "Web3, DeFi", "Audit and consulting"],
+      },
+      {
+        icon: <SparklesIcon />,
+        title: "AI Integration",
+        description:
+          "AI in products: chatbots, automation, analytics, and generative content.",
+        features: ["LLM, RAG, agents", "Data processing", "Custom models"],
+      },
+      {
+        icon: <PuzzleIcon />,
+        title: "Integrations & Support",
+        description:
+          "System integrations, product improvements, and long-term technical support.",
+        features: ["APIs and microservices", "24/7 support", "Audit and optimization"],
+      },
+    ];
+  }
+
+  return [
+    {
+      icon: <CodeIcon />,
+      title: "Веб-разработка",
+      description: "Сайты, порталы, SPA и серверные приложения на современных стеках.",
+      features: ["React, Next.js, Vue", "Node.js, Python", "API и интеграции"],
+    },
+    {
+      icon: <DeviceIcon />,
+      title: "Мобильные приложения",
+      description: "Нативные и кроссплатформенные приложения для iOS и Android.",
+      features: ["React Native, Flutter", "Нативный iOS/Android", "MVP и полный цикл"],
+    },
+    {
+      icon: <BlockchainIcon />,
+      title: "Блокчейн",
+      description: "Смарт-контракты, DApp, токенизация и интеграция с крипто-инфраструктурой.",
+      features: ["Smart contracts", "Web3, DeFi", "Аудит и консалтинг"],
+    },
+    {
+      icon: <SparklesIcon />,
+      title: "Интеграция с AI",
+      description: "Внедрение ИИ в продукты: чат-боты, автоматизация, анализ данных и генеративный контент.",
+      features: ["LLM, RAG, агенты", "Обработка данных", "Кастомные модели"],
+    },
+    {
+      icon: <PuzzleIcon />,
+      title: "Интеграции и поддержка",
+      description: "Связка систем, доработки и долгосрочная техническая поддержка.",
+      features: ["API и микросервисы", "Поддержка 24/7", "Аудит и оптимизация"],
+    },
+  ];
+}
 
 export function Services() {
   const { section, item, grid } = useStaggerVariants();
+  const { m, locale } = useI18n();
+  const services = getServices(locale);
 
   return (
     <motion.section
       id="services"
       className="bg-white py-20 lg:py-28 dark:bg-slate-900"
       variants={section}
-      initial="hidden"
+      initial={false}
       whileInView="visible"
       viewport={viewportOnce}
     >
       <Container>
         <motion.div variants={item}>
           <SectionTitle
-            tag="Услуги"
-            title="Что мы делаем"
-            description="Полный цикл разработки: от аналитики и дизайна до запуска и поддержки."
+            tag={m.sections.servicesTag}
+            title={m.sections.servicesTitle}
+            description={m.sections.servicesDesc}
           />
         </motion.div>
         <motion.div

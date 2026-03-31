@@ -6,9 +6,11 @@ import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Button } from "@/components/ui/Button";
 import { useStaggerVariants, viewportOnce } from "@/components/motion/useStaggerVariants";
+import { useI18n } from "@/components/i18n/I18nProvider";
 
 export function Contact() {
   const { section, item } = useStaggerVariants();
+  const { m } = useI18n();
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -61,7 +63,7 @@ export function Contact() {
       id="contact"
       className="border-t border-slate-200 bg-slate-50 py-20 lg:py-28 dark:border-slate-800 dark:bg-slate-900/50"
       variants={section}
-      initial="hidden"
+      initial={false}
       whileInView="visible"
       viewport={viewportOnce}
     >
@@ -69,9 +71,9 @@ export function Contact() {
         <div className="mx-auto max-w-2xl">
           <motion.div variants={item}>
             <SectionTitle
-              tag="Контакты"
-              title="Напишите нам"
-              description="Расскажите о проекте — мы свяжемся с вами и предложим варианты сотрудничества."
+              tag={m.sections.contactTag}
+              title={m.sections.contactTitle}
+              description={m.sections.contactDesc}
             />
           </motion.div>
           {sent ? (
@@ -82,7 +84,7 @@ export function Contact() {
               transition={{ type: "spring", stiffness: 380, damping: 28 }}
             >
               <p className="text-lg font-medium text-slate-900 dark:text-white">
-                Заявка отправлена. Мы свяжемся с вами в ближайшее время.
+                {m.sections.sent}
               </p>
             </motion.div>
           ) : (
@@ -98,7 +100,7 @@ export function Contact() {
               )}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-slate-600 dark:text-slate-300">
-                  Имя / Компания
+                  {m.sections.name}
                 </label>
                 <input
                   id="name"
@@ -106,7 +108,7 @@ export function Contact() {
                   type="text"
                   required
                   className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-800/50 dark:text-white dark:placeholder-slate-500"
-                  placeholder="Как к вам обращаться?"
+                  placeholder={m.sections.namePh}
                 />
               </div>
               <div>
@@ -124,7 +126,7 @@ export function Contact() {
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-slate-600 dark:text-slate-300">
-                  Сообщение
+                  {m.sections.message}
                 </label>
                 <textarea
                   id="message"
@@ -132,7 +134,7 @@ export function Contact() {
                   rows={4}
                   required
                   className="mt-2 w-full resize-none rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-800/50 dark:text-white dark:placeholder-slate-500"
-                  placeholder="Опишите проект или задачу..."
+                  placeholder={m.sections.messagePh}
                 />
               </div>
               <Button
@@ -141,7 +143,7 @@ export function Contact() {
                 size="lg"
                 className="w-full sm:w-auto"
               >
-                {loading ? "Отправка..." : "Отправить заявку"}
+                {loading ? m.sections.sending : m.sections.send}
               </Button>
             </motion.form>
           )}

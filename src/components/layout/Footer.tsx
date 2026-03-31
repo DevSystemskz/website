@@ -1,23 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-
-const footerLinks = {
-  company: [
-    { href: "/#portfolio", label: "Портфолио" },
-    { href: "/#about", label: "О компании" },
-    { href: "/#team", label: "Команда" },
-    { href: "/#contact", label: "Контакты" },
-  ],
-  services: [
-    { href: "/#services", label: "Веб-разработка" },
-    { href: "/#services", label: "Мобильные приложения" },
-    { href: "/#services", label: "Интеграции" },
-  ],
-  legal: [
-    { href: "/privacy", label: "Политика конфиденциальности" },
-    { href: "/terms", label: "Условия использования" },
-  ],
-};
+import { useI18n } from "@/components/i18n/I18nProvider";
 
 const social = [
   { href: "#", label: "Telegram" },
@@ -25,7 +10,25 @@ const social = [
 ];
 
 export function Footer() {
+  const { m } = useI18n();
   const year = new Date().getFullYear();
+  const footerLinks = {
+    company: [
+      { href: "/#portfolio", label: m.footer.portfolio },
+      { href: "/#about", label: m.footer.about },
+      { href: "/#team", label: m.footer.team },
+      { href: "/#contact", label: m.footer.contact },
+    ],
+    services: [
+      { href: "/#services", label: m.footer.web },
+      { href: "/#services", label: m.footer.mobile },
+      { href: "/#services", label: m.footer.integrations },
+    ],
+    legal: [
+      { href: "/privacy", label: m.footer.privacy },
+      { href: "/terms", label: m.footer.terms },
+    ],
+  };
 
   return (
     <footer className="border-t border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900/50">
@@ -39,7 +42,7 @@ export function Footer() {
               DevSystems
             </Link>
             <p className="mt-3 max-w-sm text-sm text-slate-600 dark:text-slate-400">
-              Разработка программного обеспечения под ключ. Веб, мобильные приложения, облачные решения и поддержка.
+              {m.footer.description}
             </p>
             <div className="mt-4 flex gap-4">
               {social.map((s) => (
@@ -56,7 +59,7 @@ export function Footer() {
 
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300">
-              Компания
+              {m.footer.company}
             </h3>
             <ul className="mt-4 space-y-2">
               {footerLinks.company.map((link) => (
@@ -74,7 +77,7 @@ export function Footer() {
 
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300">
-              Услуги
+              {m.footer.services}
             </h3>
             <ul className="mt-4 space-y-2">
               {footerLinks.services.map((link) => (
@@ -92,7 +95,7 @@ export function Footer() {
 
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300">
-              Правовая информация
+              {m.footer.legal}
             </h3>
             <ul className="mt-4 space-y-2">
               {footerLinks.legal.map((link) => (
@@ -110,7 +113,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-slate-200 pt-8 text-center text-sm text-slate-500 dark:border-slate-800">
-          © {year} DevSystems. Все права защищены.
+          © {year} DevSystems. {m.footer.rights}
         </div>
       </Container>
     </footer>

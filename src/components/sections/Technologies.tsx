@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { useStaggerVariants, viewportOnce } from "@/components/motion/useStaggerVariants";
+import { useI18n } from "@/components/i18n/I18nProvider";
 
 const stacks = [
   { label: "React / Next.js", group: "Frontend" },
@@ -22,21 +23,22 @@ const stacks = [
 
 export function Technologies() {
   const { section, item, grid } = useStaggerVariants();
+  const { m } = useI18n();
 
   return (
     <motion.section
       className="border-t border-slate-200 bg-white py-20 lg:py-28 dark:border-slate-800 dark:bg-slate-900"
       variants={section}
-      initial="hidden"
+      initial={false}
       whileInView="visible"
       viewport={viewportOnce}
     >
       <Container>
         <motion.div variants={item}>
           <SectionTitle
-            tag="Технологии"
-            title="Работаем с проверенным стеком"
-            description="Выбираем инструменты под задачу: от быстрого MVP до высоконагруженных систем."
+            tag={m.sections.technologiesTag}
+            title={m.sections.technologiesTitle}
+            description={m.sections.technologiesDesc}
           />
         </motion.div>
         <motion.div

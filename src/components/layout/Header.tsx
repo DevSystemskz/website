@@ -5,18 +5,20 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
-
-const navLinks = [
-  { href: "/#services", label: "Услуги" },
-  { href: "/#portfolio", label: "Портфолио" },
-  { href: "/#about", label: "О нас" },
-  { href: "/#process", label: "Процесс" },
-  { href: "/#team", label: "Команда" },
-  { href: "/#contact", label: "Контакты" },
-];
+import { useI18n } from "@/components/i18n/I18nProvider";
+import { LanguageToggle } from "@/components/i18n/LanguageToggle";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const { m } = useI18n();
+  const navLinks = [
+    { href: "/#services", label: m.nav.services },
+    { href: "/#portfolio", label: m.nav.portfolio },
+    { href: "/#about", label: m.nav.about },
+    { href: "/#process", label: m.nav.process },
+    { href: "/#team", label: m.nav.team },
+    { href: "/#contact", label: m.nav.contact },
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-xl dark:border-slate-800/50 dark:bg-slate-900/80">
@@ -43,16 +45,18 @@ export function Header() {
           </ul>
 
           <div className="hidden items-center gap-2 md:flex">
+            <LanguageToggle />
             <ThemeToggle />
             <Button href="/#contact" variant="outline" size="sm">
-              Связаться
+              {m.nav.contactBtn}
             </Button>
             <Button href="/#contact" variant="primary" size="sm">
-              Обсудить проект
+              {m.nav.discussBtn}
             </Button>
           </div>
 
           <div className="flex items-center gap-2 md:hidden">
+            <LanguageToggle />
             <ThemeToggle />
             <button
               type="button"
@@ -89,10 +93,10 @@ export function Header() {
               ))}
               <li className="flex gap-2 pt-2">
                 <Button href="/#contact" variant="outline" size="sm">
-                  Связаться
+                  {m.nav.contactBtn}
                 </Button>
                 <Button href="/#contact" variant="primary" size="sm">
-                  Обсудить проект
+                  {m.nav.discussBtn}
                 </Button>
               </li>
             </ul>

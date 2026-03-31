@@ -5,9 +5,11 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { smoothEase } from "@/lib/motion";
 import { viewportOnce } from "@/components/motion/useStaggerVariants";
+import { useI18n } from "@/components/i18n/I18nProvider";
 
 export function CTABanner() {
   const reduce = useReducedMotion();
+  const { m } = useI18n();
 
   return (
     <motion.section
@@ -33,14 +35,14 @@ export function CTABanner() {
           />
           <div className="relative max-w-2xl">
             <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white">
-              Готовы обсудить ваш проект?
+              {m.sections.ctaTitle}
             </h2>
             <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
-              Опишите задачу — мы подготовим оценку и план работ в течение 1–2 дней.
+              {m.sections.ctaDesc}
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button href="#contact" variant="primary" size="lg">
-                Оставить заявку
+                {m.sections.leaveRequest}
               </Button>
               <Button href="mailto:devsystemg@gmail.com" variant="outline" size="lg">
                 devsystemg@gmail.com

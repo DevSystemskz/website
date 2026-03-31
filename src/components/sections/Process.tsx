@@ -4,48 +4,79 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { useStaggerVariants, viewportOnce } from "@/components/motion/useStaggerVariants";
+import { useI18n } from "@/components/i18n/I18nProvider";
+import { type Locale } from "@/i18n/messages";
 
-const steps = [
-  {
-    number: "01",
-    title: "Обсуждение и анализ",
-    description: "Уточняем цели, аудиторию и ограничения. Фиксируем объём и приоритеты.",
-  },
-  {
-    number: "02",
-    title: "Проектирование",
-    description: "Архитектура, макеты и план работ. Согласуем этапы и сроки.",
-  },
-  {
-    number: "03",
-    title: "Разработка",
-    description: "Спринты, демо и обратная связь. Вы всегда в курсе прогресса.",
-  },
-  {
-    number: "04",
-    title: "Запуск и поддержка",
-    description: "Деплой, мониторинг и развитие продукта после релиза.",
-  },
-];
+function getSteps(locale: Locale) {
+  if (locale === "en") {
+    return [
+      {
+        number: "01",
+        title: "Discovery and Analysis",
+        description: "We align goals, audience, and constraints. Scope and priorities are documented.",
+      },
+      {
+        number: "02",
+        title: "Design and Architecture",
+        description: "Architecture, UX flows, and implementation plan with milestones.",
+      },
+      {
+        number: "03",
+        title: "Development",
+        description: "Sprint delivery, demos, and continuous feedback loop.",
+      },
+      {
+        number: "04",
+        title: "Launch and Support",
+        description: "Deployment, monitoring, and product evolution after release.",
+      },
+    ];
+  }
+
+  return [
+    {
+      number: "01",
+      title: "Обсуждение и анализ",
+      description: "Уточняем цели, аудиторию и ограничения. Фиксируем объем и приоритеты.",
+    },
+    {
+      number: "02",
+      title: "Проектирование",
+      description: "Архитектура, макеты и план работ. Согласуем этапы и сроки.",
+    },
+    {
+      number: "03",
+      title: "Разработка",
+      description: "Спринты, демо и обратная связь. Вы всегда в курсе прогресса.",
+    },
+    {
+      number: "04",
+      title: "Запуск и поддержка",
+      description: "Деплой, мониторинг и развитие продукта после релиза.",
+    },
+  ];
+}
 
 export function Process() {
   const { section, item, grid } = useStaggerVariants();
+  const { m, locale } = useI18n();
+  const steps = getSteps(locale);
 
   return (
     <motion.section
       id="process"
       className="border-t border-slate-200 bg-slate-50 py-20 lg:py-28 dark:border-slate-800 dark:bg-slate-900/50"
       variants={section}
-      initial="hidden"
+      initial={false}
       whileInView="visible"
       viewport={viewportOnce}
     >
       <Container>
         <motion.div variants={item}>
           <SectionTitle
-            tag="Процесс"
-            title="Как мы работаем"
-            description="Прозрачные этапы от первого звонка до запуска и дальнейшей поддержки."
+            tag={m.sections.processTag}
+            title={m.sections.processTitle}
+            description={m.sections.processDesc}
           />
         </motion.div>
         <motion.div
