@@ -13,6 +13,7 @@ export function Header() {
   const { m } = useI18n();
   const navLinks = [
     { href: "/#services", label: m.nav.services },
+    { href: "/blog", label: m.nav.blog },
     { href: "/#portfolio", label: m.nav.portfolio },
     { href: "/#about", label: m.nav.about },
     { href: "/#process", label: m.nav.process },

@@ -14,6 +14,7 @@ export function Footer() {
   const year = new Date().getFullYear();
   const footerLinks = {
     company: [
+      { href: "/blog", label: m.footer.blog },
       { href: "/#portfolio", label: m.footer.portfolio },
       { href: "/#about", label: m.footer.about },
       { href: "/#team", label: m.footer.team },

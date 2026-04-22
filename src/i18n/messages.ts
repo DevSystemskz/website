@@ -5,6 +5,7 @@ export const messages = {
   ru: {
     nav: {
       services: "Услуги",
+      blog: "Блог",
       portfolio: "Портфолио",
       about: "О нас",
       process: "Процесс",
@@ -31,6 +32,7 @@ export const messages = {
       services: "Услуги",
       legal: "Правовая информация",
       about: "О компании",
+      blog: "Блог",
       portfolio: "Портфолио",
       team: "Команда",
       contact: "Контакты",
@@ -89,11 +91,16 @@ export const messages = {
       messagePh: "Опишите проект или задачу...",
       tellProject: "Рассказать о проекте",
       submitError: "Не удалось отправить заявку. Попробуйте ещё раз.",
+      blogTitle: "Блог DevSystems",
+      blogDesc:
+        "Делимся практикой разработки: архитектура, AI, блокчейн и управление продуктом.",
+      readMore: "Читать",
     },
   },
   kk: {
     nav: {
       services: "Қызметтер",
+      blog: "Блог",
       portfolio: "Портфолио",
       about: "Біз туралы",
       process: "Процесс",
@@ -120,6 +127,7 @@ export const messages = {
       services: "Қызметтер",
       legal: "Құқықтық ақпарат",
       about: "Компания туралы",
+      blog: "Блог",
       portfolio: "Портфолио",
       team: "Команда",
       contact: "Байланыс",
@@ -178,11 +186,16 @@ export const messages = {
       messagePh: "Жобаңызды немесе міндетті сипаттаңыз...",
       tellProject: "Жоба туралы айту",
       submitError: "Өтінімді жіберу мүмкін болмады. Қайта көріңіз.",
+      blogTitle: "DevSystems блогы",
+      blogDesc:
+        "Әзірлеу тәжірибесімен бөлісеміз: архитектура, AI, блокчейн және өнімді басқару.",
+      readMore: "Оқу",
     },
   },
   en: {
     nav: {
       services: "Services",
+      blog: "Blog",
       portfolio: "Portfolio",
       about: "About",
       process: "Process",
@@ -209,6 +222,7 @@ export const messages = {
       services: "Services",
       legal: "Legal",
       about: "About company",
+      blog: "Blog",
       portfolio: "Portfolio",
       team: "Team",
       contact: "Contact",
@@ -267,6 +281,10 @@ export const messages = {
       messagePh: "Describe your project or task...",
       tellProject: "Tell us about project",
       submitError: "Failed to send request. Please try again.",
+      blogTitle: "DevSystems Blog",
+      blogDesc:
+        "Practical notes on software engineering: architecture, AI, blockchain, and product delivery.",
+      readMore: "Read",
     },
   },
 } as const;
