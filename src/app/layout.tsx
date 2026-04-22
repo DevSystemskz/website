@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { I18nProvider } from "@/components/i18n/I18nProvider";
+import { AuthProvider } from "@/components/auth/AuthProvider";
 import { ScrollToHash } from "@/components/layout/ScrollToHash";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -74,6 +75,7 @@ export default function RootLayout({
       >
         <noscript>
           <div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="https://mc.yandex.ru/watch/108717678"
               style={{ position: "absolute", left: "-9999px" }}
@@ -84,10 +86,12 @@ export default function RootLayout({
         <SpeedInsights />
         <Analytics />
         <I18nProvider>
-          <ThemeProvider>
-            <ScrollToHash />
-            {children}
-          </ThemeProvider>
+          <AuthProvider>
+            <ThemeProvider>
+              <ScrollToHash />
+              {children}
+            </ThemeProvider>
+          </AuthProvider>
         </I18nProvider>
       </body>
     </html>
