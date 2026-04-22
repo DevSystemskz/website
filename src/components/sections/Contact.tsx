@@ -42,7 +42,7 @@ export function Contact() {
         const data = (await res.json().catch(() => null)) as
           | { error?: string }
           | null;
-        throw new Error(data?.error || "Не удалось отправить заявку. Попробуйте ещё раз.");
+        throw new Error(data?.error || m.sections.submitError);
       }
 
       form.reset();
@@ -51,7 +51,7 @@ export function Contact() {
       const message =
         err instanceof Error
           ? err.message
-          : "Не удалось отправить заявку. Попробуйте ещё раз.";
+          : m.sections.submitError;
       setError(message);
     } finally {
       setLoading(false);
@@ -113,7 +113,7 @@ export function Contact() {
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-slate-600 dark:text-slate-300">
-                  Email
+                  {m.sections.email}
                 </label>
                 <input
                   id="email"

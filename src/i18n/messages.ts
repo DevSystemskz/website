@@ -88,6 +88,7 @@ export const messages = {
       namePh: "Как к вам обращаться?",
       messagePh: "Опишите проект или задачу...",
       tellProject: "Рассказать о проекте",
+      submitError: "Не удалось отправить заявку. Попробуйте ещё раз.",
     },
   },
   kk: {
@@ -171,11 +172,12 @@ export const messages = {
       send: "Өтінімді жіберу",
       sending: "Жіберілуде...",
       name: "Аты / Компания",
-      email: "Email",
+      email: "Эл. пошта",
       message: "Хабарлама",
       namePh: "Сізге қалай хабарласайық?",
       messagePh: "Жобаңызды немесе міндетті сипаттаңыз...",
       tellProject: "Жоба туралы айту",
+      submitError: "Өтінімді жіберу мүмкін болмады. Қайта көріңіз.",
     },
   },
   en: {
@@ -264,6 +266,7 @@ export const messages = {
       namePh: "How should we address you?",
       messagePh: "Describe your project or task...",
       tellProject: "Tell us about project",
+      submitError: "Failed to send request. Please try again.",
     },
   },
 } as const;
