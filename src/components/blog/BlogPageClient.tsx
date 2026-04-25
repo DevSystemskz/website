@@ -239,7 +239,7 @@ export function BlogPageClient({
             <nav className="mt-10 flex flex-wrap items-center justify-center gap-2" aria-label="Blog pagination">
               <Link
                 href={createBlogHref(Math.max(1, currentPage - 1), selectedTopic || undefined)}
-                aria-disabled={currentPage === 1}
+                aria-disabled={currentPage === 1 ? "true" : undefined}
                 className={`rounded-lg border px-3 py-2 text-sm font-medium transition ${
                   currentPage === 1
                     ? "pointer-events-none border-slate-200 text-slate-400 dark:border-slate-700 dark:text-slate-500"
@@ -271,7 +271,7 @@ export function BlogPageClient({
 
               <Link
                 href={createBlogHref(Math.min(totalPages, currentPage + 1), selectedTopic || undefined)}
-                aria-disabled={currentPage === totalPages}
+                aria-disabled={currentPage === totalPages ? "true" : undefined}
                 className={`rounded-lg border px-3 py-2 text-sm font-medium transition ${
                   currentPage === totalPages
                     ? "pointer-events-none border-slate-200 text-slate-400 dark:border-slate-700 dark:text-slate-500"
