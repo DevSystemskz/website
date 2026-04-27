@@ -2,17 +2,33 @@ import type { Metadata } from "next";
 import { BlogPageClient } from "@/components/blog/BlogPageClient";
 import { getAllPostsMeta } from "@/lib/blog";
 
-export const metadata: Metadata = {
-  title: "Блог / Blog — DevSystems",
-  description:
-    "Статьи DevSystems о разработке ПО: архитектура, AI, блокчейн и запуск цифровых продуктов.",
-};
-
 const POSTS_PER_PAGE = 4;
 
 type BlogPageProps = {
   searchParams?: Promise<{ page?: string; topic?: string }>;
 };
+
+export async function generateMetadata({
+  searchParams,
+}: BlogPageProps): Promise<Metadata> {
+  const params = (await searchParams) ?? {};
+  const page = Number.parseInt(params.page ?? "1", 10);
+  const topic = params.topic?.trim();
+
+  const query = new URLSearchParams();
+  if (!Number.isNaN(page) && page > 1) query.set("page", String(page));
+  if (topic) query.set("topic", topic);
+  const queryString = query.toString();
+
+  return {
+    title: "Блог / Blog — DevSystems",
+    description:
+      "Статьи DevSystems о разработке ПО: архитектура, AI, блокчейн и запуск цифровых продуктов.",
+    alternates: {
+      canonical: queryString ? `/blog?${queryString}` : "/blog",
+    },
+  };
+}
 
 export default async function BlogPage({ searchParams }: BlogPageProps) {
   const params = (await searchParams) ?? {};

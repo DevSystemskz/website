@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Privacy Policy / Политика конфиденциальности — DevSystems",
   description:
     "Privacy Policy and personal data processing rules of DevSystems.",
+  alternates: {
+    canonical: "/privacy",
+  },
 };
 
 export default function PrivacyPage() {

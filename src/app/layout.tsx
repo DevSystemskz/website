@@ -28,10 +28,16 @@ const themeScript = `
   })();
 `;
 
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://devsystems.dev").replace(/\/$/, "");
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "DevSystems — Разработка программного обеспечения",
   description:
     "Веб и мобильная разработка, облачные решения, интеграции и поддержка. От идеи до запуска и масштабирования.",
+  alternates: {
+    canonical: "/",
+  },
   verification: {
     google: "3xCMeJGFQymP5Q2u2tj3KKyorIQp7eqi7o9Cb0Ggetc",
     yandex: "f9417b456262d374",
