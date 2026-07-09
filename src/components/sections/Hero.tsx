@@ -55,10 +55,10 @@ export function Hero() {
             </motion.p>
 
             <motion.h1
-              className="mt-5 font-display text-4xl font-bold leading-[1.08] tracking-tight text-ink sm:text-5xl lg:text-[3.5rem]"
+              className="mt-5 font-display text-4xl font-bold leading-[1.08] tracking-tight text-ink dark:text-white sm:text-5xl lg:text-[3.5rem]"
               {...item(1)}
             >
-              <RevealWords text={m.hero.titleA} delay={0.12} />{" "}
+              <RevealWords text={m.hero.titleA} delay={0.12} className="text-inherit" />{" "}
               <motion.span
                 className="text-accent-gradient inline-block"
                 initial={reduce ? false : { opacity: 0, y: 20, scale: 0.96 }}

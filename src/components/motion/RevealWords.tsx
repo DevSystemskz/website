@@ -11,7 +11,7 @@ type RevealWordsProps = {
 
 export function RevealWords({ text, className = "", delay = 0 }: RevealWordsProps) {
   const reduce = useReducedMotion();
-  const words = text.split(" ");
+  const words = text.split(/\s+/).filter(Boolean);
 
   if (reduce) {
     return <span className={className}>{text}</span>;
@@ -22,7 +22,7 @@ export function RevealWords({ text, className = "", delay = 0 }: RevealWordsProp
       {words.map((word, i) => (
         <motion.span
           key={`${word}-${i}`}
-          className="mr-[0.28em] inline-block"
+          className="inline"
           initial={{ opacity: 0, y: 22, filter: "blur(6px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{
@@ -32,6 +32,7 @@ export function RevealWords({ text, className = "", delay = 0 }: RevealWordsProp
           }}
         >
           {word}
+          {i < words.length - 1 ? " " : ""}
         </motion.span>
       ))}
     </span>
