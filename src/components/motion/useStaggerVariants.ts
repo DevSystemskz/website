@@ -18,11 +18,30 @@ export function useStaggerVariants() {
   };
 
   const item: Variants = {
-    hidden: { opacity: reduce ? 1 : 0, y: reduce ? 0 : 28 },
+    hidden: {
+      opacity: reduce ? 1 : 0,
+      y: reduce ? 0 : 32,
+      filter: reduce ? "blur(0px)" : "blur(10px)",
+    },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: reduce ? 0 : 0.52, ease: [...smoothEase] },
+      filter: "blur(0px)",
+      transition: { duration: reduce ? 0 : 0.62, ease: [...smoothEase] },
+    },
+  };
+
+  const card: Variants = {
+    hidden: {
+      opacity: reduce ? 1 : 0,
+      y: reduce ? 0 : 24,
+      scale: reduce ? 1 : 0.96,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: reduce ? 0 : 0.55, ease: [...smoothEase] },
     },
   };
 
@@ -36,7 +55,7 @@ export function useStaggerVariants() {
     },
   };
 
-  return { section, item, grid };
+  return { section, item, grid, card };
 }
 
 export const viewportOnce = {

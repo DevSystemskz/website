@@ -2,14 +2,17 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { useI18n } from "@/components/i18n/I18nProvider";
 import { LanguageToggle } from "@/components/i18n/LanguageToggle";
+import { smoothEase } from "@/lib/motion";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const reduce = useReducedMotion();
   const { m } = useI18n();
   const navLinks = [
     { href: "/#services", label: m.nav.services },
@@ -20,7 +23,12 @@ export function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-line bg-canvas/85 backdrop-blur-xl dark:border-line-dark dark:bg-canvas-dark/85">
+    <motion.header
+      className="fixed top-0 left-0 right-0 z-50 border-b border-line bg-canvas/85 backdrop-blur-xl dark:border-line-dark dark:bg-canvas-dark/85"
+      initial={reduce ? false : { y: -64, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.55, ease: smoothEase }}
+    >
       <Container>
         <nav className="flex h-16 items-center justify-between lg:h-[4.5rem]">
           <Link
@@ -105,6 +113,6 @@ export function Header() {
           </div>
         )}
       </Container>
-    </header>
+    </motion.header>
   );
 }

@@ -1,3 +1,8 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
+import { smoothEase } from "@/lib/motion";
+
 const items = [
   "Next.js",
   "React",
@@ -16,12 +21,16 @@ const items = [
 ];
 
 export function TechMarquee() {
+  const reduce = useReducedMotion();
   const track = [...items, ...items];
 
   return (
-    <div
+    <motion.div
       className="relative overflow-hidden border-y border-line bg-ink py-3 dark:border-line-dark"
       aria-hidden
+      initial={reduce ? false : { opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6, ease: smoothEase }}
     >
       <div className="absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-ink to-transparent" />
       <div className="absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-ink to-transparent" />
@@ -36,6 +45,6 @@ export function TechMarquee() {
           </span>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

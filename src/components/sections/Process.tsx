@@ -6,6 +6,7 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 import { useStaggerVariants, viewportOnce } from "@/components/motion/useStaggerVariants";
 import { useI18n } from "@/components/i18n/I18nProvider";
 import { type Locale } from "@/i18n/messages";
+import { smoothEase, springSnappy } from "@/lib/motion";
 
 function getSteps(locale: Locale) {
   if (locale === "en") {
@@ -110,17 +111,32 @@ export function Process() {
           {steps.map((step, i) => (
             <motion.div key={step.number} className="relative" variants={item}>
               {i < steps.length - 1 && (
-                <div className="absolute left-8 top-14 hidden h-px w-[calc(100%-2rem)] bg-gradient-to-r from-accent/40 to-transparent lg:block" />
+                <motion.div
+                  className="absolute left-8 top-14 hidden h-px w-[calc(100%-2rem)] origin-left bg-gradient-to-r from-accent to-transparent/0 lg:block"
+                  initial={{ scaleX: 0, opacity: 0 }}
+                  whileInView={{ scaleX: 1, opacity: 1 }}
+                  viewport={viewportOnce}
+                  transition={{ duration: 0.7, delay: i * 0.12, ease: smoothEase }}
+                />
               )}
-              <div className="border border-line bg-canvas-elevated p-6 dark:border-line-dark dark:bg-canvas-elevated-dark">
-                <span className="font-display text-3xl font-bold text-accent/70">
+              <motion.div
+                className="border border-line bg-canvas-elevated p-6 dark:border-line-dark dark:bg-canvas-elevated-dark"
+                whileHover={{ y: -4, transition: springSnappy }}
+              >
+                <motion.span
+                  className="inline-block font-display text-3xl font-bold text-accent/70"
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={viewportOnce}
+                  transition={{ type: "spring", stiffness: 400, damping: 22, delay: i * 0.08 }}
+                >
                   {step.number}
-                </span>
+                </motion.span>
                 <h3 className="mt-4 font-display text-lg font-semibold text-ink dark:text-white">
                   {step.title}
                 </h3>
                 <p className="mt-2 text-sm text-ink-muted dark:text-ink-faint">{step.description}</p>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </motion.div>

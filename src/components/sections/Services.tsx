@@ -148,7 +148,7 @@ function getServices(locale: Locale) {
 }
 
 export function Services() {
-  const { section, item, grid } = useStaggerVariants();
+  const { section, item, grid, card } = useStaggerVariants();
   const { m, locale } = useI18n();
   const services = getServices(locale);
 
@@ -174,7 +174,7 @@ export function Services() {
           variants={grid}
         >
           {services.map((s) => (
-            <motion.div key={s.title} variants={item}>
+            <motion.div key={s.title} variants={card}>
               <ServiceCard {...s} />
             </motion.div>
           ))}
