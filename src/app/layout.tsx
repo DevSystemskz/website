@@ -86,6 +86,7 @@ export default function RootLayout({
       <body
         className={`${syne.variable} ${manrope.variable} ${jetbrainsMono.variable} antialiased`}
       >
+        <div className="grain" aria-hidden />
         <noscript>
           <div>
             <img

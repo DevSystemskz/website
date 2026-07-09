@@ -11,7 +11,7 @@ interface ButtonProps {
 
 const variants = {
   primary:
-    "bg-accent text-white hover:bg-accent-hover shadow-md shadow-accent/20",
+    "bg-gradient-to-r from-accent to-[#0db8b0] text-white hover:from-accent-hover hover:to-accent shadow-md shadow-accent/25",
   secondary:
     "bg-canvas-muted text-ink hover:bg-line dark:bg-canvas-elevated-dark dark:text-white dark:hover:bg-line-dark",
   outline:

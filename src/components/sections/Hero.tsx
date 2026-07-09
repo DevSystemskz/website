@@ -24,6 +24,10 @@ export function Hero() {
     <section className="relative min-h-[88vh] overflow-hidden bg-canvas pt-20 dark:bg-canvas-dark">
       <div className="blueprint-grid pointer-events-none absolute inset-0" aria-hidden />
       <div
+        className="pointer-events-none absolute -left-24 bottom-32 h-[280px] w-[280px] rounded-full bg-accent/6 blur-3xl dark:bg-accent/10"
+        aria-hidden
+      />
+      <div
         className="pointer-events-none absolute -right-32 top-20 h-[420px] w-[420px] rounded-full bg-accent/8 blur-3xl dark:bg-accent/12"
         aria-hidden
       />
@@ -47,7 +51,7 @@ export function Hero() {
               {...item(1)}
             >
               {m.hero.titleA}{" "}
-              <span className="text-accent">{m.hero.titleB}</span>
+              <span className="text-accent-gradient">{m.hero.titleB}</span>
             </motion.h1>
 
             <motion.p
@@ -79,7 +83,7 @@ export function Hero() {
               {m.hero.stats.map((stat) => (
                 <div
                   key={stat.t}
-                  className="min-w-0 bg-canvas px-4 py-4 dark:bg-canvas-dark"
+                  className="stat-cell min-w-0 bg-canvas px-4 py-4 dark:bg-canvas-dark"
                 >
                   <span className="font-display text-2xl font-bold tabular-nums text-ink dark:text-white">
                     {stat.n}
@@ -102,7 +106,7 @@ export function Hero() {
               ease: smoothEase,
             }}
           >
-            <div className="overflow-hidden rounded-md border border-line bg-canvas-elevated shadow-2xl shadow-ink/8 dark:border-line-dark dark:bg-canvas-elevated-dark dark:shadow-black/40">
+            <div className="corner-marks overflow-hidden rounded-md border border-line bg-canvas-elevated shadow-2xl shadow-ink/8 dark:border-line-dark dark:bg-canvas-elevated-dark dark:shadow-black/40">
               <div className="flex items-center justify-between border-b border-line px-4 py-2.5 dark:border-line-dark">
                 <div className="flex gap-1.5">
                   <span className="h-2.5 w-2.5 rounded-full bg-[#E06B5E]" />

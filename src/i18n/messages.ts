@@ -99,6 +99,98 @@ export const messages = {
       readMore: "Читать",
       blogBack: "← Назад в блог",
     },
+    pricing: {
+      tag: "Pricing",
+      title: "Прайс-лист по услугам",
+      intro:
+        "Ниже ориентиры по основным услугам: лендинги, корпоративные сайты, MVP, мобильная разработка, AI-интеграции и поддержка. Финальная стоимость зависит от объёма, сроков, интеграций и требований к UX.",
+      colService: "Услуга",
+      colScope: "Что входит",
+      colPrice: "Стоимость",
+      colFormat: "Формат",
+      websitesTitle: "1) Сайты и веб-проекты",
+      productTitle: "2) Продуктовая разработка и интеграции",
+      supportTitle: "3) Поддержка и командные форматы",
+      noteTitle: "4) Важно по оценке",
+      noteBody:
+        "Цены на странице — ориентиры. Точный бюджет формируется после брифа: цели, функционал, интеграции, дедлайн, требования к дизайну и SEO.",
+      noteBullets: [
+        "Бриф и предварительная вилка — в течение 24 часов",
+        "Детальная смета и этапы — 1–2 рабочих дня",
+      ],
+      cta: "Получить расчёт под ваш проект",
+      websiteServices: [
+        {
+          service: "Лендинг (1–3 блока, форма заявок)",
+          scope: "Дизайн + вёрстка + базовая аналитика",
+          price: "200k – 500k тг",
+        },
+        {
+          service: "Корпоративный сайт (5–15 страниц)",
+          scope: "Структура, UI, CMS, SEO-база",
+          price: "500k – 1.5 млн тг",
+        },
+        {
+          service: "Интернет-магазин",
+          scope: "Каталог, корзина, оплата, админка",
+          price: "1.2 – 3.3 млн тг",
+        },
+        {
+          service: "Промо-сайт / спецпроект",
+          scope: "Анимации, интерактив, кастомный UI",
+          price: "700k – 2 млн тг",
+        },
+      ],
+      productServices: [
+        {
+          service: "Web MVP",
+          scope: "Auth, роли, core-функции, админка",
+          price: "2 – 6 млн тг",
+        },
+        {
+          service: "Mobile MVP (iOS/Android)",
+          scope: "React Native/Flutter + API",
+          price: "3.3 – 8.3 млн тг",
+        },
+        {
+          service: "AI-функции / RAG",
+          scope: "LLM-интеграция, база знаний, метрики",
+          price: "1.3 – 4.7 млн тг",
+        },
+        {
+          service: "CRM/ERP/API интеграции",
+          scope: "Двусторонняя синхронизация, webhook, логирование",
+          price: "500k – 2.7 млн тг",
+        },
+        {
+          service: "DevOps setup / CI-CD / инфраструктура",
+          scope: "Docker, CI/CD, staging/prod, мониторинг, backup, rollback",
+          price: "700k – 3 млн тг",
+        },
+      ],
+      supportServices: [
+        {
+          service: "Техподдержка сайта",
+          scope: "Обновления, мелкие задачи, мониторинг",
+          price: "100k – 300k тг/мес",
+        },
+        {
+          service: "Поддержка продукта",
+          scope: "Фичи, багфиксы, DevOps, QA",
+          price: "300k – 1.2 млн тг/мес",
+        },
+        {
+          service: "Выделенная команда",
+          scope: "PM + Dev + QA (+дизайн по запросу)",
+          price: "1.5 – 4.7 млн тг/мес",
+        },
+        {
+          service: "DevOps сопровождение",
+          scope: "Мониторинг, релизы, алерты, инциденты, оптимизация cloud-cost",
+          price: "350k – 1.5 млн тг/мес",
+        },
+      ],
+    },
   },
   kk: {
     nav: {
@@ -197,6 +289,98 @@ export const messages = {
       readMore: "Оқу",
       blogBack: "← Блогқа оралу",
     },
+    pricing: {
+      tag: "Pricing",
+      title: "Қызметтер бойынша баға тізімі",
+      intro:
+        "Негізгі қызметтер бойынша бағдарламалар: лендинг, корпоративтік сайт, MVP, мобильді әзірлеу, AI-интеграциялар және қолдау. Нақты құны көлемге, мерзімге, интеграцияларға және UX талаптарына байланысты.",
+      colService: "Қызмет",
+      colScope: "Не кіреді",
+      colPrice: "Құны",
+      colFormat: "Формат",
+      websitesTitle: "1) Сайттар және веб-жобалар",
+      productTitle: "2) Өнімдік әзірлеу және интеграциялар",
+      supportTitle: "3) Қолдау және командалық форматтар",
+      noteTitle: "4) Баға туралы маңызды",
+      noteBody:
+        "Беттегі бағалар — бағдар. Нақты бюджет брифтен кейін қалыптасады: мақсаттар, функционал, интеграциялар, дедлайн, дизайн және SEO талаптары.",
+      noteBullets: [
+        "Бриф және алдын ала баға ауқымы — 24 сағат ішінде",
+        "Толық смета және кезеңдер — 1–2 жұмыс күні",
+      ],
+      cta: "Жобаңызға есеп алу",
+      websiteServices: [
+        {
+          service: "Лендинг (1–3 блок, өтінім формасы)",
+          scope: "Дизайн + верстка + базалық аналитика",
+          price: "200k – 500k тг",
+        },
+        {
+          service: "Корпоративтік сайт (5–15 бет)",
+          scope: "Құрылым, UI, CMS, SEO-негіз",
+          price: "500k – 1.5 млн тг",
+        },
+        {
+          service: "Интернет-дүкен",
+          scope: "Каталог, себет, төлем, админка",
+          price: "1.2 – 3.3 млн тг",
+        },
+        {
+          service: "Промо-сайт / арнайы жоба",
+          scope: "Анимация, интерактив, кастомды UI",
+          price: "700k – 2 млн тг",
+        },
+      ],
+      productServices: [
+        {
+          service: "Web MVP",
+          scope: "Auth, рөлдер, негізгі функциялар, админка",
+          price: "2 – 6 млн тг",
+        },
+        {
+          service: "Mobile MVP (iOS/Android)",
+          scope: "React Native/Flutter + API",
+          price: "3.3 – 8.3 млн тг",
+        },
+        {
+          service: "AI-функциялар / RAG",
+          scope: "LLM-интеграция, білім базасы, метрикалар",
+          price: "1.3 – 4.7 млн тг",
+        },
+        {
+          service: "CRM/ERP/API интеграциялар",
+          scope: "Екі жақты синхрон, webhook, логирование",
+          price: "500k – 2.7 млн тг",
+        },
+        {
+          service: "DevOps setup / CI-CD / инфрақұрылым",
+          scope: "Docker, CI/CD, staging/prod, мониторинг, backup, rollback",
+          price: "700k – 3 млн тг",
+        },
+      ],
+      supportServices: [
+        {
+          service: "Сайт техқолдауы",
+          scope: "Жаңартулар, шағын тапсырмалар, мониторинг",
+          price: "100k – 300k тг/ай",
+        },
+        {
+          service: "Өнім қолдауы",
+          scope: "Фичалар, багфикстер, DevOps, QA",
+          price: "300k – 1.2 млн тг/ай",
+        },
+        {
+          service: "Бөлінген команда",
+          scope: "PM + Dev + QA (+дизайн сұрау бойынша)",
+          price: "1.5 – 4.7 млн тг/ай",
+        },
+        {
+          service: "DevOps сүйемелдеу",
+          scope: "Мониторинг, релиздер, алерттер, инциденттер, cloud-cost оптимизация",
+          price: "350k – 1.5 млн тг/ай",
+        },
+      ],
+    },
   },
   en: {
     nav: {
@@ -294,6 +478,98 @@ export const messages = {
         "Practical notes on software engineering: architecture, AI, blockchain, and product delivery.",
       readMore: "Read",
       blogBack: "← Back to blog",
+    },
+    pricing: {
+      tag: "Pricing",
+      title: "Service pricing",
+      intro:
+        "Ballpark ranges for our core services: landing pages, corporate websites, MVPs, mobile apps, AI integrations, and ongoing support. Final cost depends on scope, timeline, integrations, and UX requirements.",
+      colService: "Service",
+      colScope: "What's included",
+      colPrice: "Price",
+      colFormat: "Format",
+      websitesTitle: "1) Websites & web projects",
+      productTitle: "2) Product development & integrations",
+      supportTitle: "3) Support & team formats",
+      noteTitle: "4) About estimates",
+      noteBody:
+        "Prices on this page are guidelines. A precise budget is prepared after a brief: goals, features, integrations, deadline, design and SEO requirements.",
+      noteBullets: [
+        "Brief and preliminary range — within 24 hours",
+        "Detailed estimate and milestones — 1–2 business days",
+      ],
+      cta: "Get a quote for your project",
+      websiteServices: [
+        {
+          service: "Landing page (1–3 sections, lead form)",
+          scope: "Design + frontend + basic analytics",
+          price: "200k – 500k KZT",
+        },
+        {
+          service: "Corporate website (5–15 pages)",
+          scope: "Structure, UI, CMS, SEO basics",
+          price: "500k – 1.5M KZT",
+        },
+        {
+          service: "E-commerce store",
+          scope: "Catalog, cart, payments, admin panel",
+          price: "1.2 – 3.3M KZT",
+        },
+        {
+          service: "Promo site / special project",
+          scope: "Animations, interactivity, custom UI",
+          price: "700k – 2M KZT",
+        },
+      ],
+      productServices: [
+        {
+          service: "Web MVP",
+          scope: "Auth, roles, core features, admin",
+          price: "2 – 6M KZT",
+        },
+        {
+          service: "Mobile MVP (iOS/Android)",
+          scope: "React Native/Flutter + API",
+          price: "3.3 – 8.3M KZT",
+        },
+        {
+          service: "AI features / RAG",
+          scope: "LLM integration, knowledge base, metrics",
+          price: "1.3 – 4.7M KZT",
+        },
+        {
+          service: "CRM/ERP/API integrations",
+          scope: "Two-way sync, webhooks, logging",
+          price: "500k – 2.7M KZT",
+        },
+        {
+          service: "DevOps setup / CI-CD / infrastructure",
+          scope: "Docker, CI/CD, staging/prod, monitoring, backup, rollback",
+          price: "700k – 3M KZT",
+        },
+      ],
+      supportServices: [
+        {
+          service: "Website support",
+          scope: "Updates, small tasks, monitoring",
+          price: "100k – 300k KZT/mo",
+        },
+        {
+          service: "Product support",
+          scope: "Features, bugfixes, DevOps, QA",
+          price: "300k – 1.2M KZT/mo",
+        },
+        {
+          service: "Dedicated team",
+          scope: "PM + Dev + QA (+design on request)",
+          price: "1.5 – 4.7M KZT/mo",
+        },
+        {
+          service: "DevOps retainer",
+          scope: "Monitoring, releases, alerts, incidents, cloud-cost optimization",
+          price: "350k – 1.5M KZT/mo",
+        },
+      ],
     },
   },
 } as const;

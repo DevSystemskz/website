@@ -20,7 +20,7 @@ export function ServiceCard({
 
   return (
     <motion.article
-      className="group relative h-full border border-line bg-canvas-elevated p-6 transition hover:border-accent/50 dark:border-line-dark dark:bg-canvas-elevated-dark lg:p-7"
+      className="group relative h-full border border-line bg-canvas-elevated p-6 transition hover:border-accent/50 hover:shadow-lg hover:shadow-accent/5 dark:border-line-dark dark:bg-canvas-elevated-dark dark:hover:shadow-accent/10 lg:p-7"
       whileHover={reduce ? undefined : { y: -4 }}
       transition={{ type: "spring", stiffness: 400, damping: 28 }}
     >

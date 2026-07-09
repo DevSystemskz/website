@@ -21,6 +21,7 @@ export function SectionTitle({
       <h2 className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl dark:text-white">
         {title}
       </h2>
+      <div className="mt-4 h-px w-16 bg-gradient-to-r from-accent to-transparent" />
       {description && (
         <p className="mt-3 text-lg text-ink-muted dark:text-ink-faint">{description}</p>
       )}
