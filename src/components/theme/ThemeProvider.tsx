@@ -6,6 +6,7 @@ type Theme = "light" | "dark";
 
 interface ThemeContextValue {
   theme: Theme;
+  hydrated: boolean;
   setTheme: (theme: Theme) => void;
   toggleTheme: () => void;
 }
@@ -15,25 +16,19 @@ const ThemeContext = createContext<ThemeContextValue | null>(null);
 const STORAGE_KEY = "devsystems-theme";
 
 function getInitialTheme(): Theme {
-  if (typeof window === "undefined") return "light";
   const stored = localStorage.getItem(STORAGE_KEY) as Theme | null;
   if (stored === "light" || stored === "dark") return stored;
   if (window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
   return "light";
 }
 
-function getThemeFromDOM(): Theme {
-  if (typeof document === "undefined") return "light";
-  return document.documentElement.classList.contains("dark") ? "dark" : "light";
-}
-
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>(getThemeFromDOM);
-  const [mounted, setMounted] = useState(false);
+  const [theme, setThemeState] = useState<Theme>("light");
+  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
     setThemeState(getInitialTheme());
-    setMounted(true);
+    setHydrated(true);
   }, []);
 
   const setTheme = useCallback((value: Theme) => {
@@ -43,16 +38,16 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
-    if (!mounted) return;
+    if (!hydrated) return;
     document.documentElement.classList.toggle("dark", theme === "dark");
-  }, [mounted, theme]);
+  }, [hydrated, theme]);
 
   const toggleTheme = useCallback(() => {
     setTheme(theme === "dark" ? "light" : "dark");
   }, [theme, setTheme]);
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, hydrated, setTheme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
