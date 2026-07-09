@@ -192,7 +192,7 @@ export function Portfolio() {
   return (
     <motion.section
       id="portfolio"
-      className="border-t border-slate-200 bg-slate-50 py-20 lg:py-28 dark:border-slate-800 dark:bg-slate-900/50"
+      className="ds-section bg-canvas-muted dark:bg-canvas-dark"
       variants={section}
       initial={false}
       whileInView="visible"

@@ -108,12 +108,15 @@ export function BlogPageClient({
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-white pt-24 dark:bg-slate-900">
+      <main className="min-h-screen bg-canvas pt-24 dark:bg-canvas-dark">
         <Container className="py-12 lg:py-16">
-          <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white">
+          <p className="inline-flex border-l-2 border-accent pl-3 font-mono text-xs uppercase tracking-[0.18em] text-accent">
+            Blog
+          </p>
+          <h1 className="mt-3 font-display text-3xl font-bold text-ink sm:text-4xl dark:text-white">
             {m.sections.blogTitle}
           </h1>
-          <p className="mt-3 max-w-3xl text-slate-600 dark:text-slate-400">
+          <p className="mt-3 max-w-3xl text-lg text-ink-muted dark:text-ink-faint">
             {m.sections.blogDesc}
           </p>
 
@@ -122,9 +125,9 @@ export function BlogPageClient({
               {posts.map((post) => (
                 <article
                   key={post.slug}
-                  className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 transition hover:border-indigo-400/60 hover:shadow-lg hover:shadow-indigo-500/5 dark:border-slate-800 dark:bg-slate-800/30"
+                  className="overflow-hidden border border-line bg-canvas-elevated transition hover:border-accent/40 dark:border-line-dark dark:bg-canvas-elevated-dark"
                 >
-                  <div className="relative h-48 w-full overflow-hidden bg-slate-200 dark:bg-slate-800">
+                  <div className="relative h-48 w-full overflow-hidden bg-canvas-muted dark:bg-canvas-dark">
                     <Image
                       src={post.imageSrc}
                       alt={post.imageAlt}
@@ -135,20 +138,20 @@ export function BlogPageClient({
                   </div>
                   <div className="p-6">
                     <div className="mb-4 flex items-center justify-between">
-                      <span className="rounded-full bg-indigo-100 px-2.5 py-1 text-xs font-medium text-indigo-700 dark:bg-indigo-500/20 dark:text-indigo-300">
+                      <span className="border border-line bg-accent-muted px-2.5 py-1 font-mono text-xs text-accent dark:border-line-dark">
                         {post.tag}
                       </span>
-                      <span className="text-xs text-slate-500">{post.date}</span>
+                      <span className="font-mono text-xs text-ink-faint">{post.date}</span>
                     </div>
-                    <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
+                    <h2 className="font-display text-lg font-semibold text-ink dark:text-white">
                       {post.title}
                     </h2>
-                    <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">
+                    <p className="mt-3 text-sm text-ink-muted dark:text-ink-faint">
                       {post.excerpt}
                     </p>
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="mt-5 inline-flex text-sm font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
+                      className="mt-5 inline-flex font-mono text-sm text-accent transition hover:text-accent-hover"
                     >
                       {m.sections.readMore} →
                     </Link>
@@ -156,15 +159,15 @@ export function BlogPageClient({
                 </article>
               ))}
               {posts.length === 0 && (
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-800/30 dark:text-slate-300">
+                <div className="border border-line bg-canvas-muted p-6 text-sm text-ink-muted dark:border-line-dark dark:bg-canvas-elevated-dark dark:text-ink-faint">
                   {noPostsLabel}
                 </div>
               )}
             </div>
 
             <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
-              <section className="rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-800/30">
-                <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+              <section className="border border-line bg-canvas-elevated p-5 dark:border-line-dark dark:bg-canvas-elevated-dark">
+                <h3 className="font-mono text-xs font-medium uppercase tracking-[0.15em] text-ink-faint">
                   {sidebar.topicsTitle}
                 </h3>
                 <ul className="mt-3 space-y-2">
@@ -173,8 +176,8 @@ export function BlogPageClient({
                       href="/blog"
                       className={`text-sm transition ${
                         !selectedTopic
-                          ? "font-semibold text-indigo-600 dark:text-indigo-300"
-                          : "text-slate-700 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-300"
+                          ? "font-semibold text-accent"
+                          : "text-ink-muted hover:text-accent dark:text-ink-faint dark:hover:text-accent"
                       }`}
                     >
                       {allTopicsLabel}
@@ -188,8 +191,8 @@ export function BlogPageClient({
                           href={createBlogHref(1, topic)}
                           className={`text-sm transition ${
                             isActive
-                              ? "font-semibold text-indigo-600 dark:text-indigo-300"
-                              : "text-slate-700 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-300"
+                              ? "font-semibold text-accent"
+                              : "text-ink-muted hover:text-accent dark:text-ink-faint dark:hover:text-accent"
                           }`}
                         >
                           {topic}
@@ -200,8 +203,8 @@ export function BlogPageClient({
                 </ul>
               </section>
 
-              <section className="rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-800/30">
-                <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+              <section className="border border-line bg-canvas-elevated p-5 dark:border-line-dark dark:bg-canvas-elevated-dark">
+                <h3 className="font-mono text-xs font-medium uppercase tracking-[0.15em] text-ink-faint">
                   {sidebar.latestTitle}
                 </h3>
                 <ul className="mt-3 space-y-3">
@@ -209,7 +212,7 @@ export function BlogPageClient({
                     <li key={`latest-${post.slug}`}>
                       <Link
                         href={`/blog/${post.slug}`}
-                        className="text-sm text-slate-700 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-300"
+                        className="text-sm text-ink-muted hover:text-accent dark:text-ink-faint dark:hover:text-accent"
                       >
                         {post.title}
                       </Link>
@@ -218,16 +221,16 @@ export function BlogPageClient({
                 </ul>
               </section>
 
-              <section className="rounded-2xl border border-indigo-300 bg-indigo-50 p-5 dark:border-indigo-500/30 dark:bg-indigo-500/10">
-                <h3 className="text-base font-semibold text-slate-900 dark:text-white">
+              <section className="border border-accent/30 bg-accent-muted p-5">
+                <h3 className="font-display text-base font-semibold text-ink dark:text-white">
                   {sidebar.ctaTitle}
                 </h3>
-                <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+                <p className="mt-2 text-sm text-ink-muted dark:text-ink-faint">
                   {sidebar.ctaText}
                 </p>
                 <Link
                   href="/#contact"
-                  className="mt-4 inline-flex text-sm font-medium text-indigo-700 hover:text-indigo-600 dark:text-indigo-300 dark:hover:text-indigo-200"
+                  className="mt-4 inline-flex font-mono text-sm text-accent transition hover:text-accent-hover"
                 >
                   {sidebar.ctaButton} →
                 </Link>
@@ -240,10 +243,10 @@ export function BlogPageClient({
               <Link
                 href={createBlogHref(Math.max(1, currentPage - 1), selectedTopic || undefined)}
                 aria-disabled={currentPage === 1}
-                className={`rounded-lg border px-3 py-2 text-sm font-medium transition ${
+                className={`border px-3 py-2 font-mono text-sm transition ${
                   currentPage === 1
-                    ? "pointer-events-none border-slate-200 text-slate-400 dark:border-slate-700 dark:text-slate-500"
-                    : "border-slate-300 text-slate-700 hover:border-indigo-400 hover:text-indigo-600 dark:border-slate-700 dark:text-slate-300 dark:hover:border-indigo-400 dark:hover:text-indigo-300"
+                    ? "pointer-events-none border-line text-ink-faint dark:border-line-dark"
+                    : "border-line text-ink-muted hover:border-accent hover:text-accent dark:border-line-dark dark:text-ink-faint dark:hover:text-accent"
                 }`}
               >
                 {prevLabel}
@@ -258,10 +261,10 @@ export function BlogPageClient({
                     key={`page-${page}`}
                     href={createBlogHref(page, selectedTopic || undefined)}
                     aria-current={isActive ? "page" : undefined}
-                    className={`rounded-lg border px-3 py-2 text-sm font-semibold transition ${
+                    className={`border px-3 py-2 font-mono text-sm transition ${
                       isActive
-                        ? "border-indigo-500 bg-indigo-600 text-white dark:border-indigo-400 dark:bg-indigo-500"
-                        : "border-slate-300 text-slate-700 hover:border-indigo-400 hover:text-indigo-600 dark:border-slate-700 dark:text-slate-300 dark:hover:border-indigo-400 dark:hover:text-indigo-300"
+                        ? "border-accent bg-accent text-white"
+                        : "border-line text-ink-muted hover:border-accent hover:text-accent dark:border-line-dark dark:text-ink-faint dark:hover:text-accent"
                     }`}
                   >
                     {page}
@@ -272,10 +275,10 @@ export function BlogPageClient({
               <Link
                 href={createBlogHref(Math.min(totalPages, currentPage + 1), selectedTopic || undefined)}
                 aria-disabled={currentPage === totalPages}
-                className={`rounded-lg border px-3 py-2 text-sm font-medium transition ${
+                className={`border px-3 py-2 font-mono text-sm transition ${
                   currentPage === totalPages
-                    ? "pointer-events-none border-slate-200 text-slate-400 dark:border-slate-700 dark:text-slate-500"
-                    : "border-slate-300 text-slate-700 hover:border-indigo-400 hover:text-indigo-600 dark:border-slate-700 dark:text-slate-300 dark:hover:border-indigo-400 dark:hover:text-indigo-300"
+                    ? "pointer-events-none border-line text-ink-faint dark:border-line-dark"
+                    : "border-line text-ink-muted hover:border-accent hover:text-accent dark:border-line-dark dark:text-ink-faint dark:hover:text-accent"
                 }`}
               >
                 {nextLabel}

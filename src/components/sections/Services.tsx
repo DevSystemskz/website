@@ -155,7 +155,7 @@ export function Services() {
   return (
     <motion.section
       id="services"
-      className="bg-white py-20 lg:py-28 dark:bg-slate-900"
+      className="ds-section bg-canvas-elevated dark:bg-canvas-dark"
       variants={section}
       initial={false}
       whileInView="visible"

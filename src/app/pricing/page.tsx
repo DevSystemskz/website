@@ -91,41 +91,41 @@ export default function PricingPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-white pt-24 dark:bg-slate-900">
+      <main className="min-h-screen bg-canvas pt-24 dark:bg-canvas-dark">
         <Container className="py-12 lg:py-16">
           <div className="max-w-4xl">
-            <p className="inline-flex rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-indigo-700 dark:bg-indigo-500/20 dark:text-indigo-300">
+            <p className="inline-flex border-l-2 border-accent pl-3 font-mono text-xs font-medium uppercase tracking-[0.18em] text-accent">
               Pricing
             </p>
-            <h1 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
+            <h1 className="mt-4 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl dark:text-white">
               Прайс-лист по услугам
             </h1>
-            <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
+            <p className="mt-4 text-lg text-ink-muted dark:text-ink-faint">
               Ниже ориентиры по основным услугам: лендинги, корпоративные сайты,
               MVP, мобильная разработка, AI-интеграции и поддержка. Финальная
               стоимость зависит от объема, сроков, интеграций и требований к UX.
             </p>
           </div>
 
-          <section className="mt-10 rounded-2xl border border-slate-200 p-6 dark:border-slate-800">
-            <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
+          <section className="mt-10 border border-line p-6 dark:border-line-dark">
+            <h2 className="font-display text-xl font-semibold text-ink dark:text-white">
               1) Сайты и веб-проекты
             </h2>
             <div className="mt-4 overflow-x-auto">
               <table className="w-full border-collapse text-left text-sm">
                 <thead>
-                  <tr className="border-b border-slate-200 dark:border-slate-800">
-                    <th className="py-3 pr-4 font-semibold text-slate-700 dark:text-slate-200">Услуга</th>
-                    <th className="py-3 pr-4 font-semibold text-slate-700 dark:text-slate-200">Что входит</th>
-                    <th className="py-3 font-semibold text-slate-700 dark:text-slate-200">Стоимость</th>
+                  <tr className="border-b border-line dark:border-line-dark">
+                    <th className="py-3 pr-4 font-semibold text-ink-muted dark:text-ink-faint">Услуга</th>
+                    <th className="py-3 pr-4 font-semibold text-ink-muted dark:text-ink-faint">Что входит</th>
+                    <th className="py-3 font-semibold text-ink-muted dark:text-ink-faint">Стоимость</th>
                   </tr>
                 </thead>
                 <tbody>
                   {websiteServices.map((item) => (
-                    <tr key={item.service} className="border-b border-slate-100 dark:border-slate-800/60">
-                      <td className="py-3 pr-4 text-slate-700 dark:text-slate-300">{item.service}</td>
-                      <td className="py-3 pr-4 text-slate-700 dark:text-slate-300">{item.scope}</td>
-                      <td className="py-3 text-slate-900 dark:text-white">{item.price}</td>
+                    <tr key={item.service} className="border-b border-line/60 dark:border-line-dark/60">
+                      <td className="py-3 pr-4 text-ink-muted dark:text-ink-faint">{item.service}</td>
+                      <td className="py-3 pr-4 text-ink-muted dark:text-ink-faint">{item.scope}</td>
+                      <td className="py-3 text-ink dark:text-white">{item.price}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -133,25 +133,25 @@ export default function PricingPage() {
             </div>
           </section>
 
-          <section className="mt-8 rounded-2xl border border-slate-200 p-6 dark:border-slate-800">
-            <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
+          <section className="mt-8 border border-line p-6 dark:border-line-dark">
+            <h2 className="font-display text-xl font-semibold text-ink dark:text-white">
               2) Продуктовая разработка и интеграции
             </h2>
             <div className="mt-4 overflow-x-auto">
               <table className="w-full border-collapse text-left text-sm">
                 <thead>
-                  <tr className="border-b border-slate-200 dark:border-slate-800">
-                    <th className="py-3 pr-4 font-semibold text-slate-700 dark:text-slate-200">Услуга</th>
-                    <th className="py-3 pr-4 font-semibold text-slate-700 dark:text-slate-200">Что входит</th>
-                    <th className="py-3 font-semibold text-slate-700 dark:text-slate-200">Стоимость</th>
+                  <tr className="border-b border-line dark:border-line-dark">
+                    <th className="py-3 pr-4 font-semibold text-ink-muted dark:text-ink-faint">Услуга</th>
+                    <th className="py-3 pr-4 font-semibold text-ink-muted dark:text-ink-faint">Что входит</th>
+                    <th className="py-3 font-semibold text-ink-muted dark:text-ink-faint">Стоимость</th>
                   </tr>
                 </thead>
                 <tbody>
                   {productServices.map((item) => (
-                    <tr key={item.service} className="border-b border-slate-100 dark:border-slate-800/60">
-                      <td className="py-3 pr-4 text-slate-700 dark:text-slate-300">{item.service}</td>
-                      <td className="py-3 pr-4 text-slate-700 dark:text-slate-300">{item.scope}</td>
-                      <td className="py-3 text-slate-900 dark:text-white">{item.price}</td>
+                    <tr key={item.service} className="border-b border-line/60 dark:border-line-dark/60">
+                      <td className="py-3 pr-4 text-ink-muted dark:text-ink-faint">{item.service}</td>
+                      <td className="py-3 pr-4 text-ink-muted dark:text-ink-faint">{item.scope}</td>
+                      <td className="py-3 text-ink dark:text-white">{item.price}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -159,25 +159,25 @@ export default function PricingPage() {
             </div>
           </section>
 
-          <section className="mt-8 rounded-2xl border border-slate-200 p-6 dark:border-slate-800">
-            <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
+          <section className="mt-8 border border-line p-6 dark:border-line-dark">
+            <h2 className="font-display text-xl font-semibold text-ink dark:text-white">
               3) Поддержка и командные форматы
             </h2>
             <div className="mt-4 overflow-x-auto">
               <table className="w-full border-collapse text-left text-sm">
                 <thead>
-                  <tr className="border-b border-slate-200 dark:border-slate-800">
-                    <th className="py-3 pr-4 font-semibold text-slate-700 dark:text-slate-200">Формат</th>
-                    <th className="py-3 pr-4 font-semibold text-slate-700 dark:text-slate-200">Что входит</th>
-                    <th className="py-3 font-semibold text-slate-700 dark:text-slate-200">Стоимость</th>
+                  <tr className="border-b border-line dark:border-line-dark">
+                    <th className="py-3 pr-4 font-semibold text-ink-muted dark:text-ink-faint">Формат</th>
+                    <th className="py-3 pr-4 font-semibold text-ink-muted dark:text-ink-faint">Что входит</th>
+                    <th className="py-3 font-semibold text-ink-muted dark:text-ink-faint">Стоимость</th>
                   </tr>
                 </thead>
                 <tbody>
                   {supportServices.map((item) => (
-                    <tr key={item.service} className="border-b border-slate-100 dark:border-slate-800/60">
-                      <td className="py-3 pr-4 text-slate-700 dark:text-slate-300">{item.service}</td>
-                      <td className="py-3 pr-4 text-slate-700 dark:text-slate-300">{item.scope}</td>
-                      <td className="py-3 text-slate-900 dark:text-white">{item.price}</td>
+                    <tr key={item.service} className="border-b border-line/60 dark:border-line-dark/60">
+                      <td className="py-3 pr-4 text-ink-muted dark:text-ink-faint">{item.service}</td>
+                      <td className="py-3 pr-4 text-ink-muted dark:text-ink-faint">{item.scope}</td>
+                      <td className="py-3 text-ink dark:text-white">{item.price}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -185,15 +185,15 @@ export default function PricingPage() {
             </div>
           </section>
 
-          <section className="mt-8 rounded-2xl border border-indigo-200 bg-indigo-50 p-6 dark:border-indigo-500/30 dark:bg-indigo-500/10">
-            <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
+          <section className="mt-8 border border-accent/30 bg-accent-muted p-6">
+            <h2 className="font-display text-xl font-semibold text-ink dark:text-white">
               4) Важно по оценке
             </h2>
-            <p className="mt-3 text-slate-700 dark:text-slate-300">
+            <p className="mt-3 text-ink-muted dark:text-ink-faint">
               Цены на странице — ориентиры. Точный бюджет формируется после брифа:
               цели, функционал, интеграции, дедлайн, требования к дизайну и SEO.
             </p>
-            <ul className="mt-3 list-disc space-y-1 pl-5 text-slate-700 dark:text-slate-300">
+            <ul className="mt-3 list-disc space-y-1 pl-5 text-ink-muted dark:text-ink-faint">
               <li>Бриф и предварительная вилка — в течение 24 часов</li>
               <li>Детальная смета и этапы — 1-2 рабочих дня</li>
             </ul>

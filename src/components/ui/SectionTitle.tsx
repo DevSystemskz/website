@@ -14,15 +14,15 @@ export function SectionTitle({
   return (
     <div className={`max-w-2xl ${className}`}>
       {tag && (
-        <span className="inline-block text-sm font-medium uppercase tracking-wider text-indigo-600 mb-2 dark:text-indigo-400">
+        <span className="mb-3 inline-flex items-center gap-2 border-l-2 border-accent pl-3 font-mono text-xs font-medium uppercase tracking-[0.18em] text-accent">
           {tag}
         </span>
       )}
-      <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
+      <h2 className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl dark:text-white">
         {title}
       </h2>
       {description && (
-        <p className="mt-3 text-lg text-slate-600 dark:text-slate-400">{description}</p>
+        <p className="mt-3 text-lg text-ink-muted dark:text-ink-faint">{description}</p>
       )}
     </div>
   );

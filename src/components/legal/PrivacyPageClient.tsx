@@ -131,23 +131,23 @@ export function PrivacyPageClient() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-white pt-24 dark:bg-slate-900">
+      <main className="min-h-screen bg-canvas pt-24 dark:bg-canvas-dark">
         <Container className="py-12 lg:py-16">
           <Link
             href="/"
-            className="mb-8 inline-block text-sm font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
+            className="mb-8 inline-flex font-mono text-sm text-accent transition hover:text-accent-hover"
           >
             {t.back}
           </Link>
-          <h1 className="text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl">
+          <h1 className="font-display text-3xl font-bold text-ink sm:text-4xl dark:text-white">
             {t.title}
           </h1>
-          <p className="mt-2 text-slate-500 dark:text-slate-400">{t.updated}</p>
+          <p className="mt-2 font-mono text-sm text-ink-faint">{t.updated}</p>
 
-          <div className="mt-10 max-w-3xl space-y-1">
+          <div className="article-content mt-10 max-w-3xl space-y-1">
             {t.sections.map((section) => (
               <section key={section.title} className="mb-10">
-                <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
+                <h2 className="font-display text-xl font-semibold text-ink dark:text-white">
                   {section.title}
                 </h2>
                 <p>{section.body}</p>
@@ -162,14 +162,14 @@ export function PrivacyPageClient() {
             ))}
 
             <section>
-              <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
+              <h2 className="font-display text-xl font-semibold text-ink dark:text-white">
                 {t.contactsTitle}
               </h2>
               <p>
                 {t.contactsLabel}{" "}
                 <a
                   href="mailto:devsystemg@gmail.com"
-                  className="text-indigo-600 hover:underline dark:text-indigo-400"
+                  className="text-accent hover:underline"
                 >
                   devsystemg@gmail.com
                 </a>

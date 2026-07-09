@@ -9,7 +9,7 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="rounded-lg p-2 text-slate-600 transition hover:bg-slate-200 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
+      className="p-2 text-ink-muted transition hover:bg-canvas-muted hover:text-ink dark:text-ink-faint dark:hover:bg-canvas-elevated-dark dark:hover:text-white"
       aria-label={theme === "dark" ? "Включить светлую тему" : "Включить тёмную тему"}
     >
       {theme === "dark" ? (

@@ -8,7 +8,6 @@ import { Portfolio } from "@/components/sections/Portfolio";
 import { Process } from "@/components/sections/Process";
 import { Team } from "@/components/sections/Team";
 import { Testimonials } from "@/components/sections/Testimonials";
-import { CTABanner } from "@/components/sections/CTABanner";
 import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
@@ -24,7 +23,6 @@ export default function Home() {
         <Process />
         <Team />
         <Testimonials />
-        <CTABanner />
         <Contact />
       </main>
       <Footer />

@@ -14,7 +14,7 @@ export function LanguageToggle() {
   };
 
   return (
-    <div className="inline-flex rounded-lg border border-slate-300 bg-white p-1 dark:border-slate-700 dark:bg-slate-800">
+    <div className="inline-flex border border-line bg-canvas-elevated p-0.5 dark:border-line-dark dark:bg-canvas-elevated-dark">
       {options.map((opt) => {
         const active = locale === opt;
         return (
@@ -22,10 +22,10 @@ export function LanguageToggle() {
             key={opt}
             type="button"
             onClick={() => setLocale(opt)}
-            className={`rounded-md px-2.5 py-1 text-xs font-semibold uppercase transition ${
+            className={`px-2.5 py-1 font-mono text-xs font-semibold uppercase transition ${
               active
-                ? "bg-indigo-600 text-white"
-                : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-700"
+                ? "bg-accent text-white"
+                : "text-ink-muted hover:text-ink dark:text-ink-faint dark:hover:text-white"
             }`}
             aria-pressed={active}
           >
@@ -36,4 +36,3 @@ export function LanguageToggle() {
     </div>
   );
 }
-

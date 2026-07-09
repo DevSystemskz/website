@@ -89,7 +89,7 @@ export function Process() {
   return (
     <motion.section
       id="process"
-      className="border-t border-slate-200 bg-slate-50 py-20 lg:py-28 dark:border-slate-800 dark:bg-slate-900/50"
+      className="ds-section bg-canvas-muted dark:bg-canvas-dark"
       variants={section}
       initial={false}
       whileInView="visible"
@@ -110,16 +110,16 @@ export function Process() {
           {steps.map((step, i) => (
             <motion.div key={step.number} className="relative" variants={item}>
               {i < steps.length - 1 && (
-                <div className="absolute left-8 top-14 hidden h-0.5 w-[calc(100%-2rem)] bg-gradient-to-r from-indigo-400/50 to-transparent dark:from-indigo-500/50 lg:block" />
+                <div className="absolute left-8 top-14 hidden h-px w-[calc(100%-2rem)] bg-gradient-to-r from-accent/40 to-transparent lg:block" />
               )}
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-800/30">
-                <span className="text-3xl font-bold text-indigo-500/80 dark:text-indigo-400/80">
+              <div className="border border-line bg-canvas-elevated p-6 dark:border-line-dark dark:bg-canvas-elevated-dark">
+                <span className="font-display text-3xl font-bold text-accent/70">
                   {step.number}
                 </span>
-                <h3 className="mt-4 text-lg font-semibold text-slate-900 dark:text-white">
+                <h3 className="mt-4 font-display text-lg font-semibold text-ink dark:text-white">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{step.description}</p>
+                <p className="mt-2 text-sm text-ink-muted dark:text-ink-faint">{step.description}</p>
               </div>
             </motion.div>
           ))}

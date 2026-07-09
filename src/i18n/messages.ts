@@ -5,6 +5,7 @@ export const messages = {
   ru: {
     nav: {
       services: "Услуги",
+      pricing: "Прайс",
       blog: "Блог",
       portfolio: "Портфолио",
       about: "О нас",
@@ -33,6 +34,7 @@ export const messages = {
       legal: "Правовая информация",
       about: "О компании",
       blog: "Блог",
+      pricing: "Прайс",
       portfolio: "Портфолио",
       team: "Команда",
       contact: "Контакты",
@@ -95,11 +97,13 @@ export const messages = {
       blogDesc:
         "Делимся практикой разработки: архитектура, AI, блокчейн и управление продуктом.",
       readMore: "Читать",
+      blogBack: "← Назад в блог",
     },
   },
   kk: {
     nav: {
       services: "Қызметтер",
+      pricing: "Баға",
       blog: "Блог",
       portfolio: "Портфолио",
       about: "Біз туралы",
@@ -128,6 +132,7 @@ export const messages = {
       legal: "Құқықтық ақпарат",
       about: "Компания туралы",
       blog: "Блог",
+      pricing: "Баға",
       portfolio: "Портфолио",
       team: "Команда",
       contact: "Байланыс",
@@ -190,11 +195,13 @@ export const messages = {
       blogDesc:
         "Әзірлеу тәжірибесімен бөлісеміз: архитектура, AI, блокчейн және өнімді басқару.",
       readMore: "Оқу",
+      blogBack: "← Блогқа оралу",
     },
   },
   en: {
     nav: {
       services: "Services",
+      pricing: "Pricing",
       blog: "Blog",
       portfolio: "Portfolio",
       about: "About",
@@ -223,6 +230,7 @@ export const messages = {
       legal: "Legal",
       about: "About company",
       blog: "Blog",
+      pricing: "Pricing",
       portfolio: "Portfolio",
       team: "Team",
       contact: "Contact",
@@ -285,6 +293,7 @@ export const messages = {
       blogDesc:
         "Practical notes on software engineering: architecture, AI, blockchain, and product delivery.",
       readMore: "Read",
+      blogBack: "← Back to blog",
     },
   },
 } as const;

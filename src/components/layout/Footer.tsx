@@ -13,7 +13,7 @@ export function Footer() {
   const year = new Date().getFullYear();
   const footerLinks = {
     company: [
-      { href: "/pricing", label: "Прайс" },
+      { href: "/pricing", label: m.footer.pricing },
       { href: "/blog", label: m.footer.blog },
       { href: "/#portfolio", label: m.footer.portfolio },
       { href: "/#about", label: m.footer.about },
@@ -32,17 +32,17 @@ export function Footer() {
   };
 
   return (
-    <footer className="border-t border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900/50">
+    <footer className="border-t border-line bg-canvas-muted dark:border-line-dark dark:bg-canvas-dark">
       <Container className="py-12 lg:py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <Link
               href="/"
-              className="text-xl font-bold text-slate-900 hover:text-indigo-600 dark:text-white dark:hover:text-indigo-400"
+              className="font-display text-xl font-bold text-ink transition hover:text-accent dark:text-white dark:hover:text-accent"
             >
               DevSystems
             </Link>
-            <p className="mt-3 max-w-sm text-sm text-slate-600 dark:text-slate-400">
+            <p className="mt-3 max-w-sm text-sm leading-relaxed text-ink-muted dark:text-ink-faint">
               {m.footer.description}
             </p>
             <div className="mt-4 flex gap-4">
@@ -50,7 +50,7 @@ export function Footer() {
                 <a
                   key={s.label}
                   href={s.href}
-                  className="text-slate-600 transition hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
+                  className="font-mono text-sm text-ink-muted transition hover:text-accent dark:text-ink-faint dark:hover:text-accent"
                 >
                   {s.label}
                 </a>
@@ -59,7 +59,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300">
+            <h3 className="font-mono text-xs font-medium uppercase tracking-[0.15em] text-ink-muted dark:text-ink-faint">
               {m.footer.company}
             </h3>
             <ul className="mt-4 space-y-2">
@@ -67,7 +67,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-slate-600 transition hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+                    className="text-sm text-ink-muted transition hover:text-ink dark:text-ink-faint dark:hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -77,7 +77,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300">
+            <h3 className="font-mono text-xs font-medium uppercase tracking-[0.15em] text-ink-muted dark:text-ink-faint">
               {m.footer.services}
             </h3>
             <ul className="mt-4 space-y-2">
@@ -85,7 +85,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-slate-600 transition hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+                    className="text-sm text-ink-muted transition hover:text-ink dark:text-ink-faint dark:hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -95,7 +95,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300">
+            <h3 className="font-mono text-xs font-medium uppercase tracking-[0.15em] text-ink-muted dark:text-ink-faint">
               {m.footer.legal}
             </h3>
             <ul className="mt-4 space-y-2">
@@ -103,7 +103,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-slate-600 transition hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+                    className="text-sm text-ink-muted transition hover:text-ink dark:text-ink-faint dark:hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -113,7 +113,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-slate-200 pt-8 text-center text-sm text-slate-500 dark:border-slate-800">
+        <div className="mt-12 border-t border-line pt-8 text-center font-mono text-xs text-ink-faint dark:border-line-dark">
           © {year} DevSystems. {m.footer.rights}
         </div>
       </Container>

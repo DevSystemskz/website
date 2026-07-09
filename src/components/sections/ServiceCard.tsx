@@ -20,21 +20,21 @@ export function ServiceCard({
 
   return (
     <motion.article
-      className="group relative rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:border-indigo-400 hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-800/30 dark:hover:border-indigo-500/50 dark:hover:bg-slate-800/50 lg:p-8"
-      whileHover={reduce ? undefined : { y: -6 }}
-      whileTap={reduce ? undefined : { scale: 0.99 }}
+      className="group relative h-full border border-line bg-canvas-elevated p-6 transition hover:border-accent/50 dark:border-line-dark dark:bg-canvas-elevated-dark lg:p-7"
+      whileHover={reduce ? undefined : { y: -4 }}
       transition={{ type: "spring", stiffness: 400, damping: 28 }}
     >
-      <div className="mb-4 inline-flex rounded-xl bg-indigo-100 p-3 text-indigo-600 transition group-hover:bg-indigo-200 dark:bg-indigo-500/10 dark:text-indigo-400 dark:group-hover:bg-indigo-500/20">
+      <div className="absolute left-0 top-0 h-0 w-0.5 bg-accent transition-all duration-300 group-hover:h-full" />
+      <div className="mb-4 inline-flex border border-line bg-canvas-muted p-3 text-accent dark:border-line-dark dark:bg-canvas-dark">
         {icon}
       </div>
-      <h3 className="text-xl font-semibold text-slate-900 dark:text-white">{title}</h3>
-      <p className="mt-2 text-slate-600 dark:text-slate-400">{description}</p>
+      <h3 className="font-display text-lg font-semibold text-ink dark:text-white">{title}</h3>
+      <p className="mt-2 text-sm leading-relaxed text-ink-muted dark:text-ink-faint">{description}</p>
       {features.length > 0 && (
         <ul className="mt-4 space-y-2">
           {features.map((f) => (
-            <li key={f} className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-indigo-500 dark:bg-indigo-400" />
+            <li key={f} className="flex items-start gap-2 text-sm text-ink-muted dark:text-ink-faint">
+              <span className="mt-2 h-1 w-1 shrink-0 bg-accent" />
               {f}
             </li>
           ))}

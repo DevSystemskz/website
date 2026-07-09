@@ -13,29 +13,32 @@ export function Header() {
   const { m } = useI18n();
   const navLinks = [
     { href: "/#services", label: m.nav.services },
-    { href: "/pricing", label: "Прайс" },
+    { href: "/pricing", label: m.nav.pricing },
     { href: "/#portfolio", label: m.nav.portfolio },
     { href: "/blog", label: m.nav.blog },
     { href: "/#contact", label: m.nav.contact },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-xl dark:border-slate-800/50 dark:bg-slate-900/80">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-line bg-canvas/85 backdrop-blur-xl dark:border-line-dark dark:bg-canvas-dark/85">
       <Container>
-        <nav className="flex h-16 items-center justify-between lg:h-20">
+        <nav className="flex h-16 items-center justify-between lg:h-[4.5rem]">
           <Link
             href="/"
-            className="text-xl font-bold text-slate-900 transition hover:text-indigo-600 dark:text-white dark:hover:text-indigo-400"
+            className="group flex items-baseline gap-1 font-display text-xl font-bold text-ink transition hover:text-accent dark:text-white dark:hover:text-accent"
           >
             DevSystems
+            <span className="font-mono text-[10px] font-normal text-accent opacity-0 transition group-hover:opacity-100">
+              .dev
+            </span>
           </Link>
 
-          <ul className="hidden items-center gap-6 md:flex">
+          <ul className="hidden items-center gap-7 md:flex">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm font-medium text-slate-600 transition hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+                  className="text-sm font-medium text-ink-muted transition hover:text-ink dark:text-ink-faint dark:hover:text-white"
                 >
                   {link.label}
                 </Link>
@@ -64,26 +67,26 @@ export function Header() {
               aria-label="Меню"
             >
               <span
-                className={`block h-0.5 w-6 bg-slate-700 transition dark:bg-white ${open ? "rotate-45 translate-y-2" : ""}`}
+                className={`block h-0.5 w-6 bg-ink transition dark:bg-white ${open ? "translate-y-2 rotate-45" : ""}`}
               />
               <span
-                className={`block h-0.5 w-6 bg-slate-700 transition dark:bg-white ${open ? "opacity-0" : ""}`}
+                className={`block h-0.5 w-6 bg-ink transition dark:bg-white ${open ? "opacity-0" : ""}`}
               />
               <span
-                className={`block h-0.5 w-6 bg-slate-700 transition dark:bg-white ${open ? "-rotate-45 -translate-y-2" : ""}`}
+                className={`block h-0.5 w-6 bg-ink transition dark:bg-white ${open ? "-translate-y-2 -rotate-45" : ""}`}
               />
             </button>
           </div>
         </nav>
 
-          {open && (
-          <div className="border-t border-slate-200 py-4 dark:border-slate-800 md:hidden">
+        {open && (
+          <div className="border-t border-line py-4 dark:border-line-dark md:hidden">
             <ul className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="block text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+                    className="block text-ink-muted hover:text-ink dark:text-ink-faint dark:hover:text-white"
                     onClick={() => setOpen(false)}
                   >
                     {link.label}
@@ -100,7 +103,7 @@ export function Header() {
               </li>
             </ul>
           </div>
-          )}
+        )}
       </Container>
     </header>
   );

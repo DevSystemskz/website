@@ -63,7 +63,7 @@ export function About() {
   return (
     <motion.section
       id="about"
-      className="border-t border-slate-200 bg-slate-50 py-20 lg:py-28 dark:border-slate-800 dark:bg-slate-900/50"
+      className="ds-section bg-canvas-muted dark:bg-canvas-dark"
       variants={section}
       initial={false}
       whileInView="visible"
@@ -81,9 +81,9 @@ export function About() {
               {about.listItems.map((text) => (
                 <li
                   key={text}
-                  className="flex items-start gap-3 text-slate-600 dark:text-slate-300"
+                  className="flex items-start gap-3 text-ink-muted dark:text-ink-faint"
                 >
-                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-indigo-500 dark:bg-indigo-400" />
+                  <span className="mt-2 h-1 w-1 shrink-0 bg-accent" />
                   {text}
                 </li>
               ))}
@@ -96,19 +96,19 @@ export function About() {
           </motion.div>
           <motion.div className="relative" variants={item}>
             <motion.div
-              className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-800/30 lg:p-10"
+              className="border border-line bg-canvas-elevated p-8 dark:border-line-dark dark:bg-canvas-elevated-dark lg:p-10"
               whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }}
             >
-              <blockquote className="text-lg text-slate-600 dark:text-slate-300">
+              <blockquote className="text-lg text-ink-muted dark:text-ink-faint">
                 {`"${about.quote}"`}
               </blockquote>
               <div className="mt-6 flex items-center gap-4">
-                <div className="h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-semibold dark:bg-indigo-500/20 dark:text-indigo-400">
+                <div className="flex h-12 w-12 items-center justify-center border border-line bg-accent-muted font-display font-semibold text-accent dark:border-line-dark">
                   {about.initials}
                 </div>
                 <div>
-                  <p className="font-medium text-slate-900 dark:text-white">{about.person}</p>
-                  <p className="text-sm text-slate-500">{about.role}</p>
+                  <p className="font-medium text-ink dark:text-white">{about.person}</p>
+                  <p className="text-sm text-ink-faint">{about.role}</p>
                 </div>
               </div>
             </motion.div>

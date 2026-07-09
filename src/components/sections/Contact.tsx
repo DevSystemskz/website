@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
-import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Button } from "@/components/ui/Button";
 import { useStaggerVariants, viewportOnce } from "@/components/motion/useStaggerVariants";
 import { useI18n } from "@/components/i18n/I18nProvider";
@@ -61,92 +60,109 @@ export function Contact() {
   return (
     <motion.section
       id="contact"
-      className="border-t border-slate-200 bg-slate-50 py-20 lg:py-28 dark:border-slate-800 dark:bg-slate-900/50"
+      className="ds-section bg-canvas-muted dark:bg-canvas-dark"
       variants={section}
       initial={false}
       whileInView="visible"
       viewport={viewportOnce}
     >
       <Container>
-        <div className="mx-auto max-w-2xl">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14 lg:items-start">
           <motion.div variants={item}>
-            <SectionTitle
-              tag={m.sections.contactTag}
-              title={m.sections.contactTitle}
-              description={m.sections.contactDesc}
-            />
-          </motion.div>
-          {sent ? (
-            <motion.div
-              className="mt-10 rounded-2xl border border-indigo-300 bg-indigo-50 p-8 text-center dark:border-indigo-500/30 dark:bg-indigo-500/10"
-              initial={{ opacity: 0, scale: 0.96, y: 12 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ type: "spring", stiffness: 380, damping: 28 }}
-            >
-              <p className="text-lg font-medium text-slate-900 dark:text-white">
-                {m.sections.sent}
-              </p>
-            </motion.div>
-          ) : (
-            <motion.form
-              onSubmit={handleSubmit}
-              className="mt-10 space-y-6"
-              variants={item}
-            >
-              {error && (
-                <div className="rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-500/40 dark:bg-red-500/10 dark:text-red-100">
-                  {error}
+            <div className="relative overflow-hidden border border-line bg-ink p-8 dark:border-line-dark lg:sticky lg:top-28 lg:p-10">
+              <div className="blueprint-grid absolute inset-0 opacity-30" aria-hidden />
+              <div className="relative">
+                <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
+                  {m.sections.contactTag}
+                </p>
+                <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
+                  {m.sections.contactTitle}
+                </h2>
+                <p className="mt-4 text-lg text-white/70">{m.sections.contactDesc}</p>
+                <p className="mt-4 text-sm text-white/55">{m.sections.ctaDesc}</p>
+                <div className="mt-8">
+                  <Button
+                    href="mailto:devsystemg@gmail.com"
+                    variant="outline"
+                    size="md"
+                    className="border-white/30 text-white hover:border-accent hover:bg-accent hover:text-white"
+                  >
+                    devsystemg@gmail.com
+                  </Button>
                 </div>
-              )}
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-slate-600 dark:text-slate-300">
-                  {m.sections.name}
-                </label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  required
-                  className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-800/50 dark:text-white dark:placeholder-slate-500"
-                  placeholder={m.sections.namePh}
-                />
               </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-600 dark:text-slate-300">
-                  {m.sections.email}
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-800/50 dark:text-white dark:placeholder-slate-500"
-                  placeholder="email@example.com"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-600 dark:text-slate-300">
-                  {m.sections.message}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  required
-                  className="mt-2 w-full resize-none rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-800/50 dark:text-white dark:placeholder-slate-500"
-                  placeholder={m.sections.messagePh}
-                />
-              </div>
-              <Button
-                type="submit"
-                variant="primary"
-                size="lg"
-                className="w-full sm:w-auto"
+            </div>
+          </motion.div>
+
+          <motion.div variants={item}>
+            {sent ? (
+              <motion.div
+                className="border border-accent/30 bg-accent-muted p-8 text-center"
+                initial={{ opacity: 0, scale: 0.96, y: 12 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ type: "spring", stiffness: 380, damping: 28 }}
               >
-                {loading ? m.sections.sending : m.sections.send}
-              </Button>
-            </motion.form>
-          )}
+                <p className="text-lg font-medium text-ink dark:text-white">
+                  {m.sections.sent}
+                </p>
+              </motion.div>
+            ) : (
+              <motion.form onSubmit={handleSubmit} className="space-y-6">
+                {error && (
+                  <div className="border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-500/40 dark:bg-red-500/10 dark:text-red-100">
+                    {error}
+                  </div>
+                )}
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-ink-muted dark:text-ink-faint">
+                    {m.sections.name}
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    className="ds-input"
+                    placeholder={m.sections.namePh}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-ink-muted dark:text-ink-faint">
+                    {m.sections.email}
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    className="ds-input"
+                    placeholder="email@example.com"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-ink-muted dark:text-ink-faint">
+                    {m.sections.message}
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    required
+                    className="ds-input resize-none"
+                    placeholder={m.sections.messagePh}
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  variant="primary"
+                  size="lg"
+                  className="w-full sm:w-auto"
+                >
+                  {loading ? m.sections.sending : m.sections.send}
+                </Button>
+              </motion.form>
+            )}
+          </motion.div>
         </div>
       </Container>
     </motion.section>

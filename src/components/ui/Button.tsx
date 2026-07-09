@@ -11,19 +11,19 @@ interface ButtonProps {
 
 const variants = {
   primary:
-    "bg-indigo-600 text-white hover:bg-indigo-500 shadow-lg shadow-indigo-500/25",
+    "bg-accent text-white hover:bg-accent-hover shadow-md shadow-accent/20",
   secondary:
-    "bg-slate-200 text-slate-900 hover:bg-slate-300 dark:bg-slate-800 dark:text-white dark:hover:bg-slate-700",
+    "bg-canvas-muted text-ink hover:bg-line dark:bg-canvas-elevated-dark dark:text-white dark:hover:bg-line-dark",
   outline:
-    "border-2 border-indigo-500 text-indigo-600 hover:bg-indigo-500 hover:text-white dark:text-indigo-400",
+    "border border-accent text-accent hover:bg-accent hover:text-white dark:text-accent",
   ghost:
-    "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white",
+    "text-ink-muted hover:bg-canvas-muted dark:text-ink-faint dark:hover:bg-canvas-elevated-dark dark:hover:text-white",
 };
 
 const sizes = {
-  sm: "px-4 py-2 text-sm rounded-lg",
-  md: "px-6 py-3 text-base rounded-xl",
-  lg: "px-8 py-4 text-lg rounded-xl",
+  sm: "px-4 py-2 text-sm rounded-md",
+  md: "px-6 py-3 text-base rounded-md",
+  lg: "px-8 py-4 text-lg rounded-md",
 };
 
 export function Button({
@@ -35,7 +35,7 @@ export function Button({
   className = "",
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900";
+    "inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-canvas dark:focus:ring-offset-canvas-dark";
 
   const combined = `${base} ${variants[variant]} ${sizes[size]} ${className}`;
 
