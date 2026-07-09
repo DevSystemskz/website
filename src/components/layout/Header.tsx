@@ -13,11 +13,9 @@ export function Header() {
   const { m } = useI18n();
   const navLinks = [
     { href: "/#services", label: m.nav.services },
-    { href: "/blog", label: m.nav.blog },
+    { href: "/pricing", label: "Прайс" },
     { href: "/#portfolio", label: m.nav.portfolio },
-    { href: "/#about", label: m.nav.about },
-    { href: "/#process", label: m.nav.process },
-    { href: "/#team", label: m.nav.team },
+    { href: "/blog", label: m.nav.blog },
     { href: "/#contact", label: m.nav.contact },
   ];
 
@@ -32,7 +30,7 @@ export function Header() {
             DevSystems
           </Link>
 
-          <ul className="hidden items-center gap-8 md:flex">
+          <ul className="hidden items-center gap-6 md:flex">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
@@ -78,7 +76,7 @@ export function Header() {
           </div>
         </nav>
 
-        {open && (
+          {open && (
           <div className="border-t border-slate-200 py-4 dark:border-slate-800 md:hidden">
             <ul className="flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -102,7 +100,7 @@ export function Header() {
               </li>
             </ul>
           </div>
-        )}
+          )}
       </Container>
     </header>
   );
