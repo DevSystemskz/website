@@ -4,8 +4,8 @@ import Script from "next/script";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { I18nProvider } from "@/components/i18n/I18nProvider";
 import { ScrollToHash } from "@/components/layout/ScrollToHash";
-import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -28,15 +28,27 @@ const themeScript = `
   })();
 `;
 
-const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://devsystems.dev").replace(/\/$/, "");
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://devsystems.dev").replace(
+  /\/$/,
+  "",
+);
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "DevSystems — Разработка программного обеспечения",
+  title: "DevSystems — AI и B2B product engineering",
   description:
-    "Веб и мобильная разработка, облачные решения, интеграции и поддержка. От идеи до запуска и масштабирования.",
+    "Запускаем AI-фичи и B2B-платформы в production за 8–14 недель: LLM/RAG, веб, mobile. Оценка за 48 часов.",
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    title: "DevSystems — AI и B2B product engineering",
+    description:
+      "Product engineering для стартапов: AI-интеграции, MVP, B2B SaaS, FinTech.",
+    url: siteUrl,
+    siteName: "DevSystems",
+    locale: "ru_RU",
+    type: "website",
   },
   verification: {
     google: "3xCMeJGFQymP5Q2u2tj3KKyorIQp7eqi7o9Cb0Ggetc",

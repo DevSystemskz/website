@@ -42,11 +42,27 @@ function getServices(locale: Locale) {
   if (locale === "en") {
     return [
       {
-        icon: <CodeIcon />,
-        title: "Web Development",
+        icon: <SparklesIcon />,
+        title: "AI Integration",
         description:
-          "Marketing websites, portals, SPAs, and server-side applications with modern stacks.",
+          "AI in products: chatbots, automation, analytics, and generative content.",
+        features: ["LLM, RAG, agents", "Data processing", "Custom models"],
+        href: "/services/ai-integration",
+      },
+      {
+        icon: <CodeIcon />,
+        title: "Web & B2B Platforms",
+        description:
+          "Portals, SPAs, and server-side applications — from MVP to scale.",
         features: ["React, Next.js, Vue", "Node.js, Python", "APIs and integrations"],
+        href: "/services/mvp-development",
+      },
+      {
+        icon: <PuzzleIcon />,
+        title: "Integrations & Support",
+        description:
+          "System integrations, product improvements, and long-term technical support.",
+        features: ["APIs and microservices", "SLA support", "Audit and optimization"],
       },
       {
         icon: <DeviceIcon />,
@@ -59,32 +75,32 @@ function getServices(locale: Locale) {
         icon: <BlockchainIcon />,
         title: "Blockchain",
         description:
-          "Smart contracts, dApps, tokenization, and integration with crypto infrastructure.",
+          "Smart contracts, dApps, and Web3 integrations for selected products.",
         features: ["Smart contracts", "Web3, DeFi", "Audit and consulting"],
-      },
-      {
-        icon: <SparklesIcon />,
-        title: "AI Integration",
-        description:
-          "AI in products: chatbots, automation, analytics, and generative content.",
-        features: ["LLM, RAG, agents", "Data processing", "Custom models"],
-      },
-      {
-        icon: <PuzzleIcon />,
-        title: "Integrations & Support",
-        description:
-          "System integrations, product improvements, and long-term technical support.",
-        features: ["APIs and microservices", "24/7 support", "Audit and optimization"],
       },
     ];
   }
   if (locale === "kk") {
     return [
       {
+        icon: <SparklesIcon />,
+        title: "AI интеграциясы",
+        description: "Өнімдерге ИИ: чат-бот, RAG, агенттер, қолдау автоматтандыру.",
+        features: ["LLM, RAG, агенттер", "Деректерді өңдеу", "Кастом модельдер"],
+        href: "/services/ai-integration",
+      },
+      {
         icon: <CodeIcon />,
-        title: "Веб-әзірлеу",
-        description: "Сайттар, порталдар, SPA және заманауи стектердегі серверлік қосымшалар.",
+        title: "Веб және B2B-платформалар",
+        description: "Порталдар, SPA, backend — MVP-ден масштабтауға дейін.",
         features: ["React, Next.js, Vue", "Node.js, Python", "API және интеграциялар"],
+        href: "/services/mvp-development",
+      },
+      {
+        icon: <PuzzleIcon />,
+        title: "Интеграциялар және қолдау",
+        description: "Жүйелерді біріктіру және ұзақ мерзімді техникалық қолдау.",
+        features: ["API және микросервистер", "SLA қолдау", "Аудит және оңтайландыру"],
       },
       {
         icon: <DeviceIcon />,
@@ -95,30 +111,33 @@ function getServices(locale: Locale) {
       {
         icon: <BlockchainIcon />,
         title: "Блокчейн",
-        description: "Смарт-келісімшарттар, dApp, токенизация және крипто-инфрақұрылыммен интеграция.",
+        description: "Смарт-келісімшарттар, dApp және Web3 интеграциялары.",
         features: ["Smart contracts", "Web3, DeFi", "Аудит және консалтинг"],
-      },
-      {
-        icon: <SparklesIcon />,
-        title: "AI интеграциясы",
-        description: "Өнімдерге ИИ енгізу: чат-боттар, автоматтандыру, аналитика және генеративті контент.",
-        features: ["LLM, RAG, агенттер", "Деректерді өңдеу", "Кастом модельдер"],
-      },
-      {
-        icon: <PuzzleIcon />,
-        title: "Интеграциялар және қолдау",
-        description: "Жүйелерді біріктіру, өнімді жетілдіру және ұзақ мерзімді техникалық қолдау.",
-        features: ["API және микросервистер", "24/7 қолдау", "Аудит және оңтайландыру"],
       },
     ];
   }
 
   return [
     {
+      icon: <SparklesIcon />,
+      title: "Интеграция с AI",
+      description:
+        "Внедрение ИИ в продукты: чат-боты, RAG, агенты, автоматизация поддержки.",
+      features: ["LLM, RAG, агенты", "Обработка данных", "Кастомные модели"],
+      href: "/services/ai-integration",
+    },
+    {
       icon: <CodeIcon />,
-      title: "Веб-разработка",
-      description: "Сайты, порталы, SPA и серверные приложения на современных стеках.",
+      title: "Веб и B2B-платформы",
+      description: "Порталы, SPA и backend — от MVP до масштабирования.",
       features: ["React, Next.js, Vue", "Node.js, Python", "API и интеграции"],
+      href: "/services/mvp-development",
+    },
+    {
+      icon: <PuzzleIcon />,
+      title: "Интеграции и поддержка",
+      description: "Связка систем, доработки и долгосрочная техническая поддержка.",
+      features: ["API и микросервисы", "SLA-поддержка", "Аудит и оптимизация"],
     },
     {
       icon: <DeviceIcon />,
@@ -129,20 +148,8 @@ function getServices(locale: Locale) {
     {
       icon: <BlockchainIcon />,
       title: "Блокчейн",
-      description: "Смарт-контракты, DApp, токенизация и интеграция с крипто-инфраструктурой.",
+      description: "Смарт-контракты, DApp и Web3 для отдельных продуктовых задач.",
       features: ["Smart contracts", "Web3, DeFi", "Аудит и консалтинг"],
-    },
-    {
-      icon: <SparklesIcon />,
-      title: "Интеграция с AI",
-      description: "Внедрение ИИ в продукты: чат-боты, автоматизация, анализ данных и генеративный контент.",
-      features: ["LLM, RAG, агенты", "Обработка данных", "Кастомные модели"],
-    },
-    {
-      icon: <PuzzleIcon />,
-      title: "Интеграции и поддержка",
-      description: "Связка систем, доработки и долгосрочная техническая поддержка.",
-      features: ["API и микросервисы", "Поддержка 24/7", "Аудит и оптимизация"],
     },
   ];
 }
@@ -175,7 +182,13 @@ export function Services() {
         >
           {services.map((s) => (
             <motion.div key={s.title} variants={item}>
-              <ServiceCard {...s} />
+              <ServiceCard
+                icon={s.icon}
+                title={s.title}
+                description={s.description}
+                features={s.features}
+                href={"href" in s ? s.href : undefined}
+              />
             </motion.div>
           ))}
         </motion.div>

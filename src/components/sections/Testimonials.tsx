@@ -13,21 +13,21 @@ function getTestimonials(locale: Locale) {
     return [
       {
         quote:
-          "Deadlines were met and code quality was excellent. Highly recommended for complex web products.",
+          "Shipped our B2B portal in 14 weeks with weekly demos. Code review and docs made handover to our team straightforward.",
         author: "Igor M.",
         role: "Founder",
         company: "MarketPlace Pro",
       },
       {
         quote:
-          "Clear process and frequent demos. Mobile app was released to stores on schedule.",
+          "RAG support bot went live in 8 weeks — L1 tickets dropped noticeably. Clear scope and no surprise invoices.",
         author: "Olga T.",
         role: "Product Owner",
         company: "HealthApp",
       },
       {
         quote:
-          "Cloud migration was smooth and fully documented. Great handover and support.",
+          "AWS migration with runbooks and monitoring. We kept the same release cadence during the transition.",
         author: "Nikita V.",
         role: "CTO",
         company: "DataFlow",
@@ -38,21 +38,21 @@ function getTestimonials(locale: Locale) {
     return [
       {
         quote:
-          "Мерзімдер сақталды, код сапасы жоғары. Күрделі веб-жобаларға сенімді түрде ұсынамын.",
+          "B2B-портал 14 аптада, апта сайын демо. Code review және құжаттама — командға оңай тапсырылды.",
         author: "Игорь М.",
         role: "Негізін қалаушы",
         company: "MarketPlace Pro",
       },
       {
         quote:
-          "Процесс түсінікті, демолар тұрақты. Мобильді қосымша сторларға уақытында шықты.",
+          "RAG-бот 8 аптада — L1 тикеттер азайды. Scope ашық, қоныс surprises жоқ.",
         author: "Ольга Т.",
         role: "Product Owner",
         company: "HealthApp",
       },
       {
         quote:
-          "Инфрақұрылымды бұлтқа көшіруге көмектесті. Барлығы құжатталған, тапсыру кезеңі өте ыңғайлы өтті.",
+          "AWS көшіру runbook пен мониторингпен. Релиз циклі үзілмеді.",
         author: "Никита В.",
         role: "CTO",
         company: "DataFlow",
@@ -63,21 +63,21 @@ function getTestimonials(locale: Locale) {
   return [
     {
       quote:
-        "Сроки соблюдены, качество кода на высоте. Рекомендую для сложных веб-проектов.",
+        "B2B-портал за 14 недель, демо каждую неделю. Code review и документация — передали команде без боли.",
       author: "Игорь М.",
       role: "Основатель",
       company: "MarketPlace Pro",
     },
     {
       quote:
-        "Понятный процесс, регулярные демо. Мобильное приложение вышло в сторы в срок.",
+        "RAG-бот поддержки за 8 недель — заметно меньше тикетов L1. Scope прозрачный, без сюрпризов по смете.",
       author: "Ольга Т.",
       role: "Product Owner",
       company: "HealthApp",
     },
     {
       quote:
-        "Помогли перенести инфраструктуру в облако. Все документировано, передача прошла гладко.",
+        "Миграция в AWS с runbook и мониторингом. Релизный цикл не просел на переходе.",
       author: "Никита В.",
       role: "CTO",
       company: "DataFlow",

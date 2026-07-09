@@ -3,21 +3,22 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { smoothEase } from "@/lib/motion";
-import { viewportOnce } from "@/components/motion/useStaggerVariants";
+import { useStaggerVariants, viewportOnce } from "@/components/motion/useStaggerVariants";
 import { useI18n } from "@/components/i18n/I18nProvider";
+import { siteConfig } from "@/lib/site";
 
 export function CTABanner() {
   const reduce = useReducedMotion();
+  const { section, item } = useStaggerVariants();
   const { m } = useI18n();
 
   return (
     <motion.section
-      className="border-t border-slate-200 bg-white py-20 lg:py-28 dark:border-slate-800 dark:bg-slate-900"
-      initial={reduce ? false : { opacity: 0, scale: 0.97 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      className="bg-white py-20 lg:py-28 dark:bg-slate-900"
+      variants={section}
+      initial={false}
+      whileInView="visible"
       viewport={viewportOnce}
-      transition={{ duration: reduce ? 0 : 0.55, ease: smoothEase }}
     >
       <Container>
         <div className="relative overflow-hidden rounded-3xl border border-indigo-300 bg-gradient-to-br from-indigo-50 to-slate-100 p-8 dark:border-indigo-500/30 dark:from-indigo-500/10 dark:to-slate-800/80 lg:p-12">
@@ -44,8 +45,20 @@ export function CTABanner() {
               <Button href="#contact" variant="primary" size="lg">
                 {m.sections.leaveRequest}
               </Button>
-              <Button href="mailto:devsystemg@gmail.com" variant="outline" size="lg">
-                devsystemg@gmail.com
+              <Button
+                href={siteConfig.calendlyUrl}
+                variant="outline"
+                size="lg"
+                external
+              >
+                {m.sections.bookCall}
+              </Button>
+              <Button
+                href={`mailto:${siteConfig.email}`}
+                variant="ghost"
+                size="lg"
+              >
+                {siteConfig.email}
               </Button>
             </div>
           </div>

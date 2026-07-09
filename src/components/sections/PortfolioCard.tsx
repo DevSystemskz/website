@@ -1,22 +1,29 @@
 "use client";
 
-import Image from "next/image";
+import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
+import { type CaseMetric } from "@/lib/cases";
 
 interface PortfolioCardProps {
+  slug: string;
   title: string;
   description: string;
+  industry: string;
   tags: string[];
-  imageSrc: string;
-  imageAlt: string;
+  gradient: string;
+  results: CaseMetric[];
+  viewCaseLabel: string;
 }
 
 export function PortfolioCard({
+  slug,
   title,
   description,
+  industry,
   tags,
-  imageSrc,
-  imageAlt,
+  gradient,
+  results,
+  viewCaseLabel,
 }: PortfolioCardProps) {
   const reduce = useReducedMotion();
 
@@ -26,34 +33,42 @@ export function PortfolioCard({
       whileHover={reduce ? undefined : { y: -8 }}
       transition={{ type: "spring", stiffness: 380, damping: 26 }}
     >
-      <div className="relative h-44 w-full overflow-hidden bg-slate-200 dark:bg-slate-800">
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover transition duration-500 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
-      </div>
-      <div className="p-5 lg:p-6">
-        <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-          {title}
-        </h3>
-        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-          {description}
-        </p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
-            >
-              {tag}
-            </span>
-          ))}
+      <Link href={`/cases/${slug}`} className="block">
+        <div
+          className={`relative flex h-44 flex-col justify-end bg-gradient-to-br p-5 ${gradient}`}
+        >
+          <span className="text-xs font-medium uppercase tracking-wider text-white/80">
+            {industry}
+          </span>
+          <div className="mt-3 flex flex-wrap gap-3">
+            {results.slice(0, 2).map((r) => (
+              <div key={r.label} className="rounded-lg bg-black/20 px-2 py-1 backdrop-blur-sm">
+                <span className="text-sm font-bold text-white">{r.value}</span>
+                <span className="ml-1 text-xs text-white/80">{r.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+        <div className="p-5 lg:p-6">
+          <h3 className="text-lg font-semibold text-slate-900 group-hover:text-indigo-600 dark:text-white dark:group-hover:text-indigo-400">
+            {title}
+          </h3>
+          <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{description}</p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          <p className="mt-4 text-sm font-semibold text-indigo-600 dark:text-indigo-400">
+            {viewCaseLabel} →
+          </p>
+        </div>
+      </Link>
     </motion.article>
   );
 }

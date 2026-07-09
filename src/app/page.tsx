@@ -1,13 +1,16 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { StickyCTA } from "@/components/layout/StickyCTA";
 import { Hero } from "@/components/sections/Hero";
-import { Services } from "@/components/sections/Services";
-import { About } from "@/components/sections/About";
-import { Technologies } from "@/components/sections/Technologies";
+import { TrustStrip } from "@/components/sections/TrustStrip";
 import { Portfolio } from "@/components/sections/Portfolio";
+import { Services } from "@/components/sections/Services";
 import { Process } from "@/components/sections/Process";
-import { Team } from "@/components/sections/Team";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { Engineering } from "@/components/sections/Engineering";
+import { Technologies } from "@/components/sections/Technologies";
+import { About } from "@/components/sections/About";
+import { Team } from "@/components/sections/Team";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { Contact } from "@/components/sections/Contact";
 
@@ -17,17 +20,20 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Services />
-        <About />
-        <Technologies />
+        <TrustStrip />
         <Portfolio />
+        <Services />
         <Process />
-        <Team />
         <Testimonials />
+        <Engineering />
+        <Technologies />
+        <About />
+        <Team />
         <CTABanner />
         <Contact />
       </main>
       <Footer />
+      <StickyCTA />
     </>
   );
 }

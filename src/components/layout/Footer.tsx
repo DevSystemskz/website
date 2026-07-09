@@ -3,33 +3,36 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { useI18n } from "@/components/i18n/I18nProvider";
-
-const social = [
-  { href: "#", label: "Telegram" },
-  { href: "#", label: "LinkedIn" },
-];
+import { siteConfig } from "@/lib/site";
 
 export function Footer() {
   const { m } = useI18n();
   const year = new Date().getFullYear();
   const footerLinks = {
     company: [
-      { href: "/blog", label: m.footer.blog },
       { href: "/#portfolio", label: m.footer.portfolio },
+      { href: "/blog", label: m.footer.blog },
       { href: "/#about", label: m.footer.about },
       { href: "/#team", label: m.footer.team },
       { href: "/#contact", label: m.footer.contact },
     ],
     services: [
+      { href: "/services/ai-integration", label: m.footer.ai },
+      { href: "/services/mvp-development", label: m.footer.mvp },
       { href: "/#services", label: m.footer.web },
       { href: "/#services", label: m.footer.mobile },
-      { href: "/#services", label: m.footer.integrations },
     ],
     legal: [
       { href: "/privacy", label: m.footer.privacy },
       { href: "/terms", label: m.footer.terms },
     ],
   };
+
+  const social = [
+    { href: siteConfig.telegramUrl, label: "Telegram" },
+    { href: siteConfig.linkedInUrl, label: "LinkedIn" },
+    { href: `mailto:${siteConfig.email}`, label: siteConfig.email },
+  ];
 
   return (
     <footer className="border-t border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900/50">
@@ -45,12 +48,14 @@ export function Footer() {
             <p className="mt-3 max-w-sm text-sm text-slate-600 dark:text-slate-400">
               {m.footer.description}
             </p>
-            <div className="mt-4 flex gap-4">
+            <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-4">
               {social.map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
-                  className="text-slate-600 transition hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
+                  target={s.href.startsWith("http") ? "_blank" : undefined}
+                  rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="text-sm text-slate-600 transition hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
                 >
                   {s.label}
                 </a>
