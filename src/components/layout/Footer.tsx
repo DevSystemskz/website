@@ -3,9 +3,11 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { useI18n } from "@/components/i18n/I18nProvider";
+import { contactLinks } from "@/lib/contact";
 
 const social = [
-  { href: "https://t.me/almatdev", label: "Telegram" },
+  { href: contactLinks.telegram, label: "Telegram" },
+  { href: contactLinks.whatsapp, label: "WhatsApp" },
 ];
 
 export function Footer() {
@@ -50,6 +52,8 @@ export function Footer() {
                 <a
                   key={s.label}
                   href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="font-mono text-sm text-ink-muted transition hover:text-accent dark:text-ink-faint dark:hover:text-accent"
                 >
                   {s.label}

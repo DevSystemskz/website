@@ -83,6 +83,8 @@ export const messages = {
       ctaDesc:
         "Опишите задачу — мы подготовим оценку и план работ в течение 1-2 дней.",
       leaveRequest: "Оставить заявку",
+      telegram: "Telegram",
+      whatsapp: "WhatsApp",
       sent: "Заявка отправлена. Мы свяжемся с вами в ближайшее время.",
       send: "Отправить заявку",
       sending: "Отправка...",
@@ -273,6 +275,8 @@ export const messages = {
       ctaDesc:
         "Міндетті сипаттаңыз — 1-2 күн ішінде бағалау мен жұмыс жоспарын дайындаймыз.",
       leaveRequest: "Өтінім қалдыру",
+      telegram: "Telegram",
+      whatsapp: "WhatsApp",
       sent: "Өтінім жіберілді. Жақын арада сізбен хабарласамыз.",
       send: "Өтінімді жіберу",
       sending: "Жіберілуде...",
@@ -463,6 +467,8 @@ export const messages = {
       ctaDesc:
         "Share your idea — we will provide an estimate and delivery plan within 1-2 days.",
       leaveRequest: "Submit request",
+      telegram: "Telegram",
+      whatsapp: "WhatsApp",
       sent: "Request sent. We will contact you shortly.",
       send: "Send request",
       sending: "Sending...",
