@@ -20,7 +20,6 @@ export default function Home() {
         <TechMarquee />
         <Services />
         <About />
-        <Technologies />
         <Portfolio />
         <Process />
         <Team />
