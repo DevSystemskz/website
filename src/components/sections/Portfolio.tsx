@@ -21,7 +21,7 @@ export function Portfolio() {
   return (
     <motion.section
       id="portfolio"
-      className="ds-section bg-canvas-muted dark:bg-canvas-dark"
+      className="ds-section bg-white dark:bg-canvas-dark"
       variants={section}
       initial={false}
       whileInView="visible"
