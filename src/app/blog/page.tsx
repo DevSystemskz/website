@@ -14,7 +14,6 @@ export async function generateMetadata({
   const params = (await searchParams) ?? {};
   const page = Number.parseInt(params.page ?? "1", 10);
   const topic = params.topic?.trim();
-
   const query = new URLSearchParams();
   if (!Number.isNaN(page) && page > 1) query.set("page", String(page));
   if (topic) query.set("topic", topic);
@@ -55,4 +54,3 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
     />
   );
 }
-
