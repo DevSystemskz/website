@@ -4,7 +4,6 @@ import { Hero } from "@/components/sections/Hero";
 import { TechMarquee } from "@/components/sections/TechMarquee";
 import { Services } from "@/components/sections/Services";
 import { About } from "@/components/sections/About";
-import { Technologies } from "@/components/sections/Technologies";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { Process } from "@/components/sections/Process";
 import { Team } from "@/components/sections/Team";

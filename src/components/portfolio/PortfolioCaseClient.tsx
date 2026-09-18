@@ -52,6 +52,17 @@ export function PortfolioCaseClient({ project }: Props) {
                 {caseData.summary}
               </p>
 
+              {caseData.liveUrl && (
+                <a
+                  href={caseData.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex items-center gap-2 font-mono text-sm text-accent transition hover:text-accent-hover"
+                >
+                  {m.sections.portfolioLiveSite} → {caseData.liveUrl.replace(/^https?:\/\//, "")}
+                </a>
+              )}
+
               <div className="relative mt-8 h-64 w-full overflow-hidden border border-line bg-canvas-muted sm:h-80 dark:border-line-dark dark:bg-canvas-elevated-dark">
                 <Image
                   src={caseData.imageSrc}
@@ -139,7 +150,19 @@ export function PortfolioCaseClient({ project }: Props) {
                 <p className="mt-2 text-sm text-ink-muted dark:text-ink-faint">
                   {m.sections.portfolioCtaDesc}
                 </p>
-                <div className="mt-4">
+                <div className="mt-4 flex flex-wrap gap-3">
+                  {caseData.liveUrl && (
+                    <Button
+                      href={caseData.liveUrl}
+                      variant="outline"
+                      size="md"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border-accent text-accent hover:bg-accent hover:text-white"
+                    >
+                      {m.sections.portfolioLiveSite}
+                    </Button>
+                  )}
                   <Button href="/#contact" variant="primary" size="md">
                     {m.sections.leaveRequest}
                   </Button>

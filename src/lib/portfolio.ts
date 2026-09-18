@@ -22,10 +22,236 @@ export type PortfolioProject = {
   tags: string[];
   imageSrc: string;
   year: string;
+  liveUrl?: string;
   locales: Record<Locale, PortfolioLocaleContent>;
 };
 
 const projects: PortfolioProject[] = [
+  {
+    slug: "auarai",
+    tags: ["Next.js", "Tailwind", "SEO", "CRO"],
+    imageSrc: "/portfolio/auarai.jpg",
+    year: "2026",
+    liveUrl: "https://auarai.net",
+    locales: {
+      ru: {
+        title: "AuaRai Control",
+        summary:
+          "Лендинг сервиса ремонта и установки кондиционеров в Астане: заявки в день обращения, WhatsApp и прозрачный прайс.",
+        imageAlt: "Сервис кондиционеров AuaRai Control",
+        industry: "Local services / HVAC",
+        duration: "2 нед",
+        challenge:
+          "Сервису AuaRai Control нужен был сайт, который приводит заявки из поиска и WhatsApp: понятные услуги, фиксированные цены «от», доверие к мастерам и быстрый путь «позвонить / написать». Старый формат не закрывал SEO по Астане и не объяснял оффер за первые секунды.",
+        solution:
+          "Собрали конверсионный лендинг на Next.js: hero с оффером «выезд в день обращения», блоки услуг (ремонт, монтаж, чистка, заправка, перенос блока), прайс, процесс из 5 шагов, отзыциал и FAQ. Добавили кликабельные телефоны/WhatsApp, локальное SEO (районы Астаны), мобильную адаптацию и акценты под срочный вызов мастера 24/7.",
+        results: [
+          "Чёткий оффер и CTA на первом экране — звонок и WhatsApp",
+          "Структура услуг и прайса снижает вопросы «сколько стоит» до звонка",
+          "Локальное SEO и FAQ под запросы по Астане и типам работ",
+        ],
+        metrics: [
+          { value: "24/7", label: "приём заявок" },
+          { value: "2 года", label: "акцент на гарантии" },
+          { value: "auarai.net", label: "в продакшене" },
+        ],
+      },
+      kk: {
+        title: "AuaRai Control",
+        summary:
+          "Астанадағы кондиционер жөндеу және орнату сервисінің лендингі: сол күні өтінім, WhatsApp және ашық баға.",
+        imageAlt: "AuaRai Control кондиционер сервисі",
+        industry: "Local services / HVAC",
+        duration: "2 апта",
+        challenge:
+          "AuaRai Control-ға іздеу мен WhatsApp арқылы өтінім әкелетін сайт керек болды: түсінікті қызметтер, «бастап» баға, шеберлерге сенім және жылдам «қоңырау / жазу» жолы.",
+        solution:
+          "Next.js негізінде конверсиялық лендинг жасадық: «сол күні шығу» офферы, қызметтер, прайс, 5 қадамды процесс, пікірлер мен FAQ. Телефон/WhatsApp батырмалары, Астана бойынша жергілікті SEO және мобильді бейімдеу қосылды.",
+        results: [
+          "Бірінші экранда анық оффер және CTA",
+          "Қызметтер мен прайс құрылымы қоңырауға дейін сұрақтарды азайтады",
+          "Астана мен жұмыс түрлері бойынша жергілікті SEO",
+        ],
+        metrics: [
+          { value: "24/7", label: "өтінім қабылдау" },
+          { value: "2 жыл", label: "кепілдік акценті" },
+          { value: "auarai.net", label: "продакшенде" },
+        ],
+      },
+      en: {
+        title: "AuaRai Control",
+        summary:
+          "Landing page for an Astana AC repair & install service: same-day calls, WhatsApp, and transparent pricing.",
+        imageAlt: "AuaRai Control air conditioning service",
+        industry: "Local services / HVAC",
+        duration: "2 wk",
+        challenge:
+          "AuaRai Control needed a site that drives search and WhatsApp leads: clear services, from-pricing, trust in technicians, and a fast call/message path. The previous format didn’t cover Astana SEO or explain the offer in the first seconds.",
+        solution:
+          "We built a conversion-focused Next.js landing: same-day dispatch hero, service blocks (repair, install, cleaning, refill, outdoor unit move), pricing, a 5-step process, testimonials, and FAQ. Clickable phone/WhatsApp, local SEO for Astana districts, mobile-first layout, and 24/7 urgent-call cues.",
+        results: [
+          "Clear first-screen offer with call and WhatsApp CTAs",
+          "Services + pricing structure reduce “how much?” questions before contact",
+          "Local SEO and FAQ for Astana and work-type queries",
+        ],
+        metrics: [
+          { value: "24/7", label: "lead intake" },
+          { value: "2 yr", label: "warranty focus" },
+          { value: "auarai.net", label: "live" },
+        ],
+      },
+    },
+  },
+  {
+    slug: "abdrahmanov",
+    tags: ["Next.js", "Tailwind", "SEO", "CRO"],
+    imageSrc: "/portfolio/abdrahmanov.jpg",
+    year: "2026",
+    liveUrl: "https://abdrahmanov.vercel.app",
+    locales: {
+      ru: {
+        title: "ИП Абдрахманов",
+        summary:
+          "Лендинг аренды экскаватора Hyundai 140 в Астане: ставки, услуги, WhatsApp и выезд 24/7 по Казахстану.",
+        imageAlt: "Сайт аренды экскаватора ИП Абдрахманов",
+        industry: "Local services / Construction",
+        duration: "2 нед",
+        challenge:
+          "ИП Абдрахманов нужен был сайт под прямые заявки на аренду техники: понятный оффер «своя техника без посредников», прозрачные ставки (час / смена / фикс), доверие к опыту и быстрый контакт через WhatsApp, звонок и Telegram. Важно было закрыть локальный поиск по Астане и показать спектр работ — от котлованов до гидромолота.",
+        solution:
+          "Собрали конверсионный лендинг: hero с оффером 24/7, блок услуг (котлованы, траншеи, планировка, вывоз, демонтаж), парк Hyundai 140, прайс, преимущества, процесс из 4 шагов, география, отзывы и FAQ. Добавили кликабельные CTA, акцент на безнал/документы для юрлиц и мобильную адаптацию.",
+        results: [
+          "Оффер и цены видны на первом экране — меньше «сколько стоит?» до звонка",
+          "Структура услуг закрывает типовые запросы по земляным работам",
+          "Прямые каналы связи: WhatsApp, звонок, Telegram",
+        ],
+        metrics: [
+          { value: "22 000 ₸", label: "ставка в оффере" },
+          { value: "24/7", label: "выезд" },
+          { value: "live", label: "на Vercel" },
+        ],
+      },
+      kk: {
+        title: "ИП Абдрахманов",
+        summary:
+          "Астанадағы Hyundai 140 экскаватор жалдау лендингі: тарифтер, қызметтер, WhatsApp және 24/7 шығу.",
+        imageAlt: "ИП Абдрахманов экскаватор жалдау сайты",
+        industry: "Local services / Construction",
+        duration: "2 апта",
+        challenge:
+          "ИП Абдрахманов-қа техника жалдауға тікелей өтінім әкелетін сайт керек болды: «өз техникасы, делдалсыз» офферы, ашық тарифтер, тәжірибеге сенім және WhatsApp / қоңырау / Telegram арқылы жылдам байланыс.",
+        solution:
+          "Конверсиялық лендинг жасадық: 24/7 оффер, қызметтер, Hyundai 140 паркі, прайс, артықшылықтар, 4 қадамды процесс, география, пікірлер мен FAQ. Юрлицаға арналған құжат/безнал акценті және мобильді бейімдеу қосылды.",
+        results: [
+          "Бірінші экранда оффер мен бағалар — қоңырауға дейін сұрақ азаяды",
+          "Қызметтер құрылымы жер жұмыстары бойынша типтік сұрауларды жабады",
+          "Тікелей байланыс: WhatsApp, қоңырау, Telegram",
+        ],
+        metrics: [
+          { value: "22 000 ₸", label: "оффердегі тариф" },
+          { value: "24/7", label: "шығу" },
+          { value: "live", label: "Vercel-де" },
+        ],
+      },
+      en: {
+        title: "Abdrakhmanov Excavator",
+        summary:
+          "Landing page for Hyundai 140 excavator rental in Astana: rates, services, WhatsApp, and 24/7 dispatch across Kazakhstan.",
+        imageAlt: "Abdrakhmanov excavator rental website",
+        industry: "Local services / Construction",
+        duration: "2 wk",
+        challenge:
+          "IP Abdrakhmanov needed a site for direct equipment-rental leads: a clear “own fleet, no middlemen” offer, transparent hour/shift/fixed rates, trust in experience, and fast WhatsApp / call / Telegram contact — plus Astana local search coverage.",
+        solution:
+          "We built a conversion landing: 24/7 hero, service blocks (pits, trenches, grading, haul-off, demolition), Hyundai 140 fleet, pricing, benefits, 4-step process, geography, testimonials, and FAQ. Clickable CTAs, B2B docs/bank-transfer cues, and mobile-first layout.",
+        results: [
+          "Offer and rates visible above the fold — fewer price questions before contact",
+          "Service structure covers typical earthwork search intents",
+          "Direct channels: WhatsApp, call, Telegram",
+        ],
+        metrics: [
+          { value: "22,000 ₸", label: "rate in offer" },
+          { value: "24/7", label: "dispatch" },
+          { value: "live", label: "on Vercel" },
+        ],
+      },
+    },
+  },
+  {
+    slug: "shanyrak",
+    tags: ["Next.js", "Tailwind", "SEO", "CRO"],
+    imageSrc: "/portfolio/shanyrak.jpg",
+    year: "2026",
+    liveUrl: "https://shanyrak-omega.vercel.app",
+    locales: {
+      ru: {
+        title: "Shanyrak",
+        summary:
+          "Лендинг ремонта квартир под ключ в Астане: пакеты от 85 000 ₸/м², фиксированная смета и заявка в WhatsApp.",
+        imageAlt: "Сайт ремонта под ключ Shanyrak",
+        industry: "Local services / Renovation",
+        duration: "2 нед",
+        challenge:
+          "Shanyrak нужен был сайт, который снимает страх «смета раздуется»: понятные пакеты Стандарт/Комфорт, фиксированная цена в договоре, доверие к процессу и быстрый путь к бесплатной смете через WhatsApp. Важно закрыть локальный поиск по ремонту в Астане и показать реальные объекты.",
+        solution:
+          "Собрали конверсионный лендинг: hero с оффером без сюрпризов в смете, пакеты с составом материалов, процесс из 4 шагов, портфолио объектов, отзывы, FAQ и формы заявки в WhatsApp. Добавили кликабельные телефоны, акцент на поэтапную оплату и гарантию 2 года, мобильную адаптацию.",
+        results: [
+          "Пакеты и цена за м² видны сразу — меньше вопросов до звонка",
+          "Форма ведёт в WhatsApp: короткий путь до заявки",
+          "FAQ и процесс закрывают типичные возражения по смете и срокам",
+        ],
+        metrics: [
+          { value: "85k ₸/м²", label: "пакет в оффере" },
+          { value: "2 года", label: "гарантия" },
+          { value: "live", label: "на Vercel" },
+        ],
+      },
+      kk: {
+        title: "Shanyrak",
+        summary:
+          "Астанадағы пәтерді кілтпен жөндеу лендингі: 85 000 ₸/м²-ден пакеттер, бекітілген смета және WhatsApp өтінімі.",
+        imageAlt: "Shanyrak кілтпен жөндеу сайты",
+        industry: "Local services / Renovation",
+        duration: "2 апта",
+        challenge:
+          "Shanyrak-қа «смета өсіп кетеді» қорқынышын алатын сайт керек болды: Стандарт/Комфорт пакеттері, шарттағы бекітілген баға, процесске сенім және WhatsApp арқылы тегін сметаға жылдам жол.",
+        solution:
+          "Конверсиялық лендинг жасадық: сметада тосынсыздығы жоқ оффер, материалдар тізімі бар пакеттер, 4 қадамды процесс, портфолио, пікірлер, FAQ және WhatsApp формалары. Телефондар, кезеңдік төлем және 2 жыл кепілдік акценті қосылды.",
+        results: [
+          "Пакеттер мен м² бағасы бірден көрінеді",
+          "Форма WhatsApp-қа жетелейді — өтінім жолы қысқа",
+          "FAQ мен процесс смета/мерзім бойынша қарсылықтарды жабады",
+        ],
+        metrics: [
+          { value: "85k ₸/м²", label: "оффердегі пакет" },
+          { value: "2 жыл", label: "кепілдік" },
+          { value: "live", label: "Vercel-де" },
+        ],
+      },
+      en: {
+        title: "Shanyrak",
+        summary:
+          "Turnkey apartment renovation landing in Astana: packages from 85,000 ₸/m², fixed estimate, WhatsApp lead form.",
+        imageAlt: "Shanyrak turnkey renovation website",
+        industry: "Local services / Renovation",
+        duration: "2 wk",
+        challenge:
+          "Shanyrak needed a site that removes the fear of ballooning estimates: clear Standard/Comfort packages, contract-fixed pricing, process trust, and a fast free-quote path via WhatsApp — plus Astana local search coverage and real project photos.",
+        solution:
+          "We built a conversion landing: no-surprises hero, packages with material lists, 4-step process, portfolio, reviews, FAQ, and WhatsApp forms. Clickable phones, staged payment and 2-year warranty cues, mobile-first layout.",
+        results: [
+          "Packages and ₸/m² pricing visible above the fold",
+          "Form routes to WhatsApp for a short lead path",
+          "FAQ and process address estimate and timeline objections",
+        ],
+        metrics: [
+          { value: "85k ₸/m²", label: "package in offer" },
+          { value: "2 yr", label: "warranty" },
+          { value: "live", label: "on Vercel" },
+        ],
+      },
+    },
+  },
   {
     slug: "fintech-portal",
     tags: ["Next.js", "TypeScript", "PostgreSQL"],

@@ -7,6 +7,8 @@ interface ButtonProps {
   href?: string;
   type?: "button" | "submit";
   className?: string;
+  target?: string;
+  rel?: string;
 }
 
 const variants = {
@@ -33,6 +35,8 @@ export function Button({
   href,
   type = "button",
   className = "",
+  target,
+  rel,
 }: ButtonProps) {
   const base =
     "inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-canvas dark:focus:ring-offset-canvas-dark";
@@ -41,7 +45,7 @@ export function Button({
 
   if (href) {
     return (
-      <a href={href} className={combined}>
+      <a href={href} className={combined} target={target} rel={rel}>
         {children}
       </a>
     );

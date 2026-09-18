@@ -109,6 +109,7 @@ export const messages = {
       portfolioDuration: "Срок",
       portfolioCtaTitle: "Похожий проект?",
       portfolioCtaDesc: "Расскажите задачу — подготовим оценку и план работ.",
+      portfolioLiveSite: "Открыть сайт",
     },
     pricing: {
       tag: "Pricing",
@@ -310,6 +311,7 @@ export const messages = {
       portfolioDuration: "Мерзім",
       portfolioCtaTitle: "Ұқсас жоба бар ма?",
       portfolioCtaDesc: "Міндетті айтыңыз — бағалау мен жоспар дайындаймыз.",
+      portfolioLiveSite: "Сайтты ашу",
     },
     pricing: {
       tag: "Pricing",
@@ -511,6 +513,7 @@ export const messages = {
       portfolioDuration: "Timeline",
       portfolioCtaTitle: "Have a similar project?",
       portfolioCtaDesc: "Tell us the brief — we’ll prepare an estimate and plan.",
+      portfolioLiveSite: "Open website",
     },
     pricing: {
       tag: "Pricing",
