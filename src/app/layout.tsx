@@ -6,6 +6,7 @@ import { I18nProvider } from "@/components/i18n/I18nProvider";
 import { ScrollToHash } from "@/components/layout/ScrollToHash";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL, siteJsonLd } from "@/lib/site";
 import "./globals.css";
 
 const syne = Syne({
@@ -42,13 +43,28 @@ const themeScript = `
   })();
 `;
 
-const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://devsystems.dev").replace(/\/$/, "");
+const siteUrl = SITE_URL;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "DevSystems — веб-студия разработки",
-  description:
-    "Лендинги, сервисы и MVP под ключ. Дизайн, разработка, SEO и запуск. Астана и удалённо.",
+  title: {
+    default: `${SITE_NAME} — веб-студия в Астане`,
+    template: `%s — ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    type: "website",
+    locale: "ru_RU",
+    url: siteUrl,
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} — веб-студия в Астане`,
+    description: SITE_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary",
+    title: `${SITE_NAME} — веб-студия в Астане`,
+    description: SITE_DESCRIPTION,
+  },
   robots: {
     index: true,
     follow: true,
@@ -97,6 +113,10 @@ export default function RootLayout({
       <body
         className={`${syne.variable} ${manrope.variable} ${jetbrainsMono.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd()) }}
+        />
         <div className="grain" aria-hidden />
         <noscript>
           <div>

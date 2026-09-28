@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { useI18n } from "@/components/i18n/I18nProvider";
 import {
+  getLivePortfolioProjects,
   getLocalizedProject,
   type PortfolioProject,
 } from "@/lib/portfolio";
@@ -108,6 +109,36 @@ export function PortfolioCaseClient({ project }: Props) {
                   ))}
                 </ul>
               </section>
+
+              <nav className="mt-10 border-t border-line pt-8 dark:border-line-dark" aria-label={m.nav.portfolio}>
+                <h2 className="font-display text-xl font-semibold text-ink dark:text-white">
+                  {m.nav.portfolio}
+                </h2>
+                <ul className="mt-4 space-y-2">
+                  {getLivePortfolioProjects()
+                    .filter((item) => item.slug !== project.slug)
+                    .map((item) => (
+                      <li key={item.slug}>
+                        <Link
+                          href={`/portfolio/${item.slug}`}
+                          className="text-accent transition hover:text-accent-hover"
+                        >
+                          {getLocalizedProject(locale, item).title}
+                        </Link>
+                      </li>
+                    ))}
+                  <li>
+                    <Link href="/pricing" className="text-accent transition hover:text-accent-hover">
+                      {m.nav.pricing}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/blog" className="text-accent transition hover:text-accent-hover">
+                      {m.nav.blog}
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
             </article>
 
             <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">

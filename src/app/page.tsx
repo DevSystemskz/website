@@ -6,8 +6,16 @@ import { TechMarquee } from "@/components/sections/TechMarquee";
 import { BlogTeaser } from "@/components/sections/BlogTeaser";
 
 export const metadata: Metadata = {
+  description:
+    "Студия DevSystems в Астане делает сайты, лендинги и MVP, которые приводят заявки: дизайн, разработка, SEO и запуск.",
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    title: "DevSystems — веб-студия в Астане",
+    description:
+      "Сайты, лендинги и MVP под ключ. Дизайн, разработка, SEO и запуск.",
+    url: "/",
   },
 };
 

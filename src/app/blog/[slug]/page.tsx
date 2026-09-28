@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -7,6 +8,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/ui/Container";
 import { BlogBackLink } from "@/components/blog/BlogBackLink";
+import { ArticleLinks } from "@/components/seo/ArticleLinks";
 import { getAllPostsMeta, getPostBySlug } from "@/lib/blog";
 
 type Props = {
@@ -20,14 +22,14 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
-  if (!post) return { title: "Статья не найдена — DevSystems" };
+  if (!post) return { title: { absolute: "Статья не найдена — DevSystems" } };
 
   const url = `/blog/${slug}`;
   const title = post.seoTitle || post.title;
   const description = post.seoDescription || post.excerpt;
 
   return {
-    title: `${post.title} — DevSystems`,
+    title: post.title,
     description,
     keywords: post.keywords,
     alternates: {
@@ -58,9 +60,11 @@ export default async function BlogPostPage({ params }: Props) {
 
   const site = "https://devsystems.dev";
   const url = `${site}/blog/${slug}`;
-  const related = getAllPostsMeta()
-    .filter((item) => item.slug !== slug)
-    .slice(0, 3);
+  const others = getAllPostsMeta().filter((item) => item.slug !== slug);
+  const related = [
+    ...others.filter((item) => item.tag === post.tag),
+    ...others.filter((item) => item.tag !== post.tag),
+  ].slice(0, 3);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -126,6 +130,8 @@ export default async function BlogPostPage({ params }: Props) {
               <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
             </div>
 
+            <ArticleLinks />
+
             {related.length > 0 && (
               <nav className="mt-14 border-t border-line pt-8 dark:border-line-dark" aria-label="Другие статьи">
                 <h2 className="font-display text-xl font-semibold text-ink dark:text-white">
@@ -134,12 +140,12 @@ export default async function BlogPostPage({ params }: Props) {
                 <ul className="mt-4 space-y-3">
                   {related.map((item) => (
                     <li key={item.slug}>
-                      <a
+                      <Link
                         href={`/blog/${item.slug}`}
                         className="text-accent transition hover:text-accent-hover"
                       >
                         {item.title}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>

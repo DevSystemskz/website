@@ -712,6 +712,14 @@ export function getPortfolioProject(slug: string): PortfolioProject | undefined 
   return projects.find((p) => p.slug === slug);
 }
 
+const LIVE_CASE_SLUGS = ["auarai", "abdrahmanov", "shanyrak"] as const;
+
+export function getLivePortfolioProjects(): PortfolioProject[] {
+  return LIVE_CASE_SLUGS.map((slug) => projects.find((project) => project.slug === slug)).filter(
+    (project): project is PortfolioProject => Boolean(project),
+  );
+}
+
 export function getPortfolioCard(locale: Locale, project: PortfolioProject) {
   const content = project.locales[locale];
   return {

@@ -2,11 +2,17 @@ import type { Metadata } from "next";
 import { PricingPageClient } from "@/components/pricing/PricingPageClient";
 
 export const metadata: Metadata = {
-  title: "Pricing / Прайс — DevSystems",
+  title: "Прайс на сайты и разработку",
   description:
-    "Service pricing for DevSystems: websites, MVPs, mobile apps, AI integrations, DevOps, and support.",
+    "Стоимость сайтов, MVP, мобильных приложений, AI-интеграций и поддержки в студии DevSystems. Оценка за 1–2 дня.",
   alternates: {
     canonical: "/pricing",
+  },
+  openGraph: {
+    title: "Прайс DevSystems",
+    description:
+      "Стоимость сайтов, MVP, приложений и поддержки. Оценка за 1–2 дня.",
+    url: "/pricing",
   },
 };
 

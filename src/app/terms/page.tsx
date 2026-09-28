@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { TermsPageClient } from "@/components/legal/TermsPageClient";
 
 export const metadata: Metadata = {
-  title: "Terms of Use / Условия использования — DevSystems",
-  description: "Terms of Use for DevSystems website and services.",
+  title: { absolute: "Условия использования — DevSystems" },
+  description: "Условия использования сайта и сервисов DevSystems.",
   alternates: {
     canonical: "/terms",
   },
+  robots: { index: false, follow: true },
 };
 
 export default function TermsPage() {

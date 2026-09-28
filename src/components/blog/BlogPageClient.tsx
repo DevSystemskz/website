@@ -144,7 +144,9 @@ export function BlogPageClient({
                       <span className="font-mono text-xs text-ink-faint">{post.date}</span>
                     </div>
                     <h2 className="font-display text-lg font-semibold text-ink dark:text-white">
-                      {post.title}
+                      <Link href={`/blog/${post.slug}`} className="transition hover:text-accent">
+                        {post.title}
+                      </Link>
                     </h2>
                     <p className="mt-3 text-sm text-ink-muted dark:text-ink-faint">
                       {post.excerpt}

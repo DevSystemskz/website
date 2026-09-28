@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { BlogPageClient } from "@/components/blog/BlogPageClient";
 import { getAllPostsMeta } from "@/lib/blog";
+import { SITE_URL } from "@/lib/site";
 
 const POSTS_PER_PAGE = 50;
 
@@ -17,11 +18,17 @@ export async function generateMetadata({
   const isIndexable = !topic && (Number.isNaN(page) || page <= 1);
 
   return {
-    title: "Блог — DevSystems",
+    title: "Блог о разработке",
     description:
-      "Статьи DevSystems о разработке ПО: архитектура, AI, блокчейн и запуск цифровых продуктов.",
+      "Статьи DevSystems о разработке сайтов, архитектуре, AI и запуске цифровых продуктов.",
     alternates: {
       canonical: "/blog",
+    },
+    openGraph: {
+      title: "Блог DevSystems",
+      description:
+        "Статьи о разработке сайтов, архитектуре, AI и запуске продуктов.",
+      url: "/blog",
     },
     robots: isIndexable
       ? { index: true, follow: true }
@@ -43,14 +50,36 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   const safePage = Math.min(currentPage, totalPages);
   const start = (safePage - 1) * POSTS_PER_PAGE;
   const pagePosts = filteredPosts.slice(start, start + POSTS_PER_PAGE);
+  const showIndex = !selectedTopic && safePage === 1;
+  const itemList = showIndex
+    ? {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: "Блог DevSystems",
+        itemListElement: allPosts.map((post, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          url: `${SITE_URL}/blog/${post.slug}`,
+          name: post.title,
+        })),
+      }
+    : null;
 
   return (
-    <BlogPageClient
-      posts={pagePosts}
-      allPosts={allPosts}
-      selectedTopic={selectedTopic}
-      currentPage={safePage}
-      totalPages={totalPages}
-    />
+    <>
+      {itemList && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(itemList) }}
+        />
+      )}
+      <BlogPageClient
+        posts={pagePosts}
+        allPosts={allPosts}
+        selectedTopic={selectedTopic}
+        currentPage={safePage}
+        totalPages={totalPages}
+      />
+    </>
   );
 }

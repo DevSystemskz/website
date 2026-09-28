@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { PrivacyPageClient } from "@/components/legal/PrivacyPageClient";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy / Политика конфиденциальности — DevSystems",
-  description:
-    "Privacy Policy and personal data processing rules of DevSystems.",
+  title: { absolute: "Политика конфиденциальности — DevSystems" },
+  description: "Как DevSystems обрабатывает персональные данные с сайта и заявок.",
   alternates: {
     canonical: "/privacy",
   },
+  robots: { index: false, follow: true },
 };
 
 export default function PrivacyPage() {
