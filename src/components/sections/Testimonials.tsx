@@ -92,7 +92,7 @@ export function Testimonials() {
 
   return (
     <motion.section
-      className="ds-section bg-canvas-muted dark:bg-canvas-dark"
+      className="ds-section bg-canvas-muted dark:bg-canvas-elevated-dark"
       variants={section}
       initial={false}
       whileInView="visible"
@@ -107,7 +107,7 @@ export function Testimonials() {
           />
         </motion.div>
         <motion.div
-          className="mt-14 grid gap-6 md:grid-cols-3"
+          className="mt-10 grid gap-5 md:grid-cols-3 lg:mt-12 lg:gap-6"
           variants={grid}
         >
           {testimonials.map((t) => (

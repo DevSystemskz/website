@@ -77,7 +77,7 @@ export function Contact() {
   return (
     <motion.section
       id="contact"
-      className="ds-section bg-canvas-muted dark:bg-canvas-dark"
+      className="ds-section bg-canvas dark:bg-canvas-dark"
       variants={section}
       initial={false}
       whileInView="visible"

@@ -90,7 +90,7 @@ export function Process() {
   return (
     <motion.section
       id="process"
-      className="ds-section bg-canvas-muted dark:bg-canvas-dark"
+      className="ds-section bg-canvas-muted dark:bg-canvas-elevated-dark"
       variants={section}
       initial={false}
       whileInView="visible"
@@ -105,7 +105,7 @@ export function Process() {
           />
         </motion.div>
         <motion.div
-          className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-10 grid gap-6 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4 lg:gap-8"
           variants={grid}
         >
           {steps.map((step, i) => (

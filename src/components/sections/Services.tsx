@@ -170,7 +170,7 @@ export function Services() {
           />
         </motion.div>
         <motion.div
-          className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5"
+          className="mt-10 grid gap-5 sm:grid-cols-2 lg:mt-12 lg:grid-cols-3 lg:gap-6"
           variants={grid}
         >
           {services.map((s) => (

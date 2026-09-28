@@ -16,16 +16,18 @@ export const messages = {
       discussBtn: "Обсудить проект",
     },
     hero: {
-      titleA: "Создаём цифровые продукты, которые",
-      titleB: "работают на бизнес",
+      eyebrow: "Веб-студия · Астана",
+      titleA: "Сайты и продукты,",
+      titleB: "которые приносят заявки",
       description:
-        "Веб-приложения, мобильные приложения, блокчейн, AI и техническая поддержка. От идеи до запуска и масштабирования.",
+        "Делаем лендинги, сервисы и MVP под ключ: дизайн, разработка, SEO и запуск. От идеи до первых лидов — без лишней бюрократии.",
       discussBtn: "Обсудить проект",
+      portfolioBtn: "Смотреть работы",
       servicesBtn: "Наши услуги",
       stats: [
-        { n: "50+", t: "реализованных проектов" },
+        { n: "50+", t: "запущенных проектов" },
         { n: "8+", t: "лет на рынке" },
-        { n: "100%", t: "фокус на качестве" },
+        { n: "2", t: "дня на оценку" },
       ],
     },
     footer: {
@@ -55,7 +57,7 @@ export const messages = {
       portfolioTag: "Портфолио",
       portfolioTitle: "Избранные проекты",
       portfolioDesc:
-        "Реальные задачи: от MVP до масштабируемых продуктов. Названия и детали могут быть изменены под ваш кейс.",
+        "Три живых проекта в продакшене. Откройте кейс — задача, решение и результат.",
       processTag: "Процесс",
       processTitle: "Как мы работаем",
       processDesc:
@@ -218,16 +220,18 @@ export const messages = {
       discussBtn: "Жобаны талқылау",
     },
     hero: {
-      titleA: "Біз бизнеске",
-      titleB: "нәтиже беретін цифрлық өнімдер жасаймыз",
+      eyebrow: "Веб-студия · Астана",
+      titleA: "Сайттар мен өнімдер,",
+      titleB: "өтінім әкеледі",
       description:
-        "Веб-қосымшалар, мобильді қосымшалар, блокчейн, AI және техникалық қолдау. Идеядан бастап іске қосу мен масштабтауға дейін.",
+        "Лендинг, сервис және MVP-ді кілтпен жасаймыз: дизайн, әзірлеу, SEO және іске қосу. Идеядан алғашқы лидтерге дейін.",
       discussBtn: "Жобаны талқылау",
+      portfolioBtn: "Жұмыстарды қарау",
       servicesBtn: "Қызметтеріміз",
       stats: [
-        { n: "50+", t: "аяқталған жоба" },
+        { n: "50+", t: "іске қосылған жоба" },
         { n: "8+", t: "нарықтағы жыл" },
-        { n: "100%", t: "сапаға фокус" },
+        { n: "2", t: "күнде бағалау" },
       ],
     },
     footer: {
@@ -257,7 +261,7 @@ export const messages = {
       portfolioTag: "Портфолио",
       portfolioTitle: "Таңдамалы жобалар",
       portfolioDesc:
-        "Нақты міндеттер: MVP-ден масштабталатын өнімдерге дейін. Атаулар мен детальдар кейсіңізге қарай өзгертілуі мүмкін.",
+        "Үш тірі жоба продакшенде. Кейсті ашыңыз — міндет, шешім және нәтиже.",
       processTag: "Процесс",
       processTitle: "Біз қалай жұмыс істейміз",
       processDesc:
@@ -420,16 +424,18 @@ export const messages = {
       discussBtn: "Discuss project",
     },
     hero: {
-      titleA: "We build digital products that",
-      titleB: "drive business growth",
+      eyebrow: "Web studio · Astana",
+      titleA: "Sites and products that",
+      titleB: "bring in leads",
       description:
-        "Web apps, mobile apps, blockchain, AI integrations, and long-term support. From idea to launch and scaling.",
+        "We build landings, services, and MVPs end-to-end: design, engineering, SEO, and launch. From idea to first leads — without the bureaucracy.",
       discussBtn: "Discuss project",
+      portfolioBtn: "See our work",
       servicesBtn: "Our services",
       stats: [
-        { n: "50+", t: "projects delivered" },
+        { n: "50+", t: "projects shipped" },
         { n: "8+", t: "years on market" },
-        { n: "100%", t: "quality focus" },
+        { n: "2", t: "days to estimate" },
       ],
     },
     footer: {
@@ -459,7 +465,7 @@ export const messages = {
       portfolioTag: "Portfolio",
       portfolioTitle: "Selected projects",
       portfolioDesc:
-        "Real-world product cases from MVPs to scalable systems. Names and details can be adapted to your context.",
+        "Three live projects in production. Open a case for the challenge, solution, and results.",
       processTag: "Process",
       processTitle: "How we work",
       processDesc:

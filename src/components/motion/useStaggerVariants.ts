@@ -20,14 +20,12 @@ export function useStaggerVariants() {
   const item: Variants = {
     hidden: {
       opacity: reduce ? 1 : 0,
-      y: reduce ? 0 : 32,
-      filter: reduce ? "blur(0px)" : "blur(10px)",
+      y: reduce ? 0 : 16,
     },
     visible: {
       opacity: 1,
       y: 0,
-      filter: "blur(0px)",
-      transition: { duration: reduce ? 0 : 0.62, ease: [...smoothEase] },
+      transition: { duration: reduce ? 0 : 0.45, ease: [...smoothEase] },
     },
   };
 

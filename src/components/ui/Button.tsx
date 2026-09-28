@@ -39,7 +39,7 @@ export function Button({
   rel,
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-canvas dark:focus:ring-offset-canvas-dark";
+    "inline-flex items-center justify-center font-semibold transition-all duration-150 active:scale-[0.97] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-canvas dark:focus:ring-offset-canvas-dark";
 
   const combined = `${base} ${variants[variant]} ${sizes[size]} ${className}`;
 

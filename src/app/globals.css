@@ -57,6 +57,12 @@ body {
   opacity: 0.06;
 }
 
+@media (max-width: 767px), (prefers-reduced-motion: reduce) {
+  .grain {
+    display: none;
+  }
+}
+
 .text-accent-gradient {
   background: linear-gradient(120deg, #0c9b95 0%, #14c4bc 45%, #0a8580 100%);
   -webkit-background-clip: text;
@@ -162,12 +168,14 @@ section[id] {
 
 .ds-section {
   border-top: 1px solid var(--color-line);
-  padding-block: 5rem;
+  padding-block: 3.5rem;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 640px;
 }
 
 @media (min-width: 1024px) {
   .ds-section {
-    padding-block: 7rem;
+    padding-block: 5rem;
   }
 }
 

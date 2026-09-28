@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { BlogPageClient } from "@/components/blog/BlogPageClient";
 import { getAllPostsMeta } from "@/lib/blog";
 
-const POSTS_PER_PAGE = 4;
+const POSTS_PER_PAGE = 50;
 
 type BlogPageProps = {
   searchParams?: Promise<{ page?: string; topic?: string }>;
@@ -14,18 +14,18 @@ export async function generateMetadata({
   const params = (await searchParams) ?? {};
   const page = Number.parseInt(params.page ?? "1", 10);
   const topic = params.topic?.trim();
-  const query = new URLSearchParams();
-  if (!Number.isNaN(page) && page > 1) query.set("page", String(page));
-  if (topic) query.set("topic", topic);
-  const queryString = query.toString();
+  const isIndexable = !topic && (Number.isNaN(page) || page <= 1);
 
   return {
-    title: "Блог / Blog — DevSystems",
+    title: "Блог — DevSystems",
     description:
       "Статьи DevSystems о разработке ПО: архитектура, AI, блокчейн и запуск цифровых продуктов.",
     alternates: {
-      canonical: queryString ? `/blog?${queryString}` : "/blog",
+      canonical: "/blog",
     },
+    robots: isIndexable
+      ? { index: true, follow: true }
+      : { index: false, follow: true },
   };
 }
 

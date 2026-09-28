@@ -63,7 +63,7 @@ export function About() {
   return (
     <motion.section
       id="about"
-      className="ds-section bg-canvas-muted dark:bg-canvas-dark"
+      className="ds-section bg-canvas dark:bg-canvas-dark"
       variants={section}
       initial={false}
       whileInView="visible"

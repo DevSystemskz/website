@@ -10,6 +10,9 @@ export type BlogPostMeta = {
   tag: string;
   imageSrc: string;
   imageAlt: string;
+  seoTitle: string;
+  seoDescription: string;
+  keywords: string[];
 };
 
 export type BlogPost = BlogPostMeta & {
@@ -32,6 +35,9 @@ function toMeta(slug: string, data: Record<string, unknown>): BlogPostMeta {
     tag: String(data.tag ?? "General"),
     imageSrc: String(data.imageSrc ?? ""),
     imageAlt: String(data.imageAlt ?? ""),
+    seoTitle: String(data.seoTitle ?? data.title ?? slug),
+    seoDescription: String(data.seoDescription ?? data.excerpt ?? ""),
+    keywords: Array.isArray(data.keywords) ? data.keywords.map(String) : [],
   };
 }
 

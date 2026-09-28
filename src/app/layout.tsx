@@ -11,19 +11,25 @@ import "./globals.css";
 const syne = Syne({
   variable: "--font-syne",
   subsets: ["latin", "latin-ext"],
-  weight: ["500", "600", "700", "800"],
+  weight: ["700"],
+  display: "swap",
+  preload: false,
 });
 
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin", "cyrillic"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600"],
+  display: "swap",
+  preload: true,
 });
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin", "cyrillic"],
-  weight: ["400", "500"],
+  weight: ["400"],
+  display: "swap",
+  preload: false,
 });
 
 const themeScript = `
@@ -40,11 +46,18 @@ const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://devsystems.dev").r
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "DevSystems — Разработка программного обеспечения",
+  title: "DevSystems — веб-студия разработки",
   description:
-    "Веб и мобильная разработка, облачные решения, интеграции и поддержка. От идеи до запуска и масштабирования.",
-  alternates: {
-    canonical: "/",
+    "Лендинги, сервисы и MVP под ключ. Дизайн, разработка, SEO и запуск. Астана и удалённо.",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   verification: {
     google: "3xCMeJGFQymP5Q2u2tj3KKyorIQp7eqi7o9Cb0Ggetc",
@@ -61,25 +74,23 @@ export default function RootLayout({
     <html lang="ru" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-        <Script id="yandex-metrika" strategy="afterInteractive">
+        <Script id="yandex-metrika" strategy="lazyOnload">
           {`
-            (function(m,e,t,r,i,k,a){
-              m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-              m[i].l=1*new Date();
-              for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-              k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-            })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=108717678', 'ym');
+            setTimeout(function () {
+              (function(m,e,t,r,i,k,a){
+                m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                m[i].l=1*new Date();
+                for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+              })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=108717678', 'ym');
 
-            ym(108717678, 'init', {
-              ssr: true,
-              webvisor: true,
-              clickmap: true,
-              ecommerce: "dataLayer",
-              referrer: document.referrer,
-              url: location.href,
-              accurateTrackBounce: true,
-              trackLinks: true
-            });
+              ym(108717678, 'init', {
+                ssr: true,
+                clickmap: true,
+                accurateTrackBounce: true,
+                trackLinks: true
+              });
+            }, 4500);
           `}
         </Script>
       </head>

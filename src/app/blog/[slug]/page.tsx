@@ -22,11 +22,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPostBySlug(slug);
   if (!post) return { title: "Статья не найдена — DevSystems" };
 
+  const url = `/blog/${slug}`;
+  const title = post.seoTitle || post.title;
+  const description = post.seoDescription || post.excerpt;
+
   return {
     title: `${post.title} — DevSystems`,
-    description: post.excerpt,
+    description,
+    keywords: post.keywords,
     alternates: {
-      canonical: `/blog/${slug}`,
+      canonical: url,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    openGraph: {
+      type: "article",
+      url,
+      title,
+      description,
+      publishedTime: post.date,
+      modifiedTime: post.date,
+      tags: post.keywords,
+      images: post.imageSrc ? [{ url: post.imageSrc, alt: post.imageAlt }] : undefined,
     },
   };
 }
@@ -37,12 +56,46 @@ export default async function BlogPostPage({ params }: Props) {
 
   if (!post) notFound();
 
+  const site = "https://devsystems.dev";
+  const url = `${site}/blog/${slug}`;
+  const related = getAllPostsMeta()
+    .filter((item) => item.slug !== slug)
+    .slice(0, 3);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.seoDescription || post.excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    inLanguage: "ru",
+    mainEntityOfPage: url,
+    url,
+    keywords: post.keywords.join(", "),
+    image: post.imageSrc || undefined,
+    author: {
+      "@type": "Organization",
+      name: "DevSystems",
+      url: site,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "DevSystems",
+      url: site,
+    },
+  };
+
   return (
     <>
       <Header />
       <main className="min-h-screen bg-canvas pt-24 dark:bg-canvas-dark">
         <Container className="py-12 lg:py-16">
           <BlogBackLink />
+
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
 
           <article className="w-full max-w-3xl">
             <div className="mb-5 flex items-center gap-3 font-mono text-sm text-ink-faint">
@@ -72,6 +125,26 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="article-content mt-10 max-w-none">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
             </div>
+
+            {related.length > 0 && (
+              <nav className="mt-14 border-t border-line pt-8 dark:border-line-dark" aria-label="Другие статьи">
+                <h2 className="font-display text-xl font-semibold text-ink dark:text-white">
+                  Другие статьи
+                </h2>
+                <ul className="mt-4 space-y-3">
+                  {related.map((item) => (
+                    <li key={item.slug}>
+                      <a
+                        href={`/blog/${item.slug}`}
+                        className="text-accent transition hover:text-accent-hover"
+                      >
+                        {item.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            )}
           </article>
         </Container>
       </main>
