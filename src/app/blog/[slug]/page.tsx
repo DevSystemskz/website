@@ -7,8 +7,8 @@ import remarkGfm from "remark-gfm";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/ui/Container";
-import { BlogBackLink } from "@/components/blog/BlogBackLink";
 import { ArticleLinks } from "@/components/seo/ArticleLinks";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { getAllPostsMeta, getPostBySlug } from "@/lib/blog";
 
 type Props = {
@@ -94,7 +94,13 @@ export default async function BlogPostPage({ params }: Props) {
       <Header />
       <main className="min-h-screen bg-canvas pt-24 dark:bg-canvas-dark">
         <Container className="py-12 lg:py-16">
-          <BlogBackLink />
+          <Breadcrumbs
+            items={[
+              { href: "/", label: "Главная" },
+              { href: "/blog", label: "Блог" },
+              { label: post.title },
+            ]}
+          />
 
           <script
             type="application/ld+json"

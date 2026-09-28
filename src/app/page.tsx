@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Hero } from "@/components/sections/Hero";
 import { TechMarquee } from "@/components/sections/TechMarquee";
 import { BlogTeaser } from "@/components/sections/BlogTeaser";
+import { Faq } from "@/components/sections/Faq";
 
 export const metadata: Metadata = {
   description:
@@ -54,6 +55,7 @@ export default function Home() {
         <About />
         <Testimonials />
         <BlogTeaser />
+        <Faq />
         <Contact />
       </main>
       <Footer />

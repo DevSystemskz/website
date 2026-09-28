@@ -22,12 +22,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const ru = project.locales.ru;
   const url = `/portfolio/${slug}`;
+  const indexable = Boolean(project.liveUrl);
   return {
     title: ru.title,
     description: ru.summary,
     alternates: {
       canonical: url,
     },
+    robots: indexable
+      ? { index: true, follow: true }
+      : { index: false, follow: true },
     openGraph: {
       title: ru.title,
       description: ru.summary,

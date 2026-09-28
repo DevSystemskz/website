@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { useI18n } from "@/components/i18n/I18nProvider";
 import {
   getLivePortfolioProjects,
@@ -26,12 +27,13 @@ export function PortfolioCaseClient({ project }: Props) {
       <Header />
       <main className="min-h-screen bg-canvas pt-24 dark:bg-canvas-dark">
         <Container className="py-12 lg:py-16">
-          <Link
-            href="/#portfolio"
-            className="mb-8 inline-flex font-mono text-sm text-accent transition hover:text-accent-hover"
-          >
-            {m.sections.portfolioBack}
-          </Link>
+          <Breadcrumbs
+            items={[
+              { href: "/", label: locale === "en" ? "Home" : locale === "kk" ? "Басты бет" : "Главная" },
+              { href: "/#portfolio", label: m.nav.portfolio },
+              { label: caseData.title },
+            ]}
+          />
 
           <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-14">
             <article>

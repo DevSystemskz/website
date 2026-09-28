@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllPostsMeta } from "@/lib/blog";
-import { getAllPortfolioProjects } from "@/lib/portfolio";
+import { getLivePortfolioProjects } from "@/lib/portfolio";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://devsystems.dev";
@@ -38,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
-    ...getAllPortfolioProjects().map((project) => ({
+    ...getLivePortfolioProjects().map((project) => ({
       url: `${base}/portfolio/${project.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,

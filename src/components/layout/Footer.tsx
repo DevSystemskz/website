@@ -18,9 +18,6 @@ export function Footer() {
       { href: "/pricing", label: m.footer.pricing },
       { href: "/blog", label: m.footer.blog },
       { href: "/#portfolio", label: m.footer.portfolio },
-      { href: "/portfolio/auarai", label: "AuaRai" },
-      { href: "/portfolio/abdrahmanov", label: "ИП Абдрахманов" },
-      { href: "/portfolio/shanyrak", label: "Shanyrak" },
       { href: "/#about", label: m.footer.about },
       { href: "/#team", label: m.footer.team },
       { href: "/#contact", label: m.footer.contact },
@@ -49,6 +46,14 @@ export function Footer() {
             </Link>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-ink-muted dark:text-ink-faint">
               {m.footer.description}
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-ink-muted dark:text-ink-faint">
+              Астана
+              <br />
+              <a href={`mailto:${contactLinks.email}`} className="transition hover:text-accent">
+                {contactLinks.email}
+              </a>
+              <br />
             </p>
             <div className="mt-4 flex gap-4">
               {social.map((s) => (

@@ -59,11 +59,13 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: `${SITE_NAME} — веб-студия в Астане`,
     description: SITE_DESCRIPTION,
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "DevSystems — веб-студия в Астане" }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: `${SITE_NAME} — веб-студия в Астане`,
     description: SITE_DESCRIPTION,
+    images: ["/og.png"],
   },
   robots: {
     index: true,
