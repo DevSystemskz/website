@@ -19,7 +19,7 @@ export function Footer() {
       { href: "/blog", label: m.footer.blog },
       { href: "/#portfolio", label: m.footer.portfolio },
       { href: "/#about", label: m.footer.about },
-      { href: "/#team", label: m.footer.team },
+      { href: "/#faq", label: "FAQ" },
       { href: "/#contact", label: m.footer.contact },
     ],
     services: [

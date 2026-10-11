@@ -9,19 +9,19 @@ export const homeFaq = [
   {
     question: "Что входит в сайт?",
     answer:
-      "Дизайн, вёрстка, адаптация под телефон, формы заявок, базовая SEO-разметка и запуск.",
+      "Дизайн, вёрстка под телефон, формы в WhatsApp или на почту, базовая SEO-разметка и запуск.",
   },
   {
     question: "Когда будет оценка?",
-    answer: "Оценку и план работ готовим за 1–2 дня после описания задачи.",
+    answer: "Вилку бюджета и план работ присылаем за 1–2 дня после описания задачи.",
   },
   {
     question: "На каких языках делаете сайт?",
-    answer: "На русском, казахском и английском — на одном или нескольких сразу.",
+    answer: "На русском, казахском и английском — на одном языке или на нескольких сразу.",
   },
   {
     question: "Где вы работаете?",
-    answer: "В Астане и удалённо по Казахстану.",
+    answer: "В Астане и удалённо по Казахстану. Связь в Telegram и WhatsApp.",
   },
 ] as const;
 
@@ -51,11 +51,17 @@ export function Faq() {
           Вопросы
         </p>
         <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl dark:text-white">
-          Коротко о работе
+          Перед заявкой
         </h2>
+        <p className="mt-3 max-w-2xl text-lg text-ink-muted dark:text-ink-faint">
+          Сроки, состав работ и как считаем бюджет.
+        </p>
         <dl className="mt-10 grid gap-6 md:grid-cols-2">
           {homeFaq.map((item) => (
-            <div key={item.question} className="border border-line bg-canvas-elevated p-5 dark:border-line-dark dark:bg-canvas-elevated-dark">
+            <div
+              key={item.question}
+              className="border border-line bg-canvas-elevated p-5 dark:border-line-dark dark:bg-canvas-elevated-dark"
+            >
               <dt className="font-display text-lg font-semibold text-ink dark:text-white">
                 {item.question}
               </dt>

@@ -7,7 +7,7 @@ export const SITE_URL = (
 export const SITE_NAME = "DevSystems";
 
 export const SITE_DESCRIPTION =
-  "Веб-студия в Астане: лендинги, сервисы и MVP под ключ. Дизайн, разработка, SEO и запуск.";
+  "Веб-студия в Астане: лендинги и MVP под заявки. Дизайн, разработка, SEO-база и запуск. Оценка за 1–2 дня.";
 
 export function siteJsonLd() {
   const orgId = `${SITE_URL}/#organization`;

@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import { PricingPageClient } from "@/components/pricing/PricingPageClient";
 
 export const metadata: Metadata = {
-  title: "Прайс на сайты и разработку",
+  title: "Сколько стоит сайт",
   description:
-    "Стоимость сайтов, MVP, мобильных приложений, AI-интеграций и поддержки в студии DevSystems. Оценка за 1–2 дня.",
+    "Вилки цен на лендинг, корпоративный сайт, MVP и поддержку. Точная смета после брифа — за 1–2 дня.",
   alternates: {
     canonical: "/pricing",
   },
   openGraph: {
-    title: "Прайс DevSystems",
+    title: "Сколько стоит сайт — DevSystems",
     description:
-      "Стоимость сайтов, MVP, приложений и поддержки. Оценка за 1–2 дня.",
+      "Ориентиры по бюджету: лендинг от 200k, корпоративный сайт, MVP. Смета за 1–2 дня.",
     url: "/pricing",
   },
 };

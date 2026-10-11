@@ -1,198 +1,175 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { smoothEase, springSnappy } from "@/lib/motion";
-import { useI18n } from "@/components/i18n/I18nProvider";
-import {
-  getAllPortfolioProjects,
-  getPortfolioCard,
-} from "@/lib/portfolio";
+import { motion, useReducedMotion } from "framer-motion";
 
-function useFeaturedProjects() {
-  const { locale } = useI18n();
-  return getAllPortfolioProjects()
-    .filter((p) => p.liveUrl)
-    .slice(0, 3)
-    .map((p) => ({
-      ...getPortfolioCard(locale, p),
-      liveUrl: p.liveUrl!,
-      year: p.year,
-    }));
-}
+type Token =
+  | { t: "plain"; v: string }
+  | { t: "kw"; v: string }
+  | { t: "fn"; v: string }
+  | { t: "str"; v: string }
+  | { t: "prop"; v: string }
+  | { t: "cmt"; v: string }
+  | { t: "num"; v: string };
 
-function BrowserChrome({
-  url,
-  children,
-}: {
-  url: string;
-  children: ReactNode;
-}) {
-  return (
-    <div className="overflow-hidden rounded-xl border border-line bg-canvas-elevated shadow-[0_24px_80px_-20px_rgba(14,16,20,0.35)] dark:border-line-dark dark:bg-canvas-elevated-dark dark:shadow-[0_24px_80px_-12px_rgba(0,0,0,0.65)]">
-      <div className="flex items-center gap-3 border-b border-line bg-canvas-muted/80 px-3 py-2.5 backdrop-blur-md dark:border-line-dark dark:bg-canvas-dark/80">
-        <div className="flex gap-1.5" aria-hidden>
-          <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
-          <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
-          <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
-        </div>
-        <div className="min-w-0 flex-1 truncate rounded-md bg-canvas px-3 py-1 font-mono text-[11px] text-ink-muted dark:bg-canvas-elevated-dark dark:text-ink-faint">
-          {url.replace(/^https?:\/\//, "")}
-        </div>
-      </div>
-      <div className="relative aspect-[16/10] bg-ink">{children}</div>
-    </div>
-  );
-}
+const lines: Token[][] = [
+  [{ t: "kw", v: "export" }, { t: "plain", v: " " }, { t: "kw", v: "function" }, { t: "plain", v: " " }, { t: "fn", v: "Landing" }, { t: "plain", v: "() {" }],
+  [{ t: "plain", v: "  " }, { t: "kw", v: "return" }, { t: "plain", v: " (" }],
+  [
+    { t: "plain", v: "    <" },
+    { t: "fn", v: "section" },
+    { t: "plain", v: " " },
+    { t: "prop", v: "className" },
+    { t: "plain", v: "=" },
+    { t: "str", v: '"hero"' },
+    { t: "plain", v: ">" },
+  ],
+  [
+    { t: "plain", v: "      <" },
+    { t: "fn", v: "h1" },
+    { t: "plain", v: ">" },
+    { t: "str", v: "Сайт под заявки" },
+    { t: "plain", v: "</" },
+    { t: "fn", v: "h1" },
+    { t: "plain", v: ">" },
+  ],
+  [
+    { t: "plain", v: "      <" },
+    { t: "fn", v: "Button" },
+    { t: "plain", v: " " },
+    { t: "prop", v: "href" },
+    { t: "plain", v: "=" },
+    { t: "str", v: '"https://wa.me/…"' },
+  ],
+  [
+    { t: "plain", v: "        " },
+    { t: "prop", v: "label" },
+    { t: "plain", v: "=" },
+    { t: "str", v: '"Написать"' },
+    { t: "plain", v: " />" },
+  ],
+  [
+    { t: "plain", v: "      <" },
+    { t: "fn", v: "Meta" },
+    { t: "plain", v: " " },
+    { t: "prop", v: "seo" },
+    { t: "plain", v: "=" },
+    { t: "str", v: '"local"' },
+    { t: "plain", v: " " },
+    { t: "prop", v: "lcp" },
+    { t: "plain", v: "=" },
+    { t: "num", v: "90" },
+    { t: "plain", v: " />" },
+  ],
+  [{ t: "plain", v: "    </" }, { t: "fn", v: "section" }, { t: "plain", v: ">" }],
+  [{ t: "plain", v: "  )" }],
+  [{ t: "plain", v: "}" }],
+  [],
+  [{ t: "cmt", v: "// brief → estimate in 1–2 days" }],
+];
+
+const tokenClass: Record<Token["t"], string> = {
+  plain: "text-ink-muted dark:text-[#c8cdd6]",
+  kw: "text-[#0a8580] dark:text-[#5eead4]",
+  fn: "text-[#0284c7] dark:text-[#82aaff]",
+  str: "text-[#0c9b95] dark:text-[#c3e88d]",
+  prop: "text-[#b45309] dark:text-[#ffcb6b]",
+  cmt: "text-ink-faint dark:text-[#676e7b]",
+  num: "text-[#d97706] dark:text-[#f78c6c]",
+};
 
 export function HeroShowcase() {
   const reduce = useReducedMotion();
-  const { m } = useI18n();
-  const featured = useFeaturedProjects();
-  const [active, setActive] = useState(0);
-  const project = featured[active] ?? featured[0];
-
-  if (!project) return null;
 
   return (
     <motion.div
-      className="relative mx-auto hidden w-full max-w-[520px] lg:block"
+      className="relative mx-auto mt-8 w-full max-w-[560px] lg:mt-0"
       initial={false}
+      animate={reduce ? undefined : { y: [0, -5, 0] }}
+      transition={
+        reduce
+          ? undefined
+          : { duration: 9, repeat: Infinity, ease: "easeInOut" }
+      }
     >
-      <BrowserChrome url={project.liveUrl}>
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={project.slug}
-            className="absolute inset-0"
-            initial={false}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={reduce ? undefined : { opacity: 0 }}
-            transition={{ duration: reduce ? 0 : 0.28, ease: smoothEase }}
-          >
-            <Image
-              src={project.imageSrc}
-              alt={project.imageAlt}
-              fill
-              sizes="520px"
-              className="object-cover object-top"
-              quality={65}
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/85 via-ink/35 to-transparent p-5 pt-16">
-              <p className="font-display text-lg font-semibold text-white">
-                {project.title}
-              </p>
-              <p className="mt-1 line-clamp-2 text-sm text-white/65">
-                {project.description}
-              </p>
-              <Link
-                href={`/portfolio/${project.slug}`}
-                className="mt-3 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-accent transition hover:text-white"
-              >
-                {m.sections.portfolioView}
-                <span aria-hidden>→</span>
-              </Link>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-      </BrowserChrome>
-
-      <div className="mt-4 flex gap-2">
-        {featured.map((p, i) => (
-          <motion.button
-            key={p.slug}
-            type="button"
-            onClick={() => setActive(i)}
-            whileTap={reduce ? undefined : { scale: 0.97 }}
-            transition={springSnappy}
-            className={`group relative flex-1 overflow-hidden rounded-lg border text-left transition ${
-              i === active
-                ? "border-accent bg-accent/8 dark:bg-accent/12"
-                : "border-line bg-canvas-elevated hover:border-accent/40 dark:border-line-dark dark:bg-canvas-elevated-dark"
-            }`}
-            aria-pressed={i === active}
-            aria-label={p.title}
-          >
-            <div className="relative aspect-[16/10]">
-              <Image
-                src={p.imageSrc}
-                alt=""
-                fill
-                sizes="120px"
-                className="object-cover object-top opacity-90 transition group-hover:opacity-100"
-              />
-            </div>
-            <span className="block truncate px-2 py-1.5 font-mono text-[10px] uppercase tracking-wide text-ink-muted dark:text-ink-faint">
-              {p.title}
+      <div
+        className="overflow-hidden border border-line bg-canvas-elevated shadow-[0_28px_80px_-36px_rgba(12,155,149,0.35)] dark:border-line-dark dark:bg-[#0e1014] dark:shadow-[0_28px_80px_-16px_rgba(0,0,0,0.75)]"
+        aria-label="Fragment of landing page code"
+      >
+        <div className="flex items-center gap-3 border-b border-line bg-canvas-muted px-3 py-2.5 dark:border-white/10 dark:bg-[#14171c]">
+          <div className="flex gap-1.5" aria-hidden>
+            <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
+          </div>
+          <div className="flex min-w-0 flex-1 items-center gap-2">
+            <span className="truncate border-b-2 border-accent px-2.5 py-1 font-mono text-[11px] text-ink dark:text-white">
+              landing.tsx
             </span>
-          </motion.button>
-        ))}
-      </div>
-    </motion.div>
-  );
-}
+            <span className="hidden truncate px-2 py-1 font-mono text-[11px] text-ink-faint sm:inline">
+              seo.ts
+            </span>
+          </div>
+          <span className="shrink-0 font-mono text-[10px] uppercase tracking-wider text-accent">
+            Next.js
+          </span>
+        </div>
 
-export function HeroFeaturedMobile() {
-  const reduce = useReducedMotion();
-  const { m } = useI18n();
-  const featured = useFeaturedProjects();
-  const [active, setActive] = useState(0);
-  const project = featured[active] ?? featured[0];
-
-  if (!project) return null;
-
-  return (
-    <motion.div className="mt-6 lg:hidden" initial={false}>
-      <BrowserChrome url={project.liveUrl}>
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={project.slug}
-            className="absolute inset-0"
-            initial={false}
-            animate={{ opacity: 1 }}
-            exit={reduce ? undefined : { opacity: 0 }}
-            transition={{ duration: 0.25 }}
-          >
-            <Image
-              src={project.imageSrc}
-              alt={project.imageAlt}
-              fill
-              sizes="(max-width: 1023px) 92vw, 480px"
-              className="object-cover object-top"
-              quality={60}
-              priority
-              fetchPriority="high"
-              decoding="sync"
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 to-transparent p-4 pt-12">
-              <p className="font-display text-base font-semibold text-white">
-                {project.title}
-              </p>
-              <Link
-                href={`/portfolio/${project.slug}`}
-                className="mt-1 inline-block font-mono text-[10px] uppercase tracking-wider text-accent"
-              >
-                {m.sections.portfolioView} →
-              </Link>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-      </BrowserChrome>
-
-      <div className="mt-3 flex gap-2">
-        {featured.map((p, i) => (
-          <button
-            key={p.slug}
-            type="button"
-            onClick={() => setActive(i)}
-            className={`h-1.5 flex-1 rounded-full transition ${
-              i === active ? "bg-accent" : "bg-line dark:bg-line-dark"
-            }`}
-            aria-label={p.title}
-            aria-pressed={i === active}
+        <div className="relative overflow-hidden bg-gradient-to-br from-canvas-elevated via-white to-accent-muted px-3 py-4 sm:px-4 sm:py-5 dark:from-transparent dark:via-transparent dark:to-transparent">
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.12] dark:opacity-[0.07]"
+            style={{
+              backgroundImage:
+                "linear-gradient(#0c9b95 1px, transparent 1px), linear-gradient(90deg, #0c9b95 1px, transparent 1px)",
+              backgroundSize: "24px 24px",
+            }}
+            aria-hidden
           />
-        ))}
+
+          <pre className="relative overflow-x-auto font-mono text-[12px] leading-[1.7] sm:text-[13px]">
+            <code>
+              {lines.map((line, i) => (
+                <motion.div
+                  key={i}
+                  className="flex gap-3"
+                  initial={reduce ? false : { opacity: 0, x: -6 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{
+                    delay: reduce ? 0 : 0.04 * i,
+                    duration: 0.35,
+                    ease: "easeOut",
+                  }}
+                >
+                  <span className="w-5 shrink-0 select-none text-right text-ink-faint/70 dark:text-white/25">
+                    {i + 1}
+                  </span>
+                  <span className="min-w-0 whitespace-pre">
+                    {line.length === 0 ? (
+                      <span>{"\u00a0"}</span>
+                    ) : (
+                      line.map((tok, j) => (
+                        <span key={j} className={tokenClass[tok.t]}>
+                          {tok.v}
+                        </span>
+                      ))
+                    )}
+                    {i === lines.length - 1 && (
+                      <motion.span
+                        className="ml-0.5 inline-block h-[1.05em] w-[0.55ch] translate-y-[0.15em] bg-accent align-middle"
+                        aria-hidden
+                        animate={reduce ? undefined : { opacity: [1, 0, 1] }}
+                        transition={
+                          reduce
+                            ? undefined
+                            : { duration: 1.1, repeat: Infinity, ease: "linear" }
+                        }
+                      />
+                    )}
+                  </span>
+                </motion.div>
+              ))}
+            </code>
+          </pre>
+        </div>
       </div>
     </motion.div>
   );

@@ -2,9 +2,9 @@ import Link from "next/link";
 import { getLivePortfolioProjects } from "@/lib/portfolio";
 
 const links = [
-  { href: "/pricing", label: "Прайс на разработку" },
-  { href: "/#contact", label: "Обсудить проект" },
-  { href: "/blog", label: "Все статьи" },
+  { href: "/pricing", label: "Сколько стоит сайт" },
+  { href: "/#contact", label: "Получить оценку за 2 дня" },
+  { href: "/blog", label: "Все статьи блога" },
 ];
 
 export function ArticleLinks({ currentSlug }: { currentSlug?: string }) {

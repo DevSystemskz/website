@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { springSnappy } from "@/lib/motion";
 import { useI18n } from "@/components/i18n/I18nProvider";
-import { HeroShowcase, HeroFeaturedMobile } from "@/components/sections/HeroShowcase";
+import { HeroShowcase } from "@/components/sections/HeroShowcase";
 
 export function Hero() {
   const reduce = useReducedMotion();
@@ -23,8 +23,8 @@ export function Hero() {
         aria-hidden
       />
 
-      <Container className="relative pb-12 lg:pb-14">
-        <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12">
+      <Container className="relative pb-14 lg:pb-16">
+        <div className="grid items-center gap-4 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12">
           <div className="min-w-0">
             <p className="mt-8 font-display text-4xl font-bold tracking-tight text-ink sm:mt-10 sm:text-5xl lg:mt-12 lg:text-[3.25rem] dark:text-white">
               DevSystems
@@ -42,8 +42,6 @@ export function Hero() {
               {m.hero.titleA}{" "}
               <span className="text-accent-gradient">{m.hero.titleB}</span>
             </h1>
-
-            <HeroFeaturedMobile />
 
             <p className="mt-5 max-w-lg text-base leading-relaxed text-ink-muted sm:text-lg dark:text-ink-faint">
               {m.hero.description}

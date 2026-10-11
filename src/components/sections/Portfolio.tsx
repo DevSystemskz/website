@@ -52,7 +52,7 @@ export function Portfolio() {
                   whileHover={reduce ? undefined : { y: -4 }}
                   transition={springSnappy}
                 >
-                  <div className="relative aspect-[16/11] overflow-hidden bg-ink sm:aspect-[16/10]">
+                  <div className="relative aspect-[16/11] overflow-hidden bg-canvas-muted sm:aspect-[16/10]">
                     <motion.div
                       className="relative h-full w-full"
                       whileHover={reduce ? undefined : { scale: 1.04 }}
@@ -67,19 +67,19 @@ export function Portfolio() {
                         quality={60}
                       />
                     </motion.div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/15 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0c9b95]/85 via-[#0c9b95]/20 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7">
-                      <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-accent">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-white/90">
                         {featured.year}
                         {featured.liveUrl ? " · live" : ""}
                       </p>
                       <h3 className="mt-2 font-display text-2xl font-bold text-white sm:text-3xl">
                         {featured.title}
                       </h3>
-                      <p className="mt-2 max-w-lg text-sm text-white/70 sm:text-base">
+                      <p className="mt-2 max-w-lg text-sm text-white/85 sm:text-base">
                         {featured.description}
                       </p>
-                      <span className="mt-4 inline-flex font-mono text-[11px] uppercase tracking-wider text-white/0 transition group-hover:text-white/90">
+                      <span className="mt-4 inline-flex font-mono text-[11px] uppercase tracking-wider text-white/0 transition group-hover:text-white">
                         {m.sections.portfolioView} →
                       </span>
                     </div>
@@ -98,7 +98,7 @@ export function Portfolio() {
                     whileHover={reduce ? undefined : { y: -3 }}
                     transition={springSnappy}
                   >
-                    <div className="relative w-[42%] min-w-[120px] shrink-0 overflow-hidden bg-ink sm:w-[46%]">
+                    <div className="relative w-[42%] min-w-[120px] shrink-0 overflow-hidden bg-canvas-muted sm:w-[46%]">
                       <Image
                         src={p.imageSrc}
                         alt={p.imageAlt}

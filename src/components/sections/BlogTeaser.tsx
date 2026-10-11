@@ -14,8 +14,11 @@ export function BlogTeaser() {
           Блог
         </p>
         <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl dark:text-white">
-          Статьи
+          Как делаем сайты
         </h2>
+        <p className="mt-3 max-w-2xl text-lg text-ink-muted dark:text-ink-faint">
+          Короткие разборы по запуску, структуре и заявкам.
+        </p>
         <ul className="mt-10 grid gap-4 md:grid-cols-3">
           {posts.map((post) => (
             <li key={post.slug}>

@@ -86,23 +86,24 @@ export function Contact() {
       <Container>
         <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14 lg:items-start">
           <motion.div variants={item}>
-            <div className="relative overflow-hidden border border-line bg-ink p-8 dark:border-line-dark lg:sticky lg:top-28 lg:p-10">
-              <div className="blueprint-grid absolute inset-0 opacity-30" aria-hidden />
+            <div className="relative overflow-hidden border border-line bg-canvas-elevated p-8 shadow-[0_20px_50px_-28px_rgba(12,155,149,0.35)] dark:border-line-dark dark:bg-canvas-elevated-dark lg:sticky lg:top-28 lg:p-10">
+              <div className="blueprint-grid absolute inset-0 opacity-40 dark:opacity-20" aria-hidden />
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent via-[#2dd4bf] to-[#38bdf8]" aria-hidden />
               <div className="relative">
                 <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
                   {m.sections.contactTag}
                 </p>
-                <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
+                <h2 className="mt-3 font-display text-3xl font-bold text-ink sm:text-4xl dark:text-white">
                   {m.sections.contactTitle}
                 </h2>
-                <p className="mt-4 text-lg text-white/70">{m.sections.contactDesc}</p>
-                <p className="mt-4 text-sm text-white/55">{m.sections.ctaDesc}</p>
+                <p className="mt-4 text-lg text-ink-muted dark:text-ink-faint">{m.sections.contactDesc}</p>
+                <p className="mt-4 text-sm text-ink-faint">{m.sections.ctaDesc}</p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <a
                     href={contactLinks.telegram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 border border-white/30 bg-[#229ED9] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1b8bc0]"
+                    className="inline-flex items-center gap-2 border border-[#229ED9]/30 bg-[#229ED9] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1b8bc0]"
                   >
                     <TelegramIcon />
                     {m.sections.telegram}
@@ -111,14 +112,14 @@ export function Contact() {
                     href={contactLinks.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 border border-white/30 bg-[#25D366] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1ebe57]"
+                    className="inline-flex items-center gap-2 border border-[#25D366]/30 bg-[#25D366] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1ebe57]"
                   >
                     <WhatsAppIcon />
                     {m.sections.whatsapp}
                   </a>
                   <a
                     href={`mailto:${contactLinks.email}`}
-                    className="inline-flex items-center gap-2 border border-white/20 bg-white px-4 py-2.5 text-sm font-semibold text-ink transition hover:bg-canvas-muted"
+                    className="inline-flex items-center gap-2 border border-line bg-canvas-muted px-4 py-2.5 text-sm font-semibold text-ink transition hover:border-accent hover:text-accent dark:border-line-dark dark:bg-canvas-dark dark:text-white"
                   >
                     {contactLinks.email}
                   </a>

@@ -20,15 +20,15 @@ const DeviceIcon = () => (
   </svg>
 );
 
-const BlockchainIcon = () => (
+const LayersIcon = () => (
   <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
   </svg>
 );
 
-const SparklesIcon = () => (
+const SearchIcon = () => (
   <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
   </svg>
 );
 
@@ -43,38 +43,38 @@ function getServices(locale: Locale) {
     return [
       {
         icon: <CodeIcon />,
-        title: "Web Development",
+        title: "Landing pages",
         description:
-          "Marketing websites, portals, SPAs, and server-side applications with modern stacks.",
-        features: ["React, Next.js, Vue", "Node.js, Python", "APIs and integrations"],
+          "One clear offer, messenger CTA, and a structure that converts visits into leads.",
+        features: ["Offer on first screen", "WhatsApp / Telegram forms", "1–2 week launch"],
+      },
+      {
+        icon: <LayersIcon />,
+        title: "Corporate sites",
+        description:
+          "Multi-page sites with services, cases, and SEO-ready structure for local search.",
+        features: ["5–15 pages", "CMS basics", "Local SEO markup"],
       },
       {
         icon: <DeviceIcon />,
-        title: "Mobile Apps",
+        title: "Web MVP",
         description:
-          "Native and cross-platform applications for iOS and Android.",
-        features: ["React Native, Flutter", "Native iOS/Android", "MVP to full product"],
+          "A narrow product slice: auth, admin, and core flows — without bloated scope.",
+        features: ["Next.js + API", "Fixed stages", "Demo each sprint"],
       },
       {
-        icon: <BlockchainIcon />,
-        title: "Blockchain",
+        icon: <SearchIcon />,
+        title: "SEO foundation",
         description:
-          "Smart contracts, dApps, tokenization, and integration with crypto infrastructure.",
-        features: ["Smart contracts", "Web3, DeFi", "Audit and consulting"],
-      },
-      {
-        icon: <SparklesIcon />,
-        title: "AI Integration",
-        description:
-          "AI in products: chatbots, automation, analytics, and generative content.",
-        features: ["LLM, RAG, agents", "Data processing", "Custom models"],
+          "Titles, schema, sitemap, and page speed so the site can rank after launch.",
+        features: ["Meta + Open Graph", "JSON-LD", "Core Web Vitals"],
       },
       {
         icon: <PuzzleIcon />,
-        title: "Integrations & Support",
+        title: "Integrations & support",
         description:
-          "System integrations, product improvements, and long-term technical support.",
-        features: ["APIs and microservices", "24/7 support", "Audit and optimization"],
+          "CRM, analytics, messengers, and ongoing updates after release.",
+        features: ["CRM & analytics", "Messenger bots", "Monthly support"],
       },
     ];
   }
@@ -82,33 +82,38 @@ function getServices(locale: Locale) {
     return [
       {
         icon: <CodeIcon />,
-        title: "Веб-әзірлеу",
-        description: "Сайттар, порталдар, SPA және заманауи стектердегі серверлік қосымшалар.",
-        features: ["React, Next.js, Vue", "Node.js, Python", "API және интеграциялар"],
+        title: "Лендингтер",
+        description:
+          "Анық оффер, мессенджер CTA және кіруді өтінімге айналдыратын құрылым.",
+        features: ["Бірінші экранда оффер", "WhatsApp / Telegram формалар", "1–2 аптада іске қосу"],
+      },
+      {
+        icon: <LayersIcon />,
+        title: "Корпоративтік сайттар",
+        description:
+          "Қызметтер, кейстер және жергілікті іздеуге арналған SEO-құрылымы бар көпбеттік сайттар.",
+        features: ["5–15 бет", "CMS базасы", "Жергілікті SEO-белгілеу"],
       },
       {
         icon: <DeviceIcon />,
-        title: "Мобильді қосымшалар",
-        description: "iOS және Android үшін нативті және кросс-платформалы қосымшалар.",
-        features: ["React Native, Flutter", "Нативті iOS/Android", "MVP-ден толық өнімге дейін"],
+        title: "Web MVP",
+        description:
+          "Тар өнім кесіндісі: auth, админка және негізгі сценарийлер — артық scope жоқ.",
+        features: ["Next.js + API", "Бекітілген кезеңдер", "Әр спринтте демо"],
       },
       {
-        icon: <BlockchainIcon />,
-        title: "Блокчейн",
-        description: "Смарт-келісімшарттар, dApp, токенизация және крипто-инфрақұрылыммен интеграция.",
-        features: ["Smart contracts", "Web3, DeFi", "Аудит және консалтинг"],
-      },
-      {
-        icon: <SparklesIcon />,
-        title: "AI интеграциясы",
-        description: "Өнімдерге ИИ енгізу: чат-боттар, автоматтандыру, аналитика және генеративті контент.",
-        features: ["LLM, RAG, агенттер", "Деректерді өңдеу", "Кастом модельдер"],
+        icon: <SearchIcon />,
+        title: "SEO-база",
+        description:
+          "Title, schema, sitemap және жылдамдық — іске қосудан кейін сайт іздеуде жұмыс істей алады.",
+        features: ["Meta + Open Graph", "JSON-LD", "Core Web Vitals"],
       },
       {
         icon: <PuzzleIcon />,
         title: "Интеграциялар және қолдау",
-        description: "Жүйелерді біріктіру, өнімді жетілдіру және ұзақ мерзімді техникалық қолдау.",
-        features: ["API және микросервистер", "24/7 қолдау", "Аудит және оңтайландыру"],
+        description:
+          "CRM, аналитика, мессенджерлер және релизден кейінгі жаңартулар.",
+        features: ["CRM және аналитика", "Мессенджер боттар", "Айлық қолдау"],
       },
     ];
   }
@@ -116,33 +121,38 @@ function getServices(locale: Locale) {
   return [
     {
       icon: <CodeIcon />,
-      title: "Веб-разработка",
-      description: "Сайты, порталы, SPA и серверные приложения на современных стеках.",
-      features: ["React, Next.js, Vue", "Node.js, Python", "API и интеграции"],
+      title: "Лендинги",
+      description:
+        "Один оффер, CTA в мессенджер и структура, которая ведёт к заявке.",
+      features: ["Оффер на первом экране", "Формы WhatsApp / Telegram", "Запуск за 1–2 недели"],
+    },
+    {
+      icon: <LayersIcon />,
+      title: "Корпоративные сайты",
+      description:
+        "Многостраничные сайты с услугами, кейсами и структурой под локальный поиск.",
+      features: ["5–15 страниц", "Базовый CMS", "Локальная SEO-разметка"],
     },
     {
       icon: <DeviceIcon />,
-      title: "Мобильные приложения",
-      description: "Нативные и кроссплатформенные приложения для iOS и Android.",
-      features: ["React Native, Flutter", "Нативный iOS/Android", "MVP и полный цикл"],
+      title: "Web MVP",
+      description:
+        "Узкий срез продукта: auth, админка и ключевые сценарии — без раздутого scope.",
+      features: ["Next.js + API", "Фиксированные этапы", "Демо каждый спринт"],
     },
     {
-      icon: <BlockchainIcon />,
-      title: "Блокчейн",
-      description: "Смарт-контракты, DApp, токенизация и интеграция с крипто-инфраструктурой.",
-      features: ["Smart contracts", "Web3, DeFi", "Аудит и консалтинг"],
-    },
-    {
-      icon: <SparklesIcon />,
-      title: "Интеграция с AI",
-      description: "Внедрение ИИ в продукты: чат-боты, автоматизация, анализ данных и генеративный контент.",
-      features: ["LLM, RAG, агенты", "Обработка данных", "Кастомные модели"],
+      icon: <SearchIcon />,
+      title: "SEO-база",
+      description:
+        "Title, schema, sitemap и скорость — чтобы сайт мог ранжироваться после запуска.",
+      features: ["Meta + Open Graph", "JSON-LD", "Core Web Vitals"],
     },
     {
       icon: <PuzzleIcon />,
       title: "Интеграции и поддержка",
-      description: "Связка систем, доработки и долгосрочная техническая поддержка.",
-      features: ["API и микросервисы", "Поддержка 24/7", "Аудит и оптимизация"],
+      description:
+        "CRM, аналитика, мессенджеры и правки после релиза.",
+      features: ["CRM и аналитика", "Боты в мессенджерах", "Поддержка по месяцам"],
     },
   ];
 }

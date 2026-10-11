@@ -47,7 +47,7 @@ export function PortfolioCard({
               className="object-cover"
             />
           </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/10 to-transparent transition-opacity duration-300 group-hover:from-ink/85" />
+          <div className="absolute inset-0 bg-gradient-to-t from-accent/70 via-accent/10 to-transparent transition-opacity duration-300 group-hover:from-accent/80" />
           <div className="absolute bottom-3 left-3 font-mono text-[10px] uppercase tracking-wider text-white/0 transition-colors group-hover:text-white/80">
             {viewLabel}
           </div>

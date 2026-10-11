@@ -8,14 +8,14 @@ import { Faq } from "@/components/sections/Faq";
 
 export const metadata: Metadata = {
   description:
-    "Студия DevSystems в Астане делает сайты, лендинги и MVP, которые приводят заявки: дизайн, разработка, SEO и запуск.",
+    "Веб-студия в Астане: лендинги и MVP под заявки из поиска и WhatsApp. Оценка за 1–2 дня, живые кейсы в продакшене.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "DevSystems — веб-студия в Астане",
     description:
-      "Сайты, лендинги и MVP под ключ. Дизайн, разработка, SEO и запуск.",
+      "Сайты под заявки: оффер, мессенджеры, SEO-база и запуск. Оценка за 1–2 дня.",
     url: "/",
   },
 };
@@ -31,9 +31,6 @@ const Process = dynamic(() =>
 );
 const About = dynamic(() =>
   import("@/components/sections/About").then((m) => m.About),
-);
-const Testimonials = dynamic(() =>
-  import("@/components/sections/Testimonials").then((m) => m.Testimonials),
 );
 const Contact = dynamic(() =>
   import("@/components/sections/Contact").then((m) => m.Contact),
@@ -53,7 +50,6 @@ export default function Home() {
         <Services />
         <Process />
         <About />
-        <Testimonials />
         <BlogTeaser />
         <Faq />
         <Contact />
