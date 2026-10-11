@@ -42,10 +42,17 @@ function getServices(locale: Locale) {
   if (locale === "en") {
     return [
       {
+        icon: <DeviceIcon />,
+        title: "MVP for startups",
+        description:
+          "A narrow product slice to validate the idea: auth, admin, and core flows — without bloated scope.",
+        features: ["Next.js + API", "Fixed stages", "Demo each sprint"],
+      },
+      {
         icon: <CodeIcon />,
         title: "Landing pages",
         description:
-          "One clear offer, messenger CTA, and a structure that converts visits into leads.",
+          "One clear offer, messenger CTA, and a structure that turns visits into leads.",
         features: ["Offer on first screen", "WhatsApp / Telegram forms", "1–2 week launch"],
       },
       {
@@ -54,13 +61,6 @@ function getServices(locale: Locale) {
         description:
           "Multi-page sites with services, cases, and SEO-ready structure for local search.",
         features: ["5–15 pages", "CMS basics", "Local SEO markup"],
-      },
-      {
-        icon: <DeviceIcon />,
-        title: "Web MVP",
-        description:
-          "A narrow product slice: auth, admin, and core flows — without bloated scope.",
-        features: ["Next.js + API", "Fixed stages", "Demo each sprint"],
       },
       {
         icon: <SearchIcon />,
@@ -81,6 +81,13 @@ function getServices(locale: Locale) {
   if (locale === "kk") {
     return [
       {
+        icon: <DeviceIcon />,
+        title: "Стартапқа MVP",
+        description:
+          "Идеяны тексеруге арналған тар өнім: auth, админка және негізгі сценарийлер — артық scope жоқ.",
+        features: ["Next.js + API", "Бекітілген кезеңдер", "Әр спринтте демо"],
+      },
+      {
         icon: <CodeIcon />,
         title: "Лендингтер",
         description:
@@ -93,13 +100,6 @@ function getServices(locale: Locale) {
         description:
           "Қызметтер, кейстер және жергілікті іздеуге арналған SEO-құрылымы бар көпбеттік сайттар.",
         features: ["5–15 бет", "CMS базасы", "Жергілікті SEO-белгілеу"],
-      },
-      {
-        icon: <DeviceIcon />,
-        title: "Web MVP",
-        description:
-          "Тар өнім кесіндісі: auth, админка және негізгі сценарийлер — артық scope жоқ.",
-        features: ["Next.js + API", "Бекітілген кезеңдер", "Әр спринтте демо"],
       },
       {
         icon: <SearchIcon />,
@@ -120,6 +120,13 @@ function getServices(locale: Locale) {
 
   return [
     {
+      icon: <DeviceIcon />,
+      title: "MVP для стартапов",
+      description:
+        "Узкий срез продукта для проверки идеи: auth, админка и ключевые сценарии — без раздутого scope.",
+      features: ["Next.js + API", "Фиксированные этапы", "Демо каждый спринт"],
+    },
+    {
       icon: <CodeIcon />,
       title: "Лендинги",
       description:
@@ -132,13 +139,6 @@ function getServices(locale: Locale) {
       description:
         "Многостраничные сайты с услугами, кейсами и структурой под локальный поиск.",
       features: ["5–15 страниц", "Базовый CMS", "Локальная SEO-разметка"],
-    },
-    {
-      icon: <DeviceIcon />,
-      title: "Web MVP",
-      description:
-        "Узкий срез продукта: auth, админка и ключевые сценарии — без раздутого scope.",
-      features: ["Next.js + API", "Фиксированные этапы", "Демо каждый спринт"],
     },
     {
       icon: <SearchIcon />,

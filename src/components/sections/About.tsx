@@ -13,16 +13,16 @@ function getAboutData(locale: Locale) {
     return {
       listItems: [
         "Brief and budget range in 1–2 days",
-        "Offer and lead path before visual polish",
+        "Landings for leads and MVPs for startups",
         "Sprint demos before the next payment",
-        "Live cases in Astana you can open today",
+        "Narrow scope — only what you need to launch",
       ],
       trustTitle: "How we work",
       trustPoints: [
         { label: "Estimate", value: "1–2 days" },
-        { label: "Typical landing", value: "1–2 weeks" },
+        { label: "Landing", value: "1–2 weeks" },
+        { label: "Startup MVP", value: "fixed stages" },
         { label: "Chat", value: "Telegram / WhatsApp" },
-        { label: "Live cases", value: "3 in production" },
       ],
     };
   }
@@ -30,16 +30,16 @@ function getAboutData(locale: Locale) {
     return {
       listItems: [
         "Бриф және бюджет вилкасы — 1–2 күнде",
-        "Алдымен оффер мен өтінім жолы, содан кейін визуал",
+        "Өтінім лендингі және стартапқа MVP",
         "Келесі төлемге дейін спринт демосы",
-        "Астанадағы тірі кейстер — бүгін ашуға болады",
+        "Тар scope — тек іске қосуға қажеті",
       ],
       trustTitle: "Қалай жұмыс істейміз",
       trustPoints: [
         { label: "Бағалау", value: "1–2 күн" },
-        { label: "Типтік лендинг", value: "1–2 апта" },
+        { label: "Лендинг", value: "1–2 апта" },
+        { label: "Стартап MVP", value: "бекітілген кезеңдер" },
         { label: "Байланыс", value: "Telegram / WhatsApp" },
-        { label: "Тірі кейстер", value: "3 продакшенде" },
       ],
     };
   }
@@ -47,16 +47,16 @@ function getAboutData(locale: Locale) {
   return {
     listItems: [
       "Бриф и вилка бюджета за 1–2 дня",
-      "Сначала оффер и путь заявки, потом визуал",
+      "Лендинги под заявки и MVP для стартапов",
       "Демо спринта до следующей оплаты",
-      "Живые кейсы в Астане — можно открыть сегодня",
+      "Узкий scope — только то, что нужно для запуска",
     ],
     trustTitle: "Как работаем",
     trustPoints: [
       { label: "Оценка", value: "1–2 дня" },
-      { label: "Типовой лендинг", value: "1–2 недели" },
+      { label: "Лендинг", value: "1–2 недели" },
+      { label: "MVP стартапа", value: "фиксированные этапы" },
       { label: "Связь", value: "Telegram / WhatsApp" },
-      { label: "Живые кейсы", value: "3 в продакшене" },
     ],
   };
 }

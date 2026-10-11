@@ -16,18 +16,18 @@ export const messages = {
       discussBtn: "Получить оценку",
     },
     hero: {
-      eyebrow: "Веб-студия · Астана",
-      titleA: "Сайт под заявки",
-      titleB: "из поиска и WhatsApp",
+      eyebrow: "Стартапы и бизнес · Астана",
+      titleA: "Лендинги и MVP",
+      titleB: "для запуска продукта",
       description:
-        "Лендинги и MVP под ключ: оффер на первом экране, формы в мессенджеры, SEO-база и запуск. Оценка за 1–2 дня.",
+        "Делаем сайты под заявки и узкие MVP для стартапов: оффер, продукт, мессенджеры, SEO-база. Оценка за 1–2 дня.",
       discussBtn: "Получить оценку за 2 дня",
       portfolioBtn: "Смотреть живые сайты",
       servicesBtn: "Услуги",
       stats: [
         { n: "3", t: "живых кейса в продакшене" },
         { n: "2", t: "дня на оценку" },
-        { n: "14", t: "дней на типовой лендинг" },
+        { n: "MVP", t: "для стартапов под ключ" },
       ],
     },
     footer: {
@@ -41,27 +41,27 @@ export const messages = {
       team: "Команда",
       contact: "Контакты",
       web: "Лендинги",
-      mobile: "Корпоративные сайты",
-      integrations: "Web MVP",
+      mobile: "MVP для стартапов",
+      integrations: "Корпоративные сайты",
       privacy: "Политика конфиденциальности",
       terms: "Условия использования",
       description:
-        "Веб-студия в Астане: лендинги, сайты и MVP, которые собирают заявки.",
+        "Веб-студия в Астане: лендинги, MVP для стартапов и сайты, которые собирают заявки.",
       rights: "Все права защищены.",
     },
     sections: {
       servicesTag: "Услуги",
       servicesTitle: "Что заказываете",
       servicesDesc:
-        "От лендинга под заявки до MVP и интеграций. Один подрядчик от брифа до запуска.",
+        "Лендинги под заявки, MVP для стартапов и корпоративные сайты. Один подрядчик от брифа до запуска.",
       portfolioTag: "Портфолио",
       portfolioTitle: "Живые сайты в продакшене",
       portfolioDesc:
         "Три запуска в Астане. Откройте кейс: задача, решение и результат.",
       processTag: "Процесс",
-      processTitle: "Как идём к запуску",
+      processTitle: "От брифа до запуска",
       processDesc:
-        "Бриф → структура → спринты с демо → релиз. Вы всегда видите статус.",
+        "Четыре шага без сюрпризов: сначала смета и сроки, потом продукт.",
       teamTag: "Команда",
       teamTitle: "Люди, которые делают проекты",
       teamDesc:
@@ -74,9 +74,9 @@ export const messages = {
       technologiesDesc:
         "Выбираем инструменты под задачу: от быстрого MVP до высоконагруженных систем.",
       aboutTag: "О нас",
-      aboutTitle: "Студия, которая запускает сайты под заявки",
+      aboutTitle: "Студия для стартапов и бизнеса",
       aboutDesc:
-        "Сроки фиксируем в плане работ. Связь в Telegram. Каждый этап с демо до оплаты следующего.",
+        "Запускаем лендинги и MVP. Сроки в плане работ. Связь в Telegram. Демо каждого этапа до следующей оплаты.",
       contactTag: "Контакты",
       contactTitle: "Опишите задачу",
       contactDesc:
@@ -86,24 +86,24 @@ export const messages = {
       faqDesc: "Сроки, состав работ и как считаем бюджет.",
       faqItems: [
         {
+          question: "Делаете ли вы MVP для стартапов?",
+          answer:
+            "Да. Узкий срез продукта: auth, админка и ключевые сценарии — без раздутого scope. Этапы и демо фиксируем в смете.",
+        },
+        {
           question: "Сколько занимает лендинг?",
           answer:
             "Обычно 1–2 недели после брифа и согласования структуры страницы.",
         },
         {
-          question: "Что входит в сайт?",
+          question: "Что входит в сайт или MVP?",
           answer:
-            "Дизайн, вёрстка под телефон, формы в WhatsApp или на почту, базовая SEO-разметка и запуск.",
+            "Дизайн, вёрстка или продукт под телефон, формы/интеграции, базовая SEO-разметка и запуск.",
         },
         {
           question: "Когда будет оценка?",
           answer:
             "Вилку бюджета и план работ присылаем за 1–2 дня после описания задачи.",
-        },
-        {
-          question: "На каких языках делаете сайт?",
-          answer:
-            "На русском, казахском и английском — на одном языке или на нескольких сразу.",
         },
         {
           question: "Где вы работаете?",
@@ -117,7 +117,7 @@ export const messages = {
       leaveRequest: "Оставить заявку",
       telegram: "Telegram",
       whatsapp: "WhatsApp",
-      sent: "Заявка отправлена. Мы свяжемся с вами в ближайшее время.",
+      sent: "Заявка отправлена. Ответим и пришлём вилку бюджета за 1–2 дня.",
       send: "Отправить заявку",
       sending: "Отправка...",
       name: "Имя / Компания",
@@ -125,6 +125,8 @@ export const messages = {
       message: "Сообщение",
       namePh: "Как к вам обращаться?",
       messagePh: "Какой сайт нужен, срок, бюджет если есть...",
+      formTrust:
+        "Ответим в Telegram, WhatsApp или на почту. Вилка бюджета — за 1–2 дня. Оценка бесплатная.",
       tellProject: "Написать о задаче",
       submitError: "Не удалось отправить заявку. Попробуйте ещё раз.",
       blogTitle: "Блог DevSystems",
@@ -145,9 +147,33 @@ export const messages = {
     },
     pricing: {
       tag: "Прайс",
-      title: "Сколько стоит сайт",
+      title: "Сколько стоят сайт и MVP",
       intro:
-        "Ориентиры для лендинга, корпоративного сайта, MVP и поддержки. Точная смета после брифа — за 1–2 дня. В цену входит дизайн, вёрстка и запуск.",
+        "Ориентиры для лендинга, MVP стартапа, корпоративного сайта и поддержки. Точная смета после брифа — за 1–2 дня.",
+      offerBadge: "Для бизнеса",
+      offerTitle: "Лендинг под заявки",
+      offerPrice: "от 200 000 ₸",
+      offerTime: "1–2 недели после согласования структуры",
+      offerIncludes: [
+        "Оффер и структура первого экрана",
+        "Вёрстка под телефон",
+        "Кнопка и форма в WhatsApp / Telegram",
+        "Базовая SEO-разметка и запуск",
+      ],
+      offerGuarantee:
+        "Оценка бесплатная. Если задача не наша — скажем на брифе, без счёта.",
+      mvpBadge: "Для стартапов",
+      mvpTitle: "Web MVP",
+      mvpPrice: "от 1.5 млн ₸",
+      mvpTime: "Узкий продукт за фиксированные этапы",
+      mvpIncludes: [
+        "Auth, админка и ключевые сценарии",
+        "API и база данных",
+        "Демо каждый спринт",
+        "Запуск и план следующих фич",
+      ],
+      mvpGuarantee:
+        "Сначала смета и scope. Не раздуваем бэклог — только то, что нужно для первого запуска.",
       colService: "Услуга",
       colScope: "Что входит",
       colPrice: "Стоимость",
@@ -250,18 +276,18 @@ export const messages = {
       discussBtn: "Баға алу",
     },
     hero: {
-      eyebrow: "Веб-студия · Астана",
-      titleA: "Өтінімге арналған сайт",
-      titleB: "іздеу мен WhatsApp арқылы",
+      eyebrow: "Стартап пен бизнес · Астана",
+      titleA: "Лендинг және MVP",
+      titleB: "өнімді іске қосу үшін",
       description:
-        "Лендинг пен MVP кілтпен: бірінші экранда оффер, мессенджер формалары, SEO-база және іске қосу. Бағалау — 1–2 күн.",
+        "Өтінімге арналған сайттар мен стартапқа арналған тар MVP: оффер, өнім, мессенджер, SEO-база. Бағалау — 1–2 күн.",
       discussBtn: "2 күнде баға алу",
       portfolioBtn: "Тірі сайттарды көру",
       servicesBtn: "Қызметтер",
       stats: [
         { n: "3", t: "продакшендегі кейс" },
         { n: "2", t: "күнде бағалау" },
-        { n: "14", t: "күнде типтік лендинг" },
+        { n: "MVP", t: "стартапқа кілтпен" },
       ],
     },
     footer: {
@@ -275,27 +301,27 @@ export const messages = {
       team: "Команда",
       contact: "Байланыс",
       web: "Лендингтер",
-      mobile: "Корпоративтік сайттар",
-      integrations: "Web MVP",
+      mobile: "Стартапқа MVP",
+      integrations: "Корпоративтік сайттар",
       privacy: "Құпиялылық саясаты",
       terms: "Пайдалану шарттары",
       description:
-        "Астанадағы веб-студия: өтінім жинайтын лендинг, сайт және MVP.",
+        "Астанадағы веб-студия: лендинг, стартапқа MVP және өтінім жинайтын сайттар.",
       rights: "Барлық құқықтар қорғалған.",
     },
     sections: {
       servicesTag: "Қызметтер",
       servicesTitle: "Не тапсырыс бересіз",
       servicesDesc:
-        "Өтінім лендингінен MVP мен интеграцияға дейін. Брифтен іске қосуға дейін бір подрядчик.",
+        "Өтінім лендингі, стартапқа MVP және корпоративтік сайттар. Брифтен іске қосуға дейін бір подрядчик.",
       portfolioTag: "Портфолио",
       portfolioTitle: "Продакшендегі тірі сайттар",
       portfolioDesc:
         "Астанадағы үш іске қосу. Кейсті ашыңыз: міндет, шешім, нәтиже.",
       processTag: "Процесс",
-      processTitle: "Іске қосуға қалай барамыз",
+      processTitle: "Брифтен іске қосуға дейін",
       processDesc:
-        "Бриф → құрылым → демомен спринттер → релиз. Статусты әрқашан көресіз.",
+        "Төрт қадам, сюрпризсіз: алдымен смета мен мерзім, содан кейін өнім.",
       teamTag: "Команда",
       teamTitle: "Жобаны жасайтын адамдар",
       teamDesc:
@@ -308,9 +334,9 @@ export const messages = {
       technologiesDesc:
         "Құралдарды міндетке сай таңдаймыз: жылдам MVP-ден жоғары жүктемелі жүйелерге дейін.",
       aboutTag: "Біз туралы",
-      aboutTitle: "Өтінімге арналған сайттарды іске қосатын студия",
+      aboutTitle: "Стартап пен бизнеске арналған студия",
       aboutDesc:
-        "Мерзімді жоспарда бекітеміз. Байланыс Telegram-да. Әр кезеңде демо — келесі төлемге дейін.",
+        "Лендинг пен MVP іске қосамыз. Мерзім жоспарда. Байланыс Telegram-да. Әр кезеңде демо — келесі төлемге дейін.",
       contactTag: "Байланыс",
       contactTitle: "Міндетті сипаттаңыз",
       contactDesc:
@@ -320,24 +346,24 @@ export const messages = {
       faqDesc: "Мерзім, жұмыс құрамы және бюджетті қалай есептейміз.",
       faqItems: [
         {
+          question: "Стартапқа MVP жасайсыз ба?",
+          answer:
+            "Иә. Тар өнім кесіндісі: auth, админка және негізгі сценарийлер — артық scope жоқ. Кезең мен демо сметада бекітіледі.",
+        },
+        {
           question: "Лендинг қанша уақыт алады?",
           answer:
             "Әдетте бриф пен бет құрылымын келіскеннен кейін 1–2 апта.",
         },
         {
-          question: "Сайтқа не кіреді?",
+          question: "Сайт немесе MVP-ге не кіреді?",
           answer:
-            "Дизайн, телефонға бейімделген верстка, WhatsApp немесе пошта формалары, негізгі SEO-белгілеу және іске қосу.",
+            "Дизайн, телефонға бейімделген верстка немесе өнім, формалар/интеграциялар, негізгі SEO және іске қосу.",
         },
         {
           question: "Бағалау қашан болады?",
           answer:
             "Бюджет вилкасы мен жұмыс жоспарын міндетті сипаттағаннан кейін 1–2 күнде жібереміз.",
-        },
-        {
-          question: "Сайтты қандай тілдерде жасайсыз?",
-          answer:
-            "Орыс, қазақ және ағылшын тілдерінде — бір тілде немесе бірнеше тілде бірден.",
         },
         {
           question: "Қайда жұмыс істейсіз?",
@@ -351,7 +377,7 @@ export const messages = {
       leaveRequest: "Өтінім қалдыру",
       telegram: "Telegram",
       whatsapp: "WhatsApp",
-      sent: "Өтінім жіберілді. Жақын арада сізбен хабарласамыз.",
+      sent: "Өтінім жіберілді. Жауап беріп, бюджет вилкасын 1–2 күнде жібереміз.",
       send: "Өтінімді жіберу",
       sending: "Жіберілуде...",
       name: "Аты / Компания",
@@ -359,6 +385,8 @@ export const messages = {
       message: "Хабарлама",
       namePh: "Сізге қалай хабарласайық?",
       messagePh: "Қандай сайт керек, мерзім, бюджет болса...",
+      formTrust:
+        "Telegram, WhatsApp немесе пошта арқылы жауап береміз. Бюджет вилкасы — 1–2 күнде. Бағалау тегін.",
       tellProject: "Міндет туралы жазу",
       submitError: "Өтінімді жіберу мүмкін болмады. Қайта көріңіз.",
       blogTitle: "DevSystems блогы",
@@ -379,9 +407,33 @@ export const messages = {
     },
     pricing: {
       tag: "Баға",
-      title: "Сайт қанша тұрады",
+      title: "Сайт пен MVP қанша тұрады",
       intro:
-        "Лендинг, корпоративтік сайт, MVP және қолдау үшін бағдар. Нақты смета брифтен кейін — 1–2 күнде. Бағаға дизайн, верстка және іске қосу кіреді.",
+        "Лендинг, стартап MVP, корпоративтік сайт және қолдау үшін бағдар. Нақты смета брифтен кейін — 1–2 күнде.",
+      offerBadge: "Бизнес үшін",
+      offerTitle: "Өтінімге арналған лендинг",
+      offerPrice: "200 000 ₸-дан",
+      offerTime: "Құрылымды келіскеннен кейін 1–2 апта",
+      offerIncludes: [
+        "Бірінші экран оффері мен құрылымы",
+        "Телефонға бейімделген верстка",
+        "WhatsApp / Telegram батырмасы мен формасы",
+        "Негізгі SEO-белгілеу және іске қосу",
+      ],
+      offerGuarantee:
+        "Бағалау тегін. Міндет бізге сәйкес келмесе — брифте айтамыз, шотсыз.",
+      mvpBadge: "Стартап үшін",
+      mvpTitle: "Web MVP",
+      mvpPrice: "1.5 млн ₸-дан",
+      mvpTime: "Бекітілген кезеңдермен тар өнім",
+      mvpIncludes: [
+        "Auth, админка және негізгі сценарийлер",
+        "API және дерекқор",
+        "Әр спринтте демо",
+        "Іске қосу және келесі фич жоспары",
+      ],
+      mvpGuarantee:
+        "Алдымен смета мен scope. Бэклогты үлкейтпейміз — тек бірінші іске қосуға қажеті.",
       colService: "Қызмет",
       colScope: "Не кіреді",
       colPrice: "Құны",
@@ -484,18 +536,18 @@ export const messages = {
       discussBtn: "Get a quote",
     },
     hero: {
-      eyebrow: "Web studio · Astana",
-      titleA: "A site built for leads",
-      titleB: "from search and WhatsApp",
+      eyebrow: "Startups & business · Astana",
+      titleA: "Landings and MVPs",
+      titleB: "to launch your product",
       description:
-        "Landings and MVPs end to end: offer on the first screen, messenger forms, SEO basics, and launch. Quote in 1–2 days.",
+        "Lead-focused sites and narrow MVPs for startups: offer, product, messengers, SEO basics. Quote in 1–2 days.",
       discussBtn: "Get a quote in 2 days",
       portfolioBtn: "See live sites",
       servicesBtn: "Services",
       stats: [
         { n: "3", t: "live cases in production" },
         { n: "2", t: "days to estimate" },
-        { n: "14", t: "days for a typical landing" },
+        { n: "MVP", t: "for startups end to end" },
       ],
     },
     footer: {
@@ -509,27 +561,27 @@ export const messages = {
       team: "Team",
       contact: "Contact",
       web: "Landing pages",
-      mobile: "Corporate sites",
-      integrations: "Web MVP",
+      mobile: "Startup MVPs",
+      integrations: "Corporate sites",
       privacy: "Privacy Policy",
       terms: "Terms of Use",
       description:
-        "Web studio in Astana: landings, sites, and MVPs that collect leads.",
+        "Web studio in Astana: landings, startup MVPs, and sites that collect leads.",
       rights: "All rights reserved.",
     },
     sections: {
       servicesTag: "Services",
       servicesTitle: "What you can order",
       servicesDesc:
-        "From a lead landing to an MVP and integrations. One team from brief to launch.",
+        "Lead landings, startup MVPs, and corporate sites. One team from brief to launch.",
       portfolioTag: "Portfolio",
       portfolioTitle: "Live sites in production",
       portfolioDesc:
         "Three launches in Astana. Open a case for the challenge, solution, and results.",
       processTag: "Process",
-      processTitle: "How we get to launch",
+      processTitle: "From brief to launch",
       processDesc:
-        "Brief → structure → sprints with demos → release. You always see the status.",
+        "Four clear steps: estimate and timeline first, then the product.",
       teamTag: "Team",
       teamTitle: "People behind the delivery",
       teamDesc:
@@ -542,9 +594,9 @@ export const messages = {
       technologiesDesc:
         "We select tools based on your goals — from fast MVPs to high-load systems.",
       aboutTag: "About",
-      aboutTitle: "A studio that ships sites for leads",
+      aboutTitle: "A studio for startups and business",
       aboutDesc:
-        "Timelines go into the delivery plan. We chat in Telegram. Each stage has a demo before the next payment.",
+        "We ship landings and MVPs. Timelines in the plan. Chat in Telegram. Demo each stage before the next payment.",
       contactTag: "Contact",
       contactTitle: "Describe the task",
       contactDesc:
@@ -554,24 +606,24 @@ export const messages = {
       faqDesc: "Timelines, scope of work, and how we price.",
       faqItems: [
         {
+          question: "Do you build MVPs for startups?",
+          answer:
+            "Yes. A narrow product slice: auth, admin, and core flows — without bloated scope. Stages and demos are fixed in the estimate.",
+        },
+        {
           question: "How long does a landing take?",
           answer:
             "Usually 1–2 weeks after the brief and page structure are approved.",
         },
         {
-          question: "What’s included in a site?",
+          question: "What’s included in a site or MVP?",
           answer:
-            "Design, mobile layout, WhatsApp or email forms, basic SEO markup, and launch.",
+            "Design, mobile layout or product, forms/integrations, basic SEO markup, and launch.",
         },
         {
           question: "When will I get an estimate?",
           answer:
             "We send a budget range and work plan within 1–2 days after you describe the task.",
-        },
-        {
-          question: "Which languages do you build sites in?",
-          answer:
-            "Russian, Kazakh, and English — one language or several at once.",
         },
         {
           question: "Where do you work?",
@@ -585,7 +637,7 @@ export const messages = {
       leaveRequest: "Submit request",
       telegram: "Telegram",
       whatsapp: "WhatsApp",
-      sent: "Request sent. We will contact you shortly.",
+      sent: "Request sent. We’ll reply with a budget range in 1–2 days.",
       send: "Send request",
       sending: "Sending...",
       name: "Name / Company",
@@ -593,6 +645,8 @@ export const messages = {
       message: "Message",
       namePh: "How should we address you?",
       messagePh: "What site you need, deadline, budget if any...",
+      formTrust:
+        "We’ll reply on Telegram, WhatsApp, or email. Budget range in 1–2 days. The estimate is free.",
       tellProject: "Write about the task",
       submitError: "Failed to send request. Please try again.",
       blogTitle: "DevSystems Blog",
@@ -613,9 +667,33 @@ export const messages = {
     },
     pricing: {
       tag: "Pricing",
-      title: "What a site costs",
+      title: "What a site or MVP costs",
       intro:
-        "Ranges for landings, corporate sites, MVPs, and support. Exact quote after a brief — in 1–2 days. Price includes design, build, and launch.",
+        "Ranges for landings, startup MVPs, corporate sites, and support. Exact quote after a brief — in 1–2 days.",
+      offerBadge: "For business",
+      offerTitle: "Landing built for leads",
+      offerPrice: "from 200,000 ₸",
+      offerTime: "1–2 weeks after structure approval",
+      offerIncludes: [
+        "Offer and first-screen structure",
+        "Mobile-ready layout",
+        "WhatsApp / Telegram button and form",
+        "Basic SEO markup and launch",
+      ],
+      offerGuarantee:
+        "The estimate is free. If we’re not the right fit, we’ll say so on the brief — no invoice.",
+      mvpBadge: "For startups",
+      mvpTitle: "Web MVP",
+      mvpPrice: "from 1.5M ₸",
+      mvpTime: "A narrow product with fixed stages",
+      mvpIncludes: [
+        "Auth, admin, and core flows",
+        "API and database",
+        "Demo every sprint",
+        "Launch plus a plan for next features",
+      ],
+      mvpGuarantee:
+        "Estimate and scope first. We don’t inflate the backlog — only what you need for the first launch.",
       colService: "Service",
       colScope: "What's included",
       colPrice: "Price",

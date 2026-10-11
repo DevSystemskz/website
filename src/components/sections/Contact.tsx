@@ -194,6 +194,7 @@ export function Contact() {
                 >
                   {loading ? m.sections.sending : m.sections.send}
                 </Button>
+                <p className="text-sm text-ink-faint">{m.sections.formTrust}</p>
               </motion.form>
             )}
           </motion.div>

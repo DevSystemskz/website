@@ -6,30 +6,30 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 import { useStaggerVariants, viewportOnce } from "@/components/motion/useStaggerVariants";
 import { useI18n } from "@/components/i18n/I18nProvider";
 import { type Locale } from "@/i18n/messages";
-import { smoothEase, springSnappy } from "@/lib/motion";
+import { springSnappy } from "@/lib/motion";
 
 function getSteps(locale: Locale) {
   if (locale === "en") {
     return [
       {
         number: "01",
-        title: "Discovery and Analysis",
-        description: "We align goals, audience, and constraints. Scope and priorities are documented.",
+        title: "Brief",
+        description: "You describe the task in a chat or form. Goals, deadline, and budget if you have one.",
       },
       {
         number: "02",
-        title: "Design and Architecture",
-        description: "Architecture, UX flows, and implementation plan with milestones.",
+        title: "Estimate in 1–2 days",
+        description: "We send a budget range, stages, and timeline — before any invoice.",
       },
       {
         number: "03",
-        title: "Development",
-        description: "Sprint delivery, demos, and continuous feedback loop.",
+        title: "Build with demos",
+        description: "Structure → design → layout. You see progress each stage before the next payment.",
       },
       {
         number: "04",
-        title: "Launch and Support",
-        description: "Deployment, monitoring, and product evolution after release.",
+        title: "Launch",
+        description: "Ship a landing for leads or an MVP for the startup — with demos already approved.",
       },
     ];
   }
@@ -37,23 +37,23 @@ function getSteps(locale: Locale) {
     return [
       {
         number: "01",
-        title: "Талқылау және талдау",
-        description: "Мақсат, аудитория және шектеулерді нақтылаймыз. Көлем мен приоритетті бекітеміз.",
+        title: "Бриф",
+        description: "Міндетті чатта немесе формада сипаттайсыз. Мақсат, мерзім, бюджет болса — соны.",
       },
       {
         number: "02",
-        title: "Жобалау",
-        description: "Архитектура, макет және жұмыс жоспары. Кезеңдер мен мерзімдер келісеміз.",
+        title: "1–2 күнде бағалау",
+        description: "Бюджет вилкасы, кезеңдер және мерзім — шотқа дейін жібереміз.",
       },
       {
         number: "03",
-        title: "Әзірлеу",
-        description: "Спринттер, демо және кері байланыс. Прогресс әрқашан ашық.",
+        title: "Демомен жасау",
+        description: "Құрылым → дизайн → верстка. Әр кезеңді келесі төлемге дейін көресіз.",
       },
       {
         number: "04",
-        title: "Іске қосу және қолдау",
-        description: "Деплой, мониторинг және релизден кейінгі өнімді дамыту.",
+        title: "Іске қосу",
+        description: "Өтінім лендингін немесе стартап MVP-ін шығарамыз — демолар алдын ала келісілген.",
       },
     ];
   }
@@ -61,23 +61,23 @@ function getSteps(locale: Locale) {
   return [
     {
       number: "01",
-      title: "Обсуждение и анализ",
-      description: "Уточняем цели, аудиторию и ограничения. Фиксируем объем и приоритеты.",
+      title: "Бриф",
+      description: "Описываете задачу в чате или форме. Цель, срок, бюджет если есть.",
     },
     {
       number: "02",
-      title: "Проектирование",
-      description: "Архитектура, макеты и план работ. Согласуем этапы и сроки.",
+      title: "Оценка за 1–2 дня",
+      description: "Присылаем вилку бюджета, этапы и сроки — до любого счёта.",
     },
     {
       number: "03",
-      title: "Разработка",
-      description: "Спринты, демо и обратная связь. Вы всегда в курсе прогресса.",
+      title: "Сборка с демо",
+      description: "Структура → дизайн → вёрстка. Каждый этап видите до следующей оплаты.",
     },
-    {
+      {
       number: "04",
-      title: "Запуск и поддержка",
-      description: "Деплой, мониторинг и развитие продукта после релиза.",
+      title: "Запуск",
+      description: "Выводим лендинг под заявки или MVP для стартапа — с уже согласованными демо.",
     },
   ];
 }
@@ -105,38 +105,25 @@ export function Process() {
           />
         </motion.div>
         <motion.div
-          className="mt-10 grid gap-6 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4 lg:gap-8"
+          className="mt-10 grid gap-5 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4 lg:gap-6"
           variants={grid}
         >
-          {steps.map((step, i) => (
-            <motion.div key={step.number} className="relative" variants={item}>
-              {i < steps.length - 1 && (
-                <motion.div
-                  className="absolute left-8 top-14 hidden h-px w-[calc(100%-2rem)] origin-left bg-gradient-to-r from-accent to-transparent/0 lg:block"
-                  initial={{ scaleX: 0, opacity: 0 }}
-                  whileInView={{ scaleX: 1, opacity: 1 }}
-                  viewport={viewportOnce}
-                  transition={{ duration: 0.7, delay: i * 0.12, ease: smoothEase }}
-                />
-              )}
-              <motion.div
-                className="border border-line bg-canvas-elevated p-6 dark:border-line-dark dark:bg-canvas-elevated-dark"
-                whileHover={{ y: -4, transition: springSnappy }}
-              >
-                <motion.span
-                  className="inline-block font-display text-3xl font-bold text-accent/70"
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={viewportOnce}
-                  transition={{ type: "spring", stiffness: 400, damping: 22, delay: i * 0.08 }}
-                >
-                  {step.number}
-                </motion.span>
-                <h3 className="mt-4 font-display text-lg font-semibold text-ink dark:text-white">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-sm text-ink-muted dark:text-ink-faint">{step.description}</p>
-              </motion.div>
+          {steps.map((step) => (
+            <motion.div
+              key={step.number}
+              variants={item}
+              whileHover={{ y: -4, transition: springSnappy }}
+              className="border border-line bg-canvas-elevated p-6 dark:border-line-dark dark:bg-canvas-dark"
+            >
+              <p className="font-mono text-xs font-medium tracking-[0.16em] text-accent">
+                {step.number}
+              </p>
+              <h3 className="mt-4 font-display text-lg font-semibold text-ink dark:text-white">
+                {step.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-muted dark:text-ink-faint">
+                {step.description}
+              </p>
             </motion.div>
           ))}
         </motion.div>

@@ -1,11 +1,12 @@
 # Product Marketing Context
 
-**Document version:** v1  
+**Document version:** v1.1  
 **Last updated:** 2026-10-11
 
 ## Product Overview
-**One-liner:** Веб-студия в Астане: сайты и MVP, которые приводят заявки.  
-**What it does:** Делаем лендинги, корпоративные сайты и MVP под ключ: дизайн, разработка, SEO-база, формы заявок (WhatsApp/Telegram) и запуск.  
+**One-liner:** Веб-студия в Астане: лендинги под заявки и MVP для стартапов.  
+**What it does:** Делаем лендинги, Web MVP для стартапов и корпоративные сайты: дизайн, разработка, SEO-база, формы (WhatsApp/Telegram) и запуск.  
+**Named core offers:** «Лендинг под заявки» от 200 000 ₸; «Web MVP» от 1.5 млн ₸ — узкий scope, этапы и демо; оценка бесплатная за 1–2 дня  
 **Product category:** Веб-студия / digital agency / разработка сайтов  
 **Product type:** Service (productized agency)  
 **Business model:** Проектная оплата + поддержка; ориентиры цен на /pricing; оценка за 1–2 дня
@@ -106,4 +107,5 @@
 **Current metrics:** Не зафиксированы в репо
 
 ## Changelog
+- 2026-10-11 v1.1: Именованный оффер «Лендинг под заявки», процесс под заявки, гарантия оценки, Offer schema
 - 2026-10-11 v1: Черновик из кода сайта и живых кейсов

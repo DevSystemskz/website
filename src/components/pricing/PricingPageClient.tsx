@@ -80,6 +80,68 @@ export function PricingPageClient() {
             <p className="mt-4 text-lg text-ink-muted dark:text-ink-faint">{p.intro}</p>
           </div>
 
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            <section className="border border-accent/35 bg-gradient-to-br from-accent-muted via-canvas-elevated to-canvas-elevated p-6 dark:from-accent/15 dark:via-canvas-elevated-dark dark:to-canvas-elevated-dark sm:p-8">
+              <p className="font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-accent">
+                {p.offerBadge}
+              </p>
+              <h2 className="mt-3 font-display text-2xl font-bold text-ink dark:text-white">
+                {p.offerTitle}
+              </h2>
+              <p className="mt-2 font-display text-2xl font-bold text-accent">{p.offerPrice}</p>
+              <p className="mt-2 text-sm text-ink-muted dark:text-ink-faint">{p.offerTime}</p>
+              <ul className="mt-5 space-y-2">
+                {p.offerIncludes.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-2 text-sm text-ink-muted dark:text-ink-faint"
+                  >
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 bg-accent" aria-hidden />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-5 text-sm font-medium text-ink dark:text-white">
+                {p.offerGuarantee}
+              </p>
+              <div className="mt-6">
+                <Button href="/#contact" variant="primary" size="md">
+                  {p.cta}
+                </Button>
+              </div>
+            </section>
+
+            <section className="border border-line bg-canvas-elevated p-6 dark:border-line-dark dark:bg-canvas-elevated-dark sm:p-8">
+              <p className="font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-accent">
+                {p.mvpBadge}
+              </p>
+              <h2 className="mt-3 font-display text-2xl font-bold text-ink dark:text-white">
+                {p.mvpTitle}
+              </h2>
+              <p className="mt-2 font-display text-2xl font-bold text-accent">{p.mvpPrice}</p>
+              <p className="mt-2 text-sm text-ink-muted dark:text-ink-faint">{p.mvpTime}</p>
+              <ul className="mt-5 space-y-2">
+                {p.mvpIncludes.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-2 text-sm text-ink-muted dark:text-ink-faint"
+                  >
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 bg-accent" aria-hidden />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-5 text-sm font-medium text-ink dark:text-white">
+                {p.mvpGuarantee}
+              </p>
+              <div className="mt-6">
+                <Button href="/#contact" variant="outline" size="md">
+                  {p.cta}
+                </Button>
+              </div>
+            </section>
+          </div>
+
           <div className="mt-10 space-y-8">
             <PricingTable
               title={p.websitesTitle}

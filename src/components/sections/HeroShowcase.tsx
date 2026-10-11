@@ -12,59 +12,49 @@ type Token =
   | { t: "num"; v: string };
 
 const lines: Token[][] = [
-  [{ t: "kw", v: "export" }, { t: "plain", v: " " }, { t: "kw", v: "function" }, { t: "plain", v: " " }, { t: "fn", v: "Landing" }, { t: "plain", v: "() {" }],
+  [{ t: "kw", v: "export" }, { t: "plain", v: " " }, { t: "kw", v: "function" }, { t: "plain", v: " " }, { t: "fn", v: "StartupMVP" }, { t: "plain", v: "() {" }],
   [{ t: "plain", v: "  " }, { t: "kw", v: "return" }, { t: "plain", v: " (" }],
   [
     { t: "plain", v: "    <" },
-    { t: "fn", v: "section" },
+    { t: "fn", v: "App" },
     { t: "plain", v: " " },
-    { t: "prop", v: "className" },
+    { t: "prop", v: "auth" },
     { t: "plain", v: "=" },
-    { t: "str", v: '"hero"' },
+    { t: "str", v: '"ready"' },
     { t: "plain", v: ">" },
   ],
   [
     { t: "plain", v: "      <" },
-    { t: "fn", v: "h1" },
-    { t: "plain", v: ">" },
-    { t: "str", v: "Сайт под заявки" },
-    { t: "plain", v: "</" },
-    { t: "fn", v: "h1" },
-    { t: "plain", v: ">" },
-  ],
-  [
-    { t: "plain", v: "      <" },
-    { t: "fn", v: "Button" },
+    { t: "fn", v: "Landing" },
     { t: "plain", v: " " },
-    { t: "prop", v: "href" },
+    { t: "prop", v: "cta" },
     { t: "plain", v: "=" },
-    { t: "str", v: '"https://wa.me/…"' },
-  ],
-  [
-    { t: "plain", v: "        " },
-    { t: "prop", v: "label" },
-    { t: "plain", v: "=" },
-    { t: "str", v: '"Написать"' },
+    { t: "str", v: '"WhatsApp"' },
     { t: "plain", v: " />" },
   ],
   [
     { t: "plain", v: "      <" },
-    { t: "fn", v: "Meta" },
+    { t: "fn", v: "Admin" },
     { t: "plain", v: " " },
-    { t: "prop", v: "seo" },
+    { t: "prop", v: "scope" },
     { t: "plain", v: "=" },
-    { t: "str", v: '"local"' },
-    { t: "plain", v: " " },
-    { t: "prop", v: "lcp" },
-    { t: "plain", v: "=" },
-    { t: "num", v: "90" },
+    { t: "str", v: '"core"' },
     { t: "plain", v: " />" },
   ],
-  [{ t: "plain", v: "    </" }, { t: "fn", v: "section" }, { t: "plain", v: ">" }],
+  [
+    { t: "plain", v: "      <" },
+    { t: "fn", v: "Launch" },
+    { t: "plain", v: " " },
+    { t: "prop", v: "in" },
+    { t: "plain", v: "=" },
+    { t: "str", v: '"sprints"' },
+    { t: "plain", v: " />" },
+  ],
+  [{ t: "plain", v: "    </" }, { t: "fn", v: "App" }, { t: "plain", v: ">" }],
   [{ t: "plain", v: "  )" }],
   [{ t: "plain", v: "}" }],
   [],
-  [{ t: "cmt", v: "// brief → estimate in 1–2 days" }],
+  [{ t: "cmt", v: "// startups + landings → estimate in 1–2 days" }],
 ];
 
 const tokenClass: Record<Token["t"], string> = {
@@ -103,10 +93,10 @@ export function HeroShowcase() {
           </div>
           <div className="flex min-w-0 flex-1 items-center gap-2">
             <span className="truncate border-b-2 border-accent px-2.5 py-1 font-mono text-[11px] text-ink dark:text-white">
-              landing.tsx
+              mvp.tsx
             </span>
             <span className="hidden truncate px-2 py-1 font-mono text-[11px] text-ink-faint sm:inline">
-              seo.ts
+              landing.tsx
             </span>
           </div>
           <span className="shrink-0 font-mono text-[10px] uppercase tracking-wider text-accent">

@@ -7,7 +7,7 @@ export const SITE_URL = (
 export const SITE_NAME = "DevSystems";
 
 export const SITE_DESCRIPTION =
-  "Веб-студия в Астане: лендинги и MVP под заявки. Дизайн, разработка, SEO-база и запуск. Оценка за 1–2 дня.";
+  "Веб-студия в Астане: лендинги под заявки и MVP для стартапов. Дизайн, разработка, запуск. Оценка за 1–2 дня.";
 
 export function siteJsonLd() {
   const orgId = `${SITE_URL}/#organization`;
@@ -53,6 +53,56 @@ export function siteJsonLd() {
         },
         email: contactLinks.email,
         telephone: "+77761244111",
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Услуги DevSystems",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              name: "Лендинг под заявки",
+              description:
+                "Оффер, вёрстка под телефон, формы WhatsApp/Telegram, SEO-база и запуск. Оценка за 1–2 дня.",
+              priceCurrency: "KZT",
+              price: "200000",
+              priceSpecification: {
+                "@type": "PriceSpecification",
+                priceCurrency: "KZT",
+                minPrice: 200000,
+                maxPrice: 500000,
+              },
+              url: `${SITE_URL}/pricing`,
+              availability: "https://schema.org/InStock",
+            },
+            {
+              "@type": "Offer",
+              name: "Web MVP для стартапов",
+              description:
+                "Узкий срез продукта: auth, админка, ключевые сценарии, API. Фиксированные этапы и демо.",
+              priceCurrency: "KZT",
+              price: "1500000",
+              priceSpecification: {
+                "@type": "PriceSpecification",
+                priceCurrency: "KZT",
+                minPrice: 1500000,
+              },
+              url: `${SITE_URL}/pricing`,
+            },
+            {
+              "@type": "Offer",
+              name: "Корпоративный сайт",
+              description:
+                "Многостраничный сайт с услугами, кейсами и локальной SEO-структурой.",
+              priceCurrency: "KZT",
+              priceSpecification: {
+                "@type": "PriceSpecification",
+                priceCurrency: "KZT",
+                minPrice: 500000,
+                maxPrice: 1500000,
+              },
+              url: `${SITE_URL}/pricing`,
+            },
+          ],
+        },
       },
     ],
   };
