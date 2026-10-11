@@ -81,6 +81,36 @@ export const messages = {
       contactTitle: "Опишите задачу",
       contactDesc:
         "Напишите в форму, Telegram или WhatsApp. Ответим и пришлём вилку бюджета.",
+      faqTag: "Вопросы",
+      faqTitle: "Перед заявкой",
+      faqDesc: "Сроки, состав работ и как считаем бюджет.",
+      faqItems: [
+        {
+          question: "Сколько занимает лендинг?",
+          answer:
+            "Обычно 1–2 недели после брифа и согласования структуры страницы.",
+        },
+        {
+          question: "Что входит в сайт?",
+          answer:
+            "Дизайн, вёрстка под телефон, формы в WhatsApp или на почту, базовая SEO-разметка и запуск.",
+        },
+        {
+          question: "Когда будет оценка?",
+          answer:
+            "Вилку бюджета и план работ присылаем за 1–2 дня после описания задачи.",
+        },
+        {
+          question: "На каких языках делаете сайт?",
+          answer:
+            "На русском, казахском и английском — на одном языке или на нескольких сразу.",
+        },
+        {
+          question: "Где вы работаете?",
+          answer:
+            "В Астане и удалённо по Казахстану. Связь в Telegram и WhatsApp.",
+        },
+      ],
       ctaTitle: "Нужна оценка?",
       ctaDesc:
         "Кратко опишите задачу — смета и план работ за 1–2 дня.",
@@ -285,6 +315,36 @@ export const messages = {
       contactTitle: "Міндетті сипаттаңыз",
       contactDesc:
         "Форма, Telegram немесе WhatsApp арқылы жазыңыз. Жауап беріп, бюджет вилкасын жібереміз.",
+      faqTag: "Сұрақтар",
+      faqTitle: "Өтінімге дейін",
+      faqDesc: "Мерзім, жұмыс құрамы және бюджетті қалай есептейміз.",
+      faqItems: [
+        {
+          question: "Лендинг қанша уақыт алады?",
+          answer:
+            "Әдетте бриф пен бет құрылымын келіскеннен кейін 1–2 апта.",
+        },
+        {
+          question: "Сайтқа не кіреді?",
+          answer:
+            "Дизайн, телефонға бейімделген верстка, WhatsApp немесе пошта формалары, негізгі SEO-белгілеу және іске қосу.",
+        },
+        {
+          question: "Бағалау қашан болады?",
+          answer:
+            "Бюджет вилкасы мен жұмыс жоспарын міндетті сипаттағаннан кейін 1–2 күнде жібереміз.",
+        },
+        {
+          question: "Сайтты қандай тілдерде жасайсыз?",
+          answer:
+            "Орыс, қазақ және ағылшын тілдерінде — бір тілде немесе бірнеше тілде бірден.",
+        },
+        {
+          question: "Қайда жұмыс істейсіз?",
+          answer:
+            "Астанада және Қазақстан бойынша қашықтан. Байланыс Telegram мен WhatsApp арқылы.",
+        },
+      ],
       ctaTitle: "Бағалау керек пе?",
       ctaDesc:
         "Міндетті қысқаша жазыңыз — смета мен жоспар 1–2 күнде.",
@@ -489,6 +549,36 @@ export const messages = {
       contactTitle: "Describe the task",
       contactDesc:
         "Use the form, Telegram, or WhatsApp. We’ll reply with a budget range.",
+      faqTag: "FAQ",
+      faqTitle: "Before you apply",
+      faqDesc: "Timelines, scope of work, and how we price.",
+      faqItems: [
+        {
+          question: "How long does a landing take?",
+          answer:
+            "Usually 1–2 weeks after the brief and page structure are approved.",
+        },
+        {
+          question: "What’s included in a site?",
+          answer:
+            "Design, mobile layout, WhatsApp or email forms, basic SEO markup, and launch.",
+        },
+        {
+          question: "When will I get an estimate?",
+          answer:
+            "We send a budget range and work plan within 1–2 days after you describe the task.",
+        },
+        {
+          question: "Which languages do you build sites in?",
+          answer:
+            "Russian, Kazakh, and English — one language or several at once.",
+        },
+        {
+          question: "Where do you work?",
+          answer:
+            "In Astana and remotely across Kazakhstan. We chat on Telegram and WhatsApp.",
+        },
+      ],
       ctaTitle: "Need a quote?",
       ctaDesc:
         "Short brief — estimate and plan in 1–2 days.",

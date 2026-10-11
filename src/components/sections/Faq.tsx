@@ -1,31 +1,17 @@
-import { Container } from "@/components/ui/Container";
-import { SITE_URL } from "@/lib/site";
+"use client";
 
-export const homeFaq = [
-  {
-    question: "Сколько занимает лендинг?",
-    answer: "Обычно 1–2 недели после брифа и согласования структуры страницы.",
-  },
-  {
-    question: "Что входит в сайт?",
-    answer:
-      "Дизайн, вёрстка под телефон, формы в WhatsApp или на почту, базовая SEO-разметка и запуск.",
-  },
-  {
-    question: "Когда будет оценка?",
-    answer: "Вилку бюджета и план работ присылаем за 1–2 дня после описания задачи.",
-  },
-  {
-    question: "На каких языках делаете сайт?",
-    answer: "На русском, казахском и английском — на одном языке или на нескольких сразу.",
-  },
-  {
-    question: "Где вы работаете?",
-    answer: "В Астане и удалённо по Казахстану. Связь в Telegram и WhatsApp.",
-  },
-] as const;
+import { Container } from "@/components/ui/Container";
+import { useI18n } from "@/components/i18n/I18nProvider";
+import { SITE_URL } from "@/lib/site";
+import { messages } from "@/i18n/messages";
+
+/** Default RU FAQ for static JSON-LD (primary site language). */
+export const homeFaq = messages.ru.sections.faqItems;
 
 export function Faq() {
+  const { m } = useI18n();
+  const items = m.sections.faqItems;
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -48,16 +34,16 @@ export function Faq() {
       />
       <Container>
         <p className="inline-flex items-center gap-2 border-l-2 border-accent pl-3 font-mono text-xs font-medium uppercase tracking-[0.18em] text-accent">
-          Вопросы
+          {m.sections.faqTag}
         </p>
         <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl dark:text-white">
-          Перед заявкой
+          {m.sections.faqTitle}
         </h2>
         <p className="mt-3 max-w-2xl text-lg text-ink-muted dark:text-ink-faint">
-          Сроки, состав работ и как считаем бюджет.
+          {m.sections.faqDesc}
         </p>
         <dl className="mt-10 grid gap-6 md:grid-cols-2">
-          {homeFaq.map((item) => (
+          {items.map((item) => (
             <div
               key={item.question}
               className="border border-line bg-canvas-elevated p-5 dark:border-line-dark dark:bg-canvas-elevated-dark"
